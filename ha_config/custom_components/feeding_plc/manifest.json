@@ -1,0 +1,10 @@
+{
+  "domain": "feeding_plc",
+  "name": "Feeding PLC",
+  "version": "0.1.0",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": ["@iam"],
+  "requirements": ["pymodbus>=3.0.0"],
+  "config_flow": true
+}
