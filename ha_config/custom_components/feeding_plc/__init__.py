@@ -1,10 +1,19 @@
+import logging
+from datetime import timedelta
+
 from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.typing import ConfigType
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
+from homeassistant.const import CONF_HOST
+
 from .modbus_client import PLCModbusClient
-from .const import DOMAIN, SENSOR_ADDRESSES, STATE_MAP, ALARM_MASK, INPUT_ADDRESSES
+from .const import DOMAIN, PLC_FEEDING_NUMBER, HAS_NH4_SENSOR, SENSOR_ADDRESSES, STATE_MAP, ALARM_MASK, INPUT_ADDRESSES
 from .sensor import ModbusSensor
 from .number import ModbusNumber, ModbusStartTime
+
+
+logger = logging.getLogger('feeding')
 
 
 async def async_setup(hass: HomeAssistant, config: ConfigType):
@@ -12,35 +21,33 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
 
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
-    host = entry.data["host"]
-    unit = entry.data.get("unit", 1)
-    client = PLCModbusClient(host, unit_id=unit)
-    hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {"client": client}
+    host = entry.data[CONF_HOST]
+    plc_feeding_number = entry.data[PLC_FEEDING_NUMBER]
+    has_nh4 = entry.data[HAS_NH4_SENSOR]
+    client = PLCModbusClient(host)
 
-    # Групповое чтение данных
-    client.read_all()
+    async def async_update_data():
+        start_address = 20 * plc_feeding_number
+        result = client.read_all(start=start_address, count=30)
+        if result is None:
+            raise UpdateFailed("Modbus read failed")
+        return result
 
-    sensors = [
-        ModbusSensor(client, "Temperature", SENSOR_ADDRESSES["temperature"], "°C"),
-        ModbusSensor(client, "Oxygen", SENSOR_ADDRESSES["oxygen"], "%"),
-        ModbusSensor(client, "Valve 1 State", SENSOR_ADDRESSES["valve1_state"]),
-        ModbusSensor(client, "Valve 2 State", SENSOR_ADDRESSES["valve2_state"]),
-        ModbusSensor(client, "State", SENSOR_ADDRESSES["state_code"], map_fn=lambda v: STATE_MAP.get(v, f"Unknown ({v})")),
-        ModbusSensor(client, "Alarm", SENSOR_ADDRESSES["alarm_code"], map_fn=lambda v: ', '.join(name for bit, name in ALARM_MASK.items() if v & (1 << bit)))
-    ]
+    coordinator = DataUpdateCoordinator(
+        hass,
+        logger,
+        name="modbus_plc",
+        update_method=async_update_data,
+        update_interval=timedelta(seconds=1),
+    )
 
-    numbers = [
-        ModbusNumber(client, "Duration", INPUT_ADDRESSES["duration"], "s"),
-        ModbusNumber(client, "Period", INPUT_ADDRESSES["period"], "s"),
-        ModbusNumber(client, "Count", INPUT_ADDRESSES["count"])
-    ]
+    await coordinator.async_config_entry_first_refresh()
 
-    time_entities = [
-        ModbusStartTime(client, "Start Time", INPUT_ADDRESSES["start_time"])
-    ]
+    hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {
+        "client": client,
+        "coordinator": coordinator
+    }
 
-    hass.helpers.discovery.load_platform("sensor", DOMAIN, {"entities": sensors}, hass.config)
-    hass.helpers.discovery.load_platform("number", DOMAIN, {"entities": numbers}, hass.config)
-    hass.helpers.discovery.load_platform("time", DOMAIN, {"entities": time_entities}, hass.config)
+    await hass.config_entries.async_forward_entry_setups(entry, ["sensor", "number", "binary_sensor"])
 
     return True

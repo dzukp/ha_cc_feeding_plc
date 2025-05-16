@@ -6,5 +6,6 @@
   "dependencies": [],
   "codeowners": ["@iam"],
   "requirements": ["pymodbus>=3.0.0"],
-  "config_flow": true
+  "config_flow": true,
+  "supported_platforms": ["sensor", "number", "time", "binary_sensor"]
 }
