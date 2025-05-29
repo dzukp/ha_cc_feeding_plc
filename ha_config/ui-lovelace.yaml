@@ -1,0 +1,54 @@
+title: Бассейны
+views:
+  - title: Бассейны
+    path: pool
+    id: pools
+    icon: mdi:chip
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Бассейн 1
+            entities:
+              - sensor.b01_temperatura
+              - sensor.b01_kislorod
+              - sensor.b01_kormlenie_1
+              - sensor.b01_sled_korm_1
+              - sensor.b01_proshlo_korm_1
+              - sensor.b01_kormlenie_2
+              - sensor.b01_sled_korm_2
+              - sensor.b01_proshlo_korm_2
+              - sensor.b01_avariia
+              - binary_sensor.b01_avtomat
+              - binary_sensor.b01_ruchnoi
+              - binary_sensor.b01_korm_1_rabota
+              - binary_sensor.b01_korm_1_pusk
+              - binary_sensor.b01_korm_2_rabota
+              - binary_sensor.b01_korm_2_pusk
+              - number.b01_ust_vremya_nachala_1
+              - number.b01_ust_dlitelnost_1
+              - number.b01_ust_period_1
+              - number.b01_ust_kol_vo_kormlenii_1
+
+          - type: entities
+            title: Бассейн 2
+            entities:
+              - sensor.b02_temperatura
+              - sensor.b02_kislorod
+              - sensor.b02_kormlenie_1
+              - sensor.b02_sled_korm_1
+              - sensor.b02_proshlo_korm_1
+              - sensor.b02_kormlenie_2
+              - sensor.b02_sled_korm_2
+              - sensor.b02_proshlo_korm_2
+              - sensor.b02_avariia
+              - binary_sensor.b02_avtomat
+              - binary_sensor.b02_ruchnoi
+              - binary_sensor.b02_korm_1_rabota
+              - binary_sensor.b02_korm_1_pusk
+              - binary_sensor.b02_korm_2_rabota
+              - binary_sensor.b02_korm_2_pusk
+              - number.b02_ust_vremya_nachala_1
+              - number.b02_ust_dlitelnost_1
+              - number.b02_ust_period_1
+              - number.b02_ust_kol_vo_kormlenii_1
