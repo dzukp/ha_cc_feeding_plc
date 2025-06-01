@@ -25,10 +25,14 @@ views:
               - binary_sensor.b01_korm_1_pusk
               - binary_sensor.b01_korm_2_rabota
               - binary_sensor.b01_korm_2_pusk
-              - number.b01_ust_vremya_nachala_1
+              - number.b01_ust_vremia_nachala_1
               - number.b01_ust_dlitelnost_1
               - number.b01_ust_period_1
               - number.b01_ust_kol_vo_kormlenii_1
+              - number.b01_ust_vremia_nachala_2
+              - number.b01_ust_dlitelnost_2
+              - number.b01_ust_period_2
+              - number.b01_ust_kol_vo_kormlenii_2
 
           - type: entities
             title: Бассейн 2
@@ -48,7 +52,11 @@ views:
               - binary_sensor.b02_korm_1_pusk
               - binary_sensor.b02_korm_2_rabota
               - binary_sensor.b02_korm_2_pusk
-              - number.b02_ust_vremya_nachala_1
+              - number.b02_ust_vremia_nachala_1
               - number.b02_ust_dlitelnost_1
               - number.b02_ust_period_1
               - number.b02_ust_kol_vo_kormlenii_1
+              - number.b02_ust_vremia_nachala_2
+              - number.b02_ust_dlitelnost_2
+              - number.b02_ust_period_2
+              - number.b02_ust_kol_vo_kormlenii_2

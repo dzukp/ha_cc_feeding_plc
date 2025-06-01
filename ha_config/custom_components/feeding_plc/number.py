@@ -91,20 +91,36 @@ def create_items(
         coordinator: DataUpdateCoordinator, device_id: str, plc_feeding_number: int, client, address_offset: int
 ):
     return [
-        ModbusStartTime(
+        ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Время начала 1",
-            address_offset + 2
+            address_offset + 1, min_value=1, max_value=60 * 24
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Длительность 1",
-            address_offset + 3, "сек"
+            address_offset + 2, "сек", min_value=1, max_value=32000
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Период 1",
-            address_offset + 4, "сек"
+            address_offset + 3, "сек", min_value=1, max_value=32000
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Кол-во кормлений 1",
-            address_offset + 5
+            address_offset + 4, min_value=0, max_value=32000
+        ),
+        ModbusNumber(
+            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Время начала 2",
+            address_offset + 7, min_value=1, max_value=60 * 24
+        ),
+        ModbusNumber(
+            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Длительность 2",
+            address_offset + 8, "сек", min_value=1, max_value=32000
+        ),
+        ModbusNumber(
+            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Период 2",
+            address_offset + 9, "сек", min_value=1, max_value=32000
+        ),
+        ModbusNumber(
+            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Кол-во кормлений 2",
+            address_offset + 10, min_value=0, max_value=32000
         ),
     ]
