@@ -5,10 +5,9 @@ from homeassistant.config_entries import ConfigEntry
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.discovery import async_load_platform
 from homeassistant.helpers.typing import ConfigType
-from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 from homeassistant.const import CONF_HOST
 
-from .modbus_client import PLCModbusClient
+from ..common.modbus_client import PLCModbusClient
 from .const import DOMAIN, PLC_FEEDING_NUMBER, HAS_NH4_SENSOR, SENSOR_ADDRESSES, STATE_MAP, ALARM_MASK, INPUT_ADDRESSES
 
 
@@ -25,27 +24,17 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
     for idx, device_conf in enumerate(conf):
         host = device_conf["host"]
         plc_feeding_number = device_conf["number"]
-        has_nh4 = device_conf.get("has_nh4", False)
 
-        client = PLCModbusClient(host)
+        client = PLCModbusClient(hass, host)
+        client.setup_coordinator()
 
-        start_address = 20 * plc_feeding_number
-
-        coordinator = DataUpdateCoordinator(
-            hass,
-            logger,
-            name=f"modbus_plc_{plc_feeding_number}",
-            update_method=make_update_data_func(client, start_address),
-            update_interval=timedelta(seconds=1),
-        )
-
-        await coordinator.async_refresh()
+        await client.start()
 
         device_id = f"plc_{plc_feeding_number}"
 
         hass.data[DOMAIN][device_id] = {
             "client": client,
-            "coordinator": coordinator,
+            "coordinator": client.coordinator,
         }
 
         for platform in ["sensor", "number", "binary_sensor"]:
@@ -55,7 +44,6 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
                     {
                         "device_id": device_id,
                         "plc_feeding_number": plc_feeding_number,
-                        "has_nh4": has_nh4,
                     },
                     config,
                 )
@@ -67,26 +55,14 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
 
 async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     host = entry.data[CONF_HOST]
-    plc_feeding_number = entry.data[PLC_FEEDING_NUMBER]
-    has_nh4 = entry.data[HAS_NH4_SENSOR]
-    client = PLCModbusClient(host)
+    client = PLCModbusClient(hass, host)
+    client.setup_coordinator()
 
-    start_address = 20 * plc_feeding_number
-
-    coordinator = DataUpdateCoordinator(
-        hass,
-        logger,
-        name=f"modbus_plc_{plc_feeding_number}",
-        update_method=make_update_data_func(client, start_address),
-        update_interval=timedelta(seconds=1),
-        config_entry=entry,
-    )
-
-    await coordinator.async_config_entry_first_refresh()
+    await client.start()
 
     hass.data.setdefault(DOMAIN, {})[entry.entry_id] = {
         "client": client,
-        "coordinator": coordinator
+        "coordinator": client.coordinator,
     }
 
     await hass.config_entries.async_forward_entry_setups(
@@ -95,15 +71,3 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
     )
 
     return True
-
-
-def make_update_data_func(client: PLCModbusClient, start_address: int):
-    async def async_update_data():
-        # result = client.read_all(start=start_address, count=40)
-        r1 = client.read_all(start=1, count=120)
-        r2 = client.read_all(start=121, count=120)
-        r3 = client.read_all(start=241, count=58)
-        if None in (r1, r2, r3):
-            raise UpdateFailed(f"Modbus read failed at address {start_address}")
-        return {**r1, **r2, **r3}
-    return async_update_data

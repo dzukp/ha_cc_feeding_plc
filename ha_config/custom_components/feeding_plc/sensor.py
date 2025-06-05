@@ -67,7 +67,6 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 
     device_id = discovery_info["device_id"]
     plc_feeding_number = discovery_info["plc_feeding_number"]
-    has_nh4 = discovery_info["has_nh4"]
     data = hass.data[DOMAIN][device_id]
     coordinator = data["coordinator"]
     address_offset = plc_feeding_number * 20

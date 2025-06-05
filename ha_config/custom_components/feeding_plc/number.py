@@ -5,7 +5,7 @@ from homeassistant.components.number import NumberEntity
 from homeassistant.components.time import TimeEntity
 from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
 
-from .const import DOMAIN, INPUT_ADDRESSES, PLC_FEEDING_NUMBER, HAS_NH4_SENSOR
+from .const import DOMAIN, PLC_FEEDING_NUMBER
 
 
 logger = logging.getLogger('feeding')
@@ -62,7 +62,6 @@ async def async_setup_entry(hass, entry, async_add_entities):
     client = data["client"]
     coordinator = data["coordinator"]
     plc_feeding_number = entry.data[PLC_FEEDING_NUMBER]
-    has_nh4 = entry.data[HAS_NH4_SENSOR]
     device_id = entry.entry_id
     address_offset = 215 + plc_feeding_number * 20
 
@@ -77,7 +76,6 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 
     device_id = discovery_info["device_id"]
     plc_feeding_number = discovery_info["plc_feeding_number"]
-    has_nh4 = discovery_info["has_nh4"]
     data = hass.data[DOMAIN][device_id]
     coordinator = data["coordinator"]
     client = data["client"]
@@ -93,7 +91,7 @@ def create_items(
     return [
         ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Время начала 1",
-            address_offset + 1, min_value=1, max_value=60 * 24
+            address_offset + 1, 'мин', min_value=1, max_value=60 * 24
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Длительность 1",
@@ -109,7 +107,7 @@ def create_items(
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Время начала 2",
-            address_offset + 7, min_value=1, max_value=60 * 24
+            address_offset + 7, 'мин', min_value=1, max_value=60 * 24
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Длительность 2",

@@ -1,5 +1,9 @@
 import logging
+import random
+from datetime import timedelta
+from asyncio import sleep
 
+from homeassistant.helpers.update_coordinator import UpdateFailed, DataUpdateCoordinator
 from pymodbus.client import ModbusTcpClient
 
 
@@ -7,10 +11,44 @@ logger = logging.getLogger('feeding')
 
 
 class PLCModbusClient:
-    def __init__(self, host, port=502):
+    def __init__(self, hass, host, port=502):
         self.client = ModbusClientPool.get_client(host, port)
         self._host = host
         self._cache = {}
+        self._hass = hass
+        self._coordinator = None
+        self._started = False
+
+    def setup_coordinator(self):
+        async def _update():
+            all_data = {}
+            for start, count in ((1, 100), (101, 100), (201, 98)):
+                data = self.read_all(start, count)
+                if data:
+                    all_data.update(data)
+            return all_data
+
+        self._coordinator = DataUpdateCoordinator(
+            self._hass,
+            logger,
+            name=f"modbus_plc_{self._host}",
+            update_method=_update,
+            update_interval=timedelta(seconds=1),
+        )
+
+    async def start(self, delay: float | None = None):
+        if self._started:
+            return
+        if delay is None:
+            delay = random.uniform(0., 1.)
+        await sleep(delay)
+        if self._coordinator:
+            await self._coordinator.async_refresh()
+        self._started = True
+
+    @property
+    def coordinator(self):
+        return self._coordinator
 
     def read_all(self, start, count):
         logger.info(f'start read_all {self._host} {start}:{count}')
