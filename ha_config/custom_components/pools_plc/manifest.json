@@ -1,0 +1,11 @@
+{
+  "domain": "pools_plc",
+  "name": "Pools PLC",
+  "version": "0.1.0",
+  "documentation": "",
+  "dependencies": [],
+  "codeowners": ["@iam"],
+  "requirements": ["pymodbus>=3.0.0"],
+  "config_flow": false,
+  "supported_platforms": ["number"]
+}
