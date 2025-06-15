@@ -3,7 +3,7 @@ import random
 from datetime import timedelta
 from asyncio import sleep
 
-from homeassistant.helpers.update_coordinator import UpdateFailed, DataUpdateCoordinator
+from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from pymodbus.client import ModbusTcpClient
 
 
@@ -51,7 +51,7 @@ class PLCModbusClient:
         return self._coordinator
 
     def read_all(self, start, count):
-        logger.info(f'start read_all {self._host} {start}:{count}')
+        logger.debug(f'start read_all {self._host} {start}:{count}')
         try:
             self._read_all(start, count)
         except BrokenPipeError:
@@ -63,7 +63,7 @@ class PLCModbusClient:
             except BrokenPipeError as e:
                 logger.exception(f"Modbus read failed after reconnect {self._host}")
                 return None
-        logger.info(f'end real_all {self._host} {self._cache}')
+        logger.debug(f'end real_all {self._host} {self._cache}')
         return self._cache
 
     def _read_all(self, start, count):

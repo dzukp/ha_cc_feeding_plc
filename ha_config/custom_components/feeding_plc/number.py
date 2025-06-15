@@ -5,7 +5,7 @@ from homeassistant.components.number import NumberEntity
 from homeassistant.components.time import TimeEntity
 from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
 
-from .const import DOMAIN, PLC_FEEDING_NUMBER
+from .const import DOMAIN
 
 
 logger = logging.getLogger('feeding')
@@ -61,11 +61,12 @@ async def async_setup_entry(hass, entry, async_add_entities):
     data = hass.data[DOMAIN][entry.entry_id]
     client = data["client"]
     coordinator = data["coordinator"]
-    plc_feeding_number = entry.data[PLC_FEEDING_NUMBER]
+    pool_plc_index = entry.data['pool_plc_index']
+    pool_number = entry.data['pool_number']
     device_id = entry.entry_id
-    address_offset = 215 + plc_feeding_number * 20
+    address_offset = 215 + pool_plc_index * 20
 
-    entities = create_items(coordinator, device_id, plc_feeding_number, client, address_offset)
+    entities = create_items(coordinator, device_id, pool_number, client, address_offset)
     async_add_entities(entities)
 
 
@@ -75,50 +76,51 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         return
 
     device_id = discovery_info["device_id"]
-    plc_feeding_number = discovery_info["plc_feeding_number"]
+    pool_number = discovery_info["pool_number"]
+    pool_plc_index = discovery_info["pool_plc_index"]
     data = hass.data[DOMAIN][device_id]
     coordinator = data["coordinator"]
     client = data["client"]
-    address_offset = 215 + (plc_feeding_number - 1) * 20
+    address_offset = 215 + (pool_plc_index - 1) * 20
 
-    entities = create_items(coordinator, device_id, plc_feeding_number, client, address_offset)
+    entities = create_items(coordinator, device_id, pool_number, client, address_offset)
     async_add_entities(entities)
 
 
 def create_items(
-        coordinator: DataUpdateCoordinator, device_id: str, plc_feeding_number: int, client, address_offset: int
+        coordinator: DataUpdateCoordinator, device_id: str, pool_number: int, client, address_offset: int
 ):
     return [
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Время начала 1",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Время начала 1",
             address_offset + 1, 'мин', min_value=1, max_value=60 * 24
         ),
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Длительность 1",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Длительность 1",
             address_offset + 2, "сек", min_value=1, max_value=32000
         ),
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Период 1",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Период 1",
             address_offset + 3, "сек", min_value=1, max_value=32000
         ),
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Кол-во кормлений 1",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Кол-во кормлений 1",
             address_offset + 4, min_value=0, max_value=32000
         ),
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Время начала 2",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Время начала 2",
             address_offset + 7, 'мин', min_value=1, max_value=60 * 24
         ),
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Длительность 2",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Длительность 2",
             address_offset + 8, "сек", min_value=1, max_value=32000
         ),
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Период 2",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Период 2",
             address_offset + 9, "сек", min_value=1, max_value=32000
         ),
         ModbusNumber(
-            coordinator, device_id, client, f"Б{plc_feeding_number:02} Уст Кол-во кормлений 2",
+            coordinator, device_id, client, f"Б{pool_number:02} Уст Кол-во кормлений 2",
             address_offset + 10, min_value=0, max_value=32000
         ),
     ]

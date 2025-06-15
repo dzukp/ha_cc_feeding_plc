@@ -33,10 +33,12 @@ async def async_setup_entry(hass, entry, async_add_entities):
     data = hass.data[DOMAIN][entry.entry_id]
     client = data["client"]
     coordinator = data["coordinator"]
-    plc_feeding_number = data["plc_feeding_number"]
+    pool_plc_index = entry.data['pool_plc_index']
+    pool_number = entry.data['pool_number']
     device_id = entry.entry_id
+    address_offset = (pool_plc_index - 1) * 20 + 20
 
-    entities = create_items(coordinator, client, device_id, plc_feeding_number)
+    entities = create_items(coordinator, client, device_id, pool_number, address_offset)
     async_add_entities(entities)
 
 
@@ -48,11 +50,12 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     device_id = discovery_info["device_id"]
     data = hass.data[DOMAIN][device_id]
     coordinator = data["coordinator"]
-    plc_feeding_number = discovery_info["plc_feeding_number"]
+    pool_plc_index = discovery_info["pool_plc_index"]
+    pool_number = discovery_info["pool_number"]
     client = data["client"]
-    address_offset = (plc_feeding_number - 1) * 20 + 20
+    address_offset = (pool_plc_index - 1) * 20 + 20
 
-    entities = create_items(coordinator, client, device_id, plc_feeding_number, address_offset)
+    entities = create_items(coordinator, client, device_id, pool_number, address_offset)
     async_add_entities(entities)
 
 

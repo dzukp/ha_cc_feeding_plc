@@ -3,7 +3,7 @@
   "name": "Feeding PLC",
   "version": "0.1.0",
   "documentation": "",
-  "dependencies": [],
+  "dependencies": ["http"],
   "codeowners": ["@iam"],
   "requirements": ["pymodbus>=3.0.0"],
   "config_flow": false,

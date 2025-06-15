@@ -3,7 +3,7 @@ import logging
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
 
-from .const import DOMAIN, SENSOR_ADDRESSES, STATE_MAP, ALARM_MASK, PLC_FEEDING_NUMBER, HAS_NH4_SENSOR
+from .const import DOMAIN
 
 
 logger = logging.getLogger('feeding')
@@ -50,13 +50,12 @@ class ModbusBitMaskListSensor(ModbusSensor):
 
 async def async_setup_entry(hass, entry, async_add_entities):
     data = hass.data[DOMAIN][entry.entry_id]
-    client = data["client"]
     coordinator = data["coordinator"]
-    plc_feeding_number = entry.data[PLC_FEEDING_NUMBER]
-    has_nh4 = entry.data[HAS_NH4_SENSOR]
+    pool_plc_index = entry.data['pool_plc_index']
+    pool_number = entry.data['pool_number']
     device_id = entry.entry_id
-    address_offset = plc_feeding_number * 20
-    sensors = create_items(coordinator, device_id, plc_feeding_number, address_offset)
+    address_offset = pool_plc_index * 20
+    sensors = create_items(coordinator, device_id, pool_number, address_offset)
     async_add_entities(sensors)
 
 
@@ -66,11 +65,12 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
         return
 
     device_id = discovery_info["device_id"]
-    plc_feeding_number = discovery_info["plc_feeding_number"]
+    pool_plc_index = discovery_info["pool_plc_index"]
+    pool_number = discovery_info["pool_number"]
     data = hass.data[DOMAIN][device_id]
     coordinator = data["coordinator"]
-    address_offset = plc_feeding_number * 20
-    sensors = create_items(coordinator, device_id, plc_feeding_number, address_offset)
+    address_offset = pool_plc_index * 20
+    sensors = create_items(coordinator, device_id, pool_number, address_offset)
     async_add_entities(sensors)
 
 

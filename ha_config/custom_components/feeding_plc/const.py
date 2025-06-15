@@ -1,6 +1,4 @@
 DOMAIN = "feeding_plc"
-PLC_FEEDING_NUMBER = "plc_feeding_number"
-HAS_NH4_SENSOR = "has_nh4_sensor"
 
 
 SENSOR_ADDRESSES = {

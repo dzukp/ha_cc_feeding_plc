@@ -1,3 +1,7 @@
+resources:
+  - url: /local/custom_lovelace/html_card/html-card.js
+    type: js
+
 title: Бассейны
 views:
   - title: Бассейны
@@ -7,6 +11,16 @@ views:
     cards:
       - type: vertical-stack
         cards:
+          - type: entities
+            title: Шкаф 1
+            entities:
+              - number.sh1_verkh_limit_kisloroda
+              - number.sh1_niz_limit_kisloroda
+              - number.sh1_otkl_kisloroda
+              - number.sh1_vkl_kisloroda
+              - number.sh1_verkh_limit_temperatury
+              - number.sh1_niz_limit_temperatury
+
           - type: entities
             title: Бассейн 1
             entities:
@@ -60,3 +74,8 @@ views:
               - number.b02_ust_dlitelnost_2
               - number.b02_ust_period_2
               - number.b02_ust_kol_vo_kormlenii_2
+
+  - title: CSV Загрузка
+    path: csv-upload
+    cards:
+      - type: custom:upload-csv-card
