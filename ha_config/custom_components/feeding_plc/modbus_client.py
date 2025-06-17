@@ -5,7 +5,7 @@ from asyncio import sleep
 
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 from pymodbus.client import ModbusTcpClient
-
+from pymodbus.exceptions import ConnectionException
 
 logger = logging.getLogger('feeding')
 
@@ -14,6 +14,7 @@ class PLCModbusClient:
     def __init__(self, hass, host, port=502):
         self.client = ModbusClientPool.get_client(host, port)
         self._host = host
+        self._port = port
         self._cache = {}
         self._hass = hass
         self._coordinator = None
@@ -22,18 +23,19 @@ class PLCModbusClient:
     def setup_coordinator(self):
         async def _update():
             all_data = {}
-            for start, count in ((1, 100), (101, 100), (201, 98)):
-                data = self.read_all(start, count)
-                if data:
-                    all_data.update(data)
+            try:
+                for start, count in ((1, 100), (101, 100), (201, 98)):
+                    data = self.read_all(start, count)
+                    if data:
+                        all_data.update(data)
+            except ConnectionException:
+                logger.error(f'ConnectionException {self._host}')
+                self._cache = {i: None for i in range(1, 299)}
+                return {}
             return all_data
 
-        self._coordinator = DataUpdateCoordinator(
-            self._hass,
-            logger,
-            name=f"modbus_plc_{self._host}",
-            update_method=_update,
-            update_interval=timedelta(seconds=1),
+        self._coordinator = CoordinatorPool.get_coordinator(
+            host=self._host, port=self._port, hass=self._hass, name=f"modbus_plc_{self._host}", update_method=_update
         )
 
     async def start(self, delay: float | None = None):
@@ -51,7 +53,7 @@ class PLCModbusClient:
         return self._coordinator
 
     def read_all(self, start, count):
-        logger.debug(f'start read_all {self._host} {start}:{count}')
+        logger.debug(f'start read_all {id(self)} {self._host} {start}:{count}')
         try:
             self._read_all(start, count)
         except BrokenPipeError:
@@ -90,5 +92,22 @@ class ModbusClientPool:
     def get_client(cls, host, port):
         key = (host, port)
         if key not in cls._clients:
-            cls._clients[key] = ModbusTcpClient(host, port=port)
+            cls._clients[key] = ModbusTcpClient(host, port=port, timeout=0.2)
         return cls._clients[key]
+
+
+class CoordinatorPool:
+    _coordinators = {}
+
+    @classmethod
+    def get_coordinator(cls, host, port, hass, name, update_method):
+        key = (host, port)
+        if key not in cls._coordinators:
+            cls._coordinators[key] = DataUpdateCoordinator(
+                hass,
+                logger,
+                name=name,
+                update_method=update_method,
+                update_interval=timedelta(seconds=3),
+            )
+        return cls._coordinators[key]

@@ -2,80 +2,2074 @@ resources:
   - url: /local/custom_lovelace/html_card/html-card.js
     type: js
 
-title: Бассейны
+title: Кормление
 views:
-  - title: Бассейны
-    path: pool
-    id: pools
-    icon: mdi:chip
+  - title: CSV №Загрузка
+    path: csv-upload
+    icon: mdi:upload
+    cards:
+      - type: custom:upload-csv-card
+  - title: Б№1
+    path: pool_1
     cards:
       - type: vertical-stack
         cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b01_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b01_kislorod
+            graph: none
           - type: entities
-            title: Шкаф 1
+            title: Бассейн
             entities:
-              - number.sh1_verkh_limit_kisloroda
-              - number.sh1_niz_limit_kisloroda
-              - number.sh1_otkl_kisloroda
-              - number.sh1_vkl_kisloroda
-              - number.sh1_verkh_limit_temperatury
-              - number.sh1_niz_limit_temperatury
-
+              - binary_sensor.b01_avtomat
+              - binary_sensor.b01_ruchnoi
+              - sensor.b01_avariia
           - type: entities
-            title: Бассейн 1
+            title: Кормушка 1
             entities:
-              - sensor.b01_temperatura
-              - sensor.b01_kislorod
               - sensor.b01_kormlenie_1
               - sensor.b01_sled_korm_1
               - sensor.b01_proshlo_korm_1
+              - binary_sensor.b01_korm_1_rabota
+              - binary_sensor.b01_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
               - sensor.b01_kormlenie_2
               - sensor.b01_sled_korm_2
               - sensor.b01_proshlo_korm_2
-              - sensor.b01_avariia
-              - binary_sensor.b01_avtomat
-              - binary_sensor.b01_ruchnoi
-              - binary_sensor.b01_korm_1_rabota
-              - binary_sensor.b01_korm_1_pusk
               - binary_sensor.b01_korm_2_rabota
               - binary_sensor.b01_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
               - number.b01_ust_vremia_nachala_1
               - number.b01_ust_dlitelnost_1
               - number.b01_ust_period_1
               - number.b01_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
               - number.b01_ust_vremia_nachala_2
               - number.b01_ust_dlitelnost_2
               - number.b01_ust_period_2
               - number.b01_ust_kol_vo_kormlenii_2
-
+  - title: Б№2
+    path: pool_2
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b02_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b02_kislorod
+            graph: none
           - type: entities
-            title: Бассейн 2
+            title: Бассейн
             entities:
-              - sensor.b02_temperatura
-              - sensor.b02_kislorod
+              - binary_sensor.b02_avtomat
+              - binary_sensor.b02_ruchnoi
+              - sensor.b02_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
               - sensor.b02_kormlenie_1
               - sensor.b02_sled_korm_1
               - sensor.b02_proshlo_korm_1
+              - binary_sensor.b02_korm_1_rabota
+              - binary_sensor.b02_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
               - sensor.b02_kormlenie_2
               - sensor.b02_sled_korm_2
               - sensor.b02_proshlo_korm_2
-              - sensor.b02_avariia
-              - binary_sensor.b02_avtomat
-              - binary_sensor.b02_ruchnoi
-              - binary_sensor.b02_korm_1_rabota
-              - binary_sensor.b02_korm_1_pusk
               - binary_sensor.b02_korm_2_rabota
               - binary_sensor.b02_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
               - number.b02_ust_vremia_nachala_1
               - number.b02_ust_dlitelnost_1
               - number.b02_ust_period_1
               - number.b02_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
               - number.b02_ust_vremia_nachala_2
               - number.b02_ust_dlitelnost_2
               - number.b02_ust_period_2
               - number.b02_ust_kol_vo_kormlenii_2
-
-  - title: CSV Загрузка
-    path: csv-upload
+  - title: Б№3
+    path: pool_3
     cards:
-      - type: custom:upload-csv-card
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b03_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b03_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b03_avtomat
+              - binary_sensor.b03_ruchnoi
+              - sensor.b03_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b03_kormlenie_1
+              - sensor.b03_sled_korm_1
+              - sensor.b03_proshlo_korm_1
+              - binary_sensor.b03_korm_1_rabota
+              - binary_sensor.b03_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b03_kormlenie_2
+              - sensor.b03_sled_korm_2
+              - sensor.b03_proshlo_korm_2
+              - binary_sensor.b03_korm_2_rabota
+              - binary_sensor.b03_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b03_ust_vremia_nachala_1
+              - number.b03_ust_dlitelnost_1
+              - number.b03_ust_period_1
+              - number.b03_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b03_ust_vremia_nachala_2
+              - number.b03_ust_dlitelnost_2
+              - number.b03_ust_period_2
+              - number.b03_ust_kol_vo_kormlenii_2
+  - title: Б№4
+    path: pool_4
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b04_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b04_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b04_avtomat
+              - binary_sensor.b04_ruchnoi
+              - sensor.b04_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b04_kormlenie_1
+              - sensor.b04_sled_korm_1
+              - sensor.b04_proshlo_korm_1
+              - binary_sensor.b04_korm_1_rabota
+              - binary_sensor.b04_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b04_kormlenie_2
+              - sensor.b04_sled_korm_2
+              - sensor.b04_proshlo_korm_2
+              - binary_sensor.b04_korm_2_rabota
+              - binary_sensor.b04_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b04_ust_vremia_nachala_1
+              - number.b04_ust_dlitelnost_1
+              - number.b04_ust_period_1
+              - number.b04_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b04_ust_vremia_nachala_2
+              - number.b04_ust_dlitelnost_2
+              - number.b04_ust_period_2
+              - number.b04_ust_kol_vo_kormlenii_2
+  - title: Б№5
+    path: pool_5
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b05_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b05_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b05_avtomat
+              - binary_sensor.b05_ruchnoi
+              - sensor.b05_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b05_kormlenie_1
+              - sensor.b05_sled_korm_1
+              - sensor.b05_proshlo_korm_1
+              - binary_sensor.b05_korm_1_rabota
+              - binary_sensor.b05_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b05_kormlenie_2
+              - sensor.b05_sled_korm_2
+              - sensor.b05_proshlo_korm_2
+              - binary_sensor.b05_korm_2_rabota
+              - binary_sensor.b05_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b05_ust_vremia_nachala_1
+              - number.b05_ust_dlitelnost_1
+              - number.b05_ust_period_1
+              - number.b05_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b05_ust_vremia_nachala_2
+              - number.b05_ust_dlitelnost_2
+              - number.b05_ust_period_2
+              - number.b05_ust_kol_vo_kormlenii_2
+  - title: Б№6
+    path: pool_6
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b06_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b06_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b06_avtomat
+              - binary_sensor.b06_ruchnoi
+              - sensor.b06_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b06_kormlenie_1
+              - sensor.b06_sled_korm_1
+              - sensor.b06_proshlo_korm_1
+              - binary_sensor.b06_korm_1_rabota
+              - binary_sensor.b06_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b06_kormlenie_2
+              - sensor.b06_sled_korm_2
+              - sensor.b06_proshlo_korm_2
+              - binary_sensor.b06_korm_2_rabota
+              - binary_sensor.b06_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b06_ust_vremia_nachala_1
+              - number.b06_ust_dlitelnost_1
+              - number.b06_ust_period_1
+              - number.b06_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b06_ust_vremia_nachala_2
+              - number.b06_ust_dlitelnost_2
+              - number.b06_ust_period_2
+              - number.b06_ust_kol_vo_kormlenii_2
+  - title: Б№7
+    path: pool_7
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b07_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b07_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b07_avtomat
+              - binary_sensor.b07_ruchnoi
+              - sensor.b07_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b07_kormlenie_1
+              - sensor.b07_sled_korm_1
+              - sensor.b07_proshlo_korm_1
+              - binary_sensor.b07_korm_1_rabota
+              - binary_sensor.b07_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b07_kormlenie_2
+              - sensor.b07_sled_korm_2
+              - sensor.b07_proshlo_korm_2
+              - binary_sensor.b07_korm_2_rabota
+              - binary_sensor.b07_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b07_ust_vremia_nachala_1
+              - number.b07_ust_dlitelnost_1
+              - number.b07_ust_period_1
+              - number.b07_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b07_ust_vremia_nachala_2
+              - number.b07_ust_dlitelnost_2
+              - number.b07_ust_period_2
+              - number.b07_ust_kol_vo_kormlenii_2
+  - title: Б№8
+    path: pool_8
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b08_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b08_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b08_avtomat
+              - binary_sensor.b08_ruchnoi
+              - sensor.b08_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b08_kormlenie_1
+              - sensor.b08_sled_korm_1
+              - sensor.b08_proshlo_korm_1
+              - binary_sensor.b08_korm_1_rabota
+              - binary_sensor.b08_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b08_kormlenie_2
+              - sensor.b08_sled_korm_2
+              - sensor.b08_proshlo_korm_2
+              - binary_sensor.b08_korm_2_rabota
+              - binary_sensor.b08_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b08_ust_vremia_nachala_1
+              - number.b08_ust_dlitelnost_1
+              - number.b08_ust_period_1
+              - number.b08_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b08_ust_vremia_nachala_2
+              - number.b08_ust_dlitelnost_2
+              - number.b08_ust_period_2
+              - number.b08_ust_kol_vo_kormlenii_2
+  - title: Б№9
+    path: pool_9
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b09_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b09_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b09_avtomat
+              - binary_sensor.b09_ruchnoi
+              - sensor.b09_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b09_kormlenie_1
+              - sensor.b09_sled_korm_1
+              - sensor.b09_proshlo_korm_1
+              - binary_sensor.b09_korm_1_rabota
+              - binary_sensor.b09_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b09_kormlenie_2
+              - sensor.b09_sled_korm_2
+              - sensor.b09_proshlo_korm_2
+              - binary_sensor.b09_korm_2_rabota
+              - binary_sensor.b09_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b09_ust_vremia_nachala_1
+              - number.b09_ust_dlitelnost_1
+              - number.b09_ust_period_1
+              - number.b09_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b09_ust_vremia_nachala_2
+              - number.b09_ust_dlitelnost_2
+              - number.b09_ust_period_2
+              - number.b09_ust_kol_vo_kormlenii_2
+  - title: Б№10
+    path: pool_10
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b10_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b10_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b10_avtomat
+              - binary_sensor.b10_ruchnoi
+              - sensor.b10_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b10_kormlenie_1
+              - sensor.b10_sled_korm_1
+              - sensor.b10_proshlo_korm_1
+              - binary_sensor.b10_korm_1_rabota
+              - binary_sensor.b10_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b10_kormlenie_2
+              - sensor.b10_sled_korm_2
+              - sensor.b10_proshlo_korm_2
+              - binary_sensor.b10_korm_2_rabota
+              - binary_sensor.b10_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b10_ust_vremia_nachala_1
+              - number.b10_ust_dlitelnost_1
+              - number.b10_ust_period_1
+              - number.b10_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b10_ust_vremia_nachala_2
+              - number.b10_ust_dlitelnost_2
+              - number.b10_ust_period_2
+              - number.b10_ust_kol_vo_kormlenii_2
+  - title: Б№11
+    path: pool_11
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b11_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b11_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b11_avtomat
+              - binary_sensor.b11_ruchnoi
+              - sensor.b11_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b11_kormlenie_1
+              - sensor.b11_sled_korm_1
+              - sensor.b11_proshlo_korm_1
+              - binary_sensor.b11_korm_1_rabota
+              - binary_sensor.b11_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b11_kormlenie_2
+              - sensor.b11_sled_korm_2
+              - sensor.b11_proshlo_korm_2
+              - binary_sensor.b11_korm_2_rabota
+              - binary_sensor.b11_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b11_ust_vremia_nachala_1
+              - number.b11_ust_dlitelnost_1
+              - number.b11_ust_period_1
+              - number.b11_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b11_ust_vremia_nachala_2
+              - number.b11_ust_dlitelnost_2
+              - number.b11_ust_period_2
+              - number.b11_ust_kol_vo_kormlenii_2
+  - title: Б№12
+    path: pool_12
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b12_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b12_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b12_avtomat
+              - binary_sensor.b12_ruchnoi
+              - sensor.b12_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b12_kormlenie_1
+              - sensor.b12_sled_korm_1
+              - sensor.b12_proshlo_korm_1
+              - binary_sensor.b12_korm_1_rabota
+              - binary_sensor.b12_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b12_kormlenie_2
+              - sensor.b12_sled_korm_2
+              - sensor.b12_proshlo_korm_2
+              - binary_sensor.b12_korm_2_rabota
+              - binary_sensor.b12_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b12_ust_vremia_nachala_1
+              - number.b12_ust_dlitelnost_1
+              - number.b12_ust_period_1
+              - number.b12_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b12_ust_vremia_nachala_2
+              - number.b12_ust_dlitelnost_2
+              - number.b12_ust_period_2
+              - number.b12_ust_kol_vo_kormlenii_2
+  - title: Б№13
+    path: pool_13
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b13_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b13_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b13_avtomat
+              - binary_sensor.b13_ruchnoi
+              - sensor.b13_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b13_kormlenie_1
+              - sensor.b13_sled_korm_1
+              - sensor.b13_proshlo_korm_1
+              - binary_sensor.b13_korm_1_rabota
+              - binary_sensor.b13_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b13_kormlenie_2
+              - sensor.b13_sled_korm_2
+              - sensor.b13_proshlo_korm_2
+              - binary_sensor.b13_korm_2_rabota
+              - binary_sensor.b13_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b13_ust_vremia_nachala_1
+              - number.b13_ust_dlitelnost_1
+              - number.b13_ust_period_1
+              - number.b13_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b13_ust_vremia_nachala_2
+              - number.b13_ust_dlitelnost_2
+              - number.b13_ust_period_2
+              - number.b13_ust_kol_vo_kormlenii_2
+  - title: Б№14
+    path: pool_14
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b14_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b14_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b14_avtomat
+              - binary_sensor.b14_ruchnoi
+              - sensor.b14_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b14_kormlenie_1
+              - sensor.b14_sled_korm_1
+              - sensor.b14_proshlo_korm_1
+              - binary_sensor.b14_korm_1_rabota
+              - binary_sensor.b14_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b14_kormlenie_2
+              - sensor.b14_sled_korm_2
+              - sensor.b14_proshlo_korm_2
+              - binary_sensor.b14_korm_2_rabota
+              - binary_sensor.b14_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b14_ust_vremia_nachala_1
+              - number.b14_ust_dlitelnost_1
+              - number.b14_ust_period_1
+              - number.b14_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b14_ust_vremia_nachala_2
+              - number.b14_ust_dlitelnost_2
+              - number.b14_ust_period_2
+              - number.b14_ust_kol_vo_kormlenii_2
+  - title: Б№15
+    path: pool_15
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b15_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b15_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b15_avtomat
+              - binary_sensor.b15_ruchnoi
+              - sensor.b15_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b15_kormlenie_1
+              - sensor.b15_sled_korm_1
+              - sensor.b15_proshlo_korm_1
+              - binary_sensor.b15_korm_1_rabota
+              - binary_sensor.b15_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b15_kormlenie_2
+              - sensor.b15_sled_korm_2
+              - sensor.b15_proshlo_korm_2
+              - binary_sensor.b15_korm_2_rabota
+              - binary_sensor.b15_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b15_ust_vremia_nachala_1
+              - number.b15_ust_dlitelnost_1
+              - number.b15_ust_period_1
+              - number.b15_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b15_ust_vremia_nachala_2
+              - number.b15_ust_dlitelnost_2
+              - number.b15_ust_period_2
+              - number.b15_ust_kol_vo_kormlenii_2
+  - title: Б№16
+    path: pool_16
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b16_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b16_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b16_avtomat
+              - binary_sensor.b16_ruchnoi
+              - sensor.b16_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b16_kormlenie_1
+              - sensor.b16_sled_korm_1
+              - sensor.b16_proshlo_korm_1
+              - binary_sensor.b16_korm_1_rabota
+              - binary_sensor.b16_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b16_kormlenie_2
+              - sensor.b16_sled_korm_2
+              - sensor.b16_proshlo_korm_2
+              - binary_sensor.b16_korm_2_rabota
+              - binary_sensor.b16_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b16_ust_vremia_nachala_1
+              - number.b16_ust_dlitelnost_1
+              - number.b16_ust_period_1
+              - number.b16_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b16_ust_vremia_nachala_2
+              - number.b16_ust_dlitelnost_2
+              - number.b16_ust_period_2
+              - number.b16_ust_kol_vo_kormlenii_2
+  - title: Б№17
+    path: pool_17
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b17_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b17_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b17_avtomat
+              - binary_sensor.b17_ruchnoi
+              - sensor.b17_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b17_kormlenie_1
+              - sensor.b17_sled_korm_1
+              - sensor.b17_proshlo_korm_1
+              - binary_sensor.b17_korm_1_rabota
+              - binary_sensor.b17_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b17_kormlenie_2
+              - sensor.b17_sled_korm_2
+              - sensor.b17_proshlo_korm_2
+              - binary_sensor.b17_korm_2_rabota
+              - binary_sensor.b17_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b17_ust_vremia_nachala_1
+              - number.b17_ust_dlitelnost_1
+              - number.b17_ust_period_1
+              - number.b17_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b17_ust_vremia_nachala_2
+              - number.b17_ust_dlitelnost_2
+              - number.b17_ust_period_2
+              - number.b17_ust_kol_vo_kormlenii_2
+  - title: Б№18
+    path: pool_18
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b18_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b18_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b18_avtomat
+              - binary_sensor.b18_ruchnoi
+              - sensor.b18_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b18_kormlenie_1
+              - sensor.b18_sled_korm_1
+              - sensor.b18_proshlo_korm_1
+              - binary_sensor.b18_korm_1_rabota
+              - binary_sensor.b18_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b18_kormlenie_2
+              - sensor.b18_sled_korm_2
+              - sensor.b18_proshlo_korm_2
+              - binary_sensor.b18_korm_2_rabota
+              - binary_sensor.b18_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b18_ust_vremia_nachala_1
+              - number.b18_ust_dlitelnost_1
+              - number.b18_ust_period_1
+              - number.b18_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b18_ust_vremia_nachala_2
+              - number.b18_ust_dlitelnost_2
+              - number.b18_ust_period_2
+              - number.b18_ust_kol_vo_kormlenii_2
+  - title: Б№19
+    path: pool_19
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b19_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b19_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b19_avtomat
+              - binary_sensor.b19_ruchnoi
+              - sensor.b19_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b19_kormlenie_1
+              - sensor.b19_sled_korm_1
+              - sensor.b19_proshlo_korm_1
+              - binary_sensor.b19_korm_1_rabota
+              - binary_sensor.b19_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b19_kormlenie_2
+              - sensor.b19_sled_korm_2
+              - sensor.b19_proshlo_korm_2
+              - binary_sensor.b19_korm_2_rabota
+              - binary_sensor.b19_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b19_ust_vremia_nachala_1
+              - number.b19_ust_dlitelnost_1
+              - number.b19_ust_period_1
+              - number.b19_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b19_ust_vremia_nachala_2
+              - number.b19_ust_dlitelnost_2
+              - number.b19_ust_period_2
+              - number.b19_ust_kol_vo_kormlenii_2
+  - title: Б№20
+    path: pool_20
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b20_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b20_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b20_avtomat
+              - binary_sensor.b20_ruchnoi
+              - sensor.b20_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b20_kormlenie_1
+              - sensor.b20_sled_korm_1
+              - sensor.b20_proshlo_korm_1
+              - binary_sensor.b20_korm_1_rabota
+              - binary_sensor.b20_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b20_kormlenie_2
+              - sensor.b20_sled_korm_2
+              - sensor.b20_proshlo_korm_2
+              - binary_sensor.b20_korm_2_rabota
+              - binary_sensor.b20_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b20_ust_vremia_nachala_1
+              - number.b20_ust_dlitelnost_1
+              - number.b20_ust_period_1
+              - number.b20_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b20_ust_vremia_nachala_2
+              - number.b20_ust_dlitelnost_2
+              - number.b20_ust_period_2
+              - number.b20_ust_kol_vo_kormlenii_2
+  - title: Б№21
+    path: pool_21
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b21_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b21_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b21_avtomat
+              - binary_sensor.b21_ruchnoi
+              - sensor.b21_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b21_kormlenie_1
+              - sensor.b21_sled_korm_1
+              - sensor.b21_proshlo_korm_1
+              - binary_sensor.b21_korm_1_rabota
+              - binary_sensor.b21_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b21_kormlenie_2
+              - sensor.b21_sled_korm_2
+              - sensor.b21_proshlo_korm_2
+              - binary_sensor.b21_korm_2_rabota
+              - binary_sensor.b21_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b21_ust_vremia_nachala_1
+              - number.b21_ust_dlitelnost_1
+              - number.b21_ust_period_1
+              - number.b21_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b21_ust_vremia_nachala_2
+              - number.b21_ust_dlitelnost_2
+              - number.b21_ust_period_2
+              - number.b21_ust_kol_vo_kormlenii_2
+  - title: Б№22
+    path: pool_22
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b22_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b22_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b22_avtomat
+              - binary_sensor.b22_ruchnoi
+              - sensor.b22_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b22_kormlenie_1
+              - sensor.b22_sled_korm_1
+              - sensor.b22_proshlo_korm_1
+              - binary_sensor.b22_korm_1_rabota
+              - binary_sensor.b22_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b22_kormlenie_2
+              - sensor.b22_sled_korm_2
+              - sensor.b22_proshlo_korm_2
+              - binary_sensor.b22_korm_2_rabota
+              - binary_sensor.b22_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b22_ust_vremia_nachala_1
+              - number.b22_ust_dlitelnost_1
+              - number.b22_ust_period_1
+              - number.b22_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b22_ust_vremia_nachala_2
+              - number.b22_ust_dlitelnost_2
+              - number.b22_ust_period_2
+              - number.b22_ust_kol_vo_kormlenii_2
+  - title: Б№23
+    path: pool_23
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b23_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b23_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b23_avtomat
+              - binary_sensor.b23_ruchnoi
+              - sensor.b23_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b23_kormlenie_1
+              - sensor.b23_sled_korm_1
+              - sensor.b23_proshlo_korm_1
+              - binary_sensor.b23_korm_1_rabota
+              - binary_sensor.b23_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b23_kormlenie_2
+              - sensor.b23_sled_korm_2
+              - sensor.b23_proshlo_korm_2
+              - binary_sensor.b23_korm_2_rabota
+              - binary_sensor.b23_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b23_ust_vremia_nachala_1
+              - number.b23_ust_dlitelnost_1
+              - number.b23_ust_period_1
+              - number.b23_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b23_ust_vremia_nachala_2
+              - number.b23_ust_dlitelnost_2
+              - number.b23_ust_period_2
+              - number.b23_ust_kol_vo_kormlenii_2
+  - title: Б№24
+    path: pool_24
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b24_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b24_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b24_avtomat
+              - binary_sensor.b24_ruchnoi
+              - sensor.b24_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b24_kormlenie_1
+              - sensor.b24_sled_korm_1
+              - sensor.b24_proshlo_korm_1
+              - binary_sensor.b24_korm_1_rabota
+              - binary_sensor.b24_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b24_kormlenie_2
+              - sensor.b24_sled_korm_2
+              - sensor.b24_proshlo_korm_2
+              - binary_sensor.b24_korm_2_rabota
+              - binary_sensor.b24_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b24_ust_vremia_nachala_1
+              - number.b24_ust_dlitelnost_1
+              - number.b24_ust_period_1
+              - number.b24_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b24_ust_vremia_nachala_2
+              - number.b24_ust_dlitelnost_2
+              - number.b24_ust_period_2
+              - number.b24_ust_kol_vo_kormlenii_2
+  - title: Б№25
+    path: pool_25
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b25_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b25_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b25_avtomat
+              - binary_sensor.b25_ruchnoi
+              - sensor.b25_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b25_kormlenie_1
+              - sensor.b25_sled_korm_1
+              - sensor.b25_proshlo_korm_1
+              - binary_sensor.b25_korm_1_rabota
+              - binary_sensor.b25_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b25_kormlenie_2
+              - sensor.b25_sled_korm_2
+              - sensor.b25_proshlo_korm_2
+              - binary_sensor.b25_korm_2_rabota
+              - binary_sensor.b25_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b25_ust_vremia_nachala_1
+              - number.b25_ust_dlitelnost_1
+              - number.b25_ust_period_1
+              - number.b25_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b25_ust_vremia_nachala_2
+              - number.b25_ust_dlitelnost_2
+              - number.b25_ust_period_2
+              - number.b25_ust_kol_vo_kormlenii_2
+  - title: Б№26
+    path: pool_26
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b26_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b26_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b26_avtomat
+              - binary_sensor.b26_ruchnoi
+              - sensor.b26_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b26_kormlenie_1
+              - sensor.b26_sled_korm_1
+              - sensor.b26_proshlo_korm_1
+              - binary_sensor.b26_korm_1_rabota
+              - binary_sensor.b26_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b26_kormlenie_2
+              - sensor.b26_sled_korm_2
+              - sensor.b26_proshlo_korm_2
+              - binary_sensor.b26_korm_2_rabota
+              - binary_sensor.b26_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b26_ust_vremia_nachala_1
+              - number.b26_ust_dlitelnost_1
+              - number.b26_ust_period_1
+              - number.b26_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b26_ust_vremia_nachala_2
+              - number.b26_ust_dlitelnost_2
+              - number.b26_ust_period_2
+              - number.b26_ust_kol_vo_kormlenii_2
+  - title: Б№27
+    path: pool_27
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b27_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b27_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b27_avtomat
+              - binary_sensor.b27_ruchnoi
+              - sensor.b27_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b27_kormlenie_1
+              - sensor.b27_sled_korm_1
+              - sensor.b27_proshlo_korm_1
+              - binary_sensor.b27_korm_1_rabota
+              - binary_sensor.b27_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b27_kormlenie_2
+              - sensor.b27_sled_korm_2
+              - sensor.b27_proshlo_korm_2
+              - binary_sensor.b27_korm_2_rabota
+              - binary_sensor.b27_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b27_ust_vremia_nachala_1
+              - number.b27_ust_dlitelnost_1
+              - number.b27_ust_period_1
+              - number.b27_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b27_ust_vremia_nachala_2
+              - number.b27_ust_dlitelnost_2
+              - number.b27_ust_period_2
+              - number.b27_ust_kol_vo_kormlenii_2
+  - title: Б№28
+    path: pool_28
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b28_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b28_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b28_avtomat
+              - binary_sensor.b28_ruchnoi
+              - sensor.b28_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b28_kormlenie_1
+              - sensor.b28_sled_korm_1
+              - sensor.b28_proshlo_korm_1
+              - binary_sensor.b28_korm_1_rabota
+              - binary_sensor.b28_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b28_kormlenie_2
+              - sensor.b28_sled_korm_2
+              - sensor.b28_proshlo_korm_2
+              - binary_sensor.b28_korm_2_rabota
+              - binary_sensor.b28_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b28_ust_vremia_nachala_1
+              - number.b28_ust_dlitelnost_1
+              - number.b28_ust_period_1
+              - number.b28_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b28_ust_vremia_nachala_2
+              - number.b28_ust_dlitelnost_2
+              - number.b28_ust_period_2
+              - number.b28_ust_kol_vo_kormlenii_2
+  - title: Б№29
+    path: pool_29
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b29_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b29_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b29_avtomat
+              - binary_sensor.b29_ruchnoi
+              - sensor.b29_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b29_kormlenie_1
+              - sensor.b29_sled_korm_1
+              - sensor.b29_proshlo_korm_1
+              - binary_sensor.b29_korm_1_rabota
+              - binary_sensor.b29_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b29_kormlenie_2
+              - sensor.b29_sled_korm_2
+              - sensor.b29_proshlo_korm_2
+              - binary_sensor.b29_korm_2_rabota
+              - binary_sensor.b29_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b29_ust_vremia_nachala_1
+              - number.b29_ust_dlitelnost_1
+              - number.b29_ust_period_1
+              - number.b29_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b29_ust_vremia_nachala_2
+              - number.b29_ust_dlitelnost_2
+              - number.b29_ust_period_2
+              - number.b29_ust_kol_vo_kormlenii_2
+  - title: Б№30
+    path: pool_30
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b30_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b30_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b30_avtomat
+              - binary_sensor.b30_ruchnoi
+              - sensor.b30_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b30_kormlenie_1
+              - sensor.b30_sled_korm_1
+              - sensor.b30_proshlo_korm_1
+              - binary_sensor.b30_korm_1_rabota
+              - binary_sensor.b30_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b30_kormlenie_2
+              - sensor.b30_sled_korm_2
+              - sensor.b30_proshlo_korm_2
+              - binary_sensor.b30_korm_2_rabota
+              - binary_sensor.b30_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b30_ust_vremia_nachala_1
+              - number.b30_ust_dlitelnost_1
+              - number.b30_ust_period_1
+              - number.b30_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b30_ust_vremia_nachala_2
+              - number.b30_ust_dlitelnost_2
+              - number.b30_ust_period_2
+              - number.b30_ust_kol_vo_kormlenii_2
+  - title: Б№31
+    path: pool_31
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b31_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b31_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b31_avtomat
+              - binary_sensor.b31_ruchnoi
+              - sensor.b31_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b31_kormlenie_1
+              - sensor.b31_sled_korm_1
+              - sensor.b31_proshlo_korm_1
+              - binary_sensor.b31_korm_1_rabota
+              - binary_sensor.b31_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b31_kormlenie_2
+              - sensor.b31_sled_korm_2
+              - sensor.b31_proshlo_korm_2
+              - binary_sensor.b31_korm_2_rabota
+              - binary_sensor.b31_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b31_ust_vremia_nachala_1
+              - number.b31_ust_dlitelnost_1
+              - number.b31_ust_period_1
+              - number.b31_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b31_ust_vremia_nachala_2
+              - number.b31_ust_dlitelnost_2
+              - number.b31_ust_period_2
+              - number.b31_ust_kol_vo_kormlenii_2
+  - title: Б№32
+    path: pool_32
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b32_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b32_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b32_avtomat
+              - binary_sensor.b32_ruchnoi
+              - sensor.b32_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b32_kormlenie_1
+              - sensor.b32_sled_korm_1
+              - sensor.b32_proshlo_korm_1
+              - binary_sensor.b32_korm_1_rabota
+              - binary_sensor.b32_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b32_kormlenie_2
+              - sensor.b32_sled_korm_2
+              - sensor.b32_proshlo_korm_2
+              - binary_sensor.b32_korm_2_rabota
+              - binary_sensor.b32_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b32_ust_vremia_nachala_1
+              - number.b32_ust_dlitelnost_1
+              - number.b32_ust_period_1
+              - number.b32_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b32_ust_vremia_nachala_2
+              - number.b32_ust_dlitelnost_2
+              - number.b32_ust_period_2
+              - number.b32_ust_kol_vo_kormlenii_2
+  - title: Б№33
+    path: pool_33
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b33_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b33_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b33_avtomat
+              - binary_sensor.b33_ruchnoi
+              - sensor.b33_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b33_kormlenie_1
+              - sensor.b33_sled_korm_1
+              - sensor.b33_proshlo_korm_1
+              - binary_sensor.b33_korm_1_rabota
+              - binary_sensor.b33_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b33_kormlenie_2
+              - sensor.b33_sled_korm_2
+              - sensor.b33_proshlo_korm_2
+              - binary_sensor.b33_korm_2_rabota
+              - binary_sensor.b33_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b33_ust_vremia_nachala_1
+              - number.b33_ust_dlitelnost_1
+              - number.b33_ust_period_1
+              - number.b33_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b33_ust_vremia_nachala_2
+              - number.b33_ust_dlitelnost_2
+              - number.b33_ust_period_2
+              - number.b33_ust_kol_vo_kormlenii_2
+  - title: Б№34
+    path: pool_34
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b34_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b34_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b34_avtomat
+              - binary_sensor.b34_ruchnoi
+              - sensor.b34_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b34_kormlenie_1
+              - sensor.b34_sled_korm_1
+              - sensor.b34_proshlo_korm_1
+              - binary_sensor.b34_korm_1_rabota
+              - binary_sensor.b34_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b34_kormlenie_2
+              - sensor.b34_sled_korm_2
+              - sensor.b34_proshlo_korm_2
+              - binary_sensor.b34_korm_2_rabota
+              - binary_sensor.b34_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b34_ust_vremia_nachala_1
+              - number.b34_ust_dlitelnost_1
+              - number.b34_ust_period_1
+              - number.b34_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b34_ust_vremia_nachala_2
+              - number.b34_ust_dlitelnost_2
+              - number.b34_ust_period_2
+              - number.b34_ust_kol_vo_kormlenii_2
+  - title: Б№35
+    path: pool_35
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b35_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b35_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b35_avtomat
+              - binary_sensor.b35_ruchnoi
+              - sensor.b35_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b35_kormlenie_1
+              - sensor.b35_sled_korm_1
+              - sensor.b35_proshlo_korm_1
+              - binary_sensor.b35_korm_1_rabota
+              - binary_sensor.b35_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b35_kormlenie_2
+              - sensor.b35_sled_korm_2
+              - sensor.b35_proshlo_korm_2
+              - binary_sensor.b35_korm_2_rabota
+              - binary_sensor.b35_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b35_ust_vremia_nachala_1
+              - number.b35_ust_dlitelnost_1
+              - number.b35_ust_period_1
+              - number.b35_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b35_ust_vremia_nachala_2
+              - number.b35_ust_dlitelnost_2
+              - number.b35_ust_period_2
+              - number.b35_ust_kol_vo_kormlenii_2
+  - title: Б№36
+    path: pool_36
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b36_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b36_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b36_avtomat
+              - binary_sensor.b36_ruchnoi
+              - sensor.b36_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b36_kormlenie_1
+              - sensor.b36_sled_korm_1
+              - sensor.b36_proshlo_korm_1
+              - binary_sensor.b36_korm_1_rabota
+              - binary_sensor.b36_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b36_kormlenie_2
+              - sensor.b36_sled_korm_2
+              - sensor.b36_proshlo_korm_2
+              - binary_sensor.b36_korm_2_rabota
+              - binary_sensor.b36_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b36_ust_vremia_nachala_1
+              - number.b36_ust_dlitelnost_1
+              - number.b36_ust_period_1
+              - number.b36_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b36_ust_vremia_nachala_2
+              - number.b36_ust_dlitelnost_2
+              - number.b36_ust_period_2
+              - number.b36_ust_kol_vo_kormlenii_2
+  - title: Б№37
+    path: pool_37
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b37_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b37_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b37_avtomat
+              - binary_sensor.b37_ruchnoi
+              - sensor.b37_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b37_kormlenie_1
+              - sensor.b37_sled_korm_1
+              - sensor.b37_proshlo_korm_1
+              - binary_sensor.b37_korm_1_rabota
+              - binary_sensor.b37_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b37_kormlenie_2
+              - sensor.b37_sled_korm_2
+              - sensor.b37_proshlo_korm_2
+              - binary_sensor.b37_korm_2_rabota
+              - binary_sensor.b37_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b37_ust_vremia_nachala_1
+              - number.b37_ust_dlitelnost_1
+              - number.b37_ust_period_1
+              - number.b37_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b37_ust_vremia_nachala_2
+              - number.b37_ust_dlitelnost_2
+              - number.b37_ust_period_2
+              - number.b37_ust_kol_vo_kormlenii_2
+  - title: Б№38
+    path: pool_38
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b38_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b38_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b38_avtomat
+              - binary_sensor.b38_ruchnoi
+              - sensor.b38_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b38_kormlenie_1
+              - sensor.b38_sled_korm_1
+              - sensor.b38_proshlo_korm_1
+              - binary_sensor.b38_korm_1_rabota
+              - binary_sensor.b38_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b38_kormlenie_2
+              - sensor.b38_sled_korm_2
+              - sensor.b38_proshlo_korm_2
+              - binary_sensor.b38_korm_2_rabota
+              - binary_sensor.b38_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b38_ust_vremia_nachala_1
+              - number.b38_ust_dlitelnost_1
+              - number.b38_ust_period_1
+              - number.b38_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b38_ust_vremia_nachala_2
+              - number.b38_ust_dlitelnost_2
+              - number.b38_ust_period_2
+              - number.b38_ust_kol_vo_kormlenii_2
+  - title: Б№39
+    path: pool_39
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b39_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b39_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b39_avtomat
+              - binary_sensor.b39_ruchnoi
+              - sensor.b39_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b39_kormlenie_1
+              - sensor.b39_sled_korm_1
+              - sensor.b39_proshlo_korm_1
+              - binary_sensor.b39_korm_1_rabota
+              - binary_sensor.b39_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b39_kormlenie_2
+              - sensor.b39_sled_korm_2
+              - sensor.b39_proshlo_korm_2
+              - binary_sensor.b39_korm_2_rabota
+              - binary_sensor.b39_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b39_ust_vremia_nachala_1
+              - number.b39_ust_dlitelnost_1
+              - number.b39_ust_period_1
+              - number.b39_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b39_ust_vremia_nachala_2
+              - number.b39_ust_dlitelnost_2
+              - number.b39_ust_period_2
+              - number.b39_ust_kol_vo_kormlenii_2
+  - title: Б№40
+    path: pool_40
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: sensor
+            name: Температура
+            entity: sensor.b40_temperatura
+            graph: none
+          - type: sensor
+            name: Кислород
+            entity: sensor.b40_kislorod
+            graph: none
+          - type: entities
+            title: Бассейн
+            entities:
+              - binary_sensor.b40_avtomat
+              - binary_sensor.b40_ruchnoi
+              - sensor.b40_avariia
+          - type: entities
+            title: Кормушка 1
+            entities:
+              - sensor.b40_kormlenie_1
+              - sensor.b40_sled_korm_1
+              - sensor.b40_proshlo_korm_1
+              - binary_sensor.b40_korm_1_rabota
+              - binary_sensor.b40_korm_1_pusk
+          - type: entities
+            title: Кормушка 2
+            entities:
+              - sensor.b40_kormlenie_2
+              - sensor.b40_sled_korm_2
+              - sensor.b40_proshlo_korm_2
+              - binary_sensor.b40_korm_2_rabota
+              - binary_sensor.b40_korm_2_pusk
+          - type: entities
+            title: Настройки кормления 1
+            entities:
+              - number.b40_ust_vremia_nachala_1
+              - number.b40_ust_dlitelnost_1
+              - number.b40_ust_period_1
+              - number.b40_ust_kol_vo_kormlenii_1
+          - type: entities
+            title: Настройки кормления 2
+            entities:
+              - number.b40_ust_vremia_nachala_2
+              - number.b40_ust_dlitelnost_2
+              - number.b40_ust_period_2
+              - number.b40_ust_kol_vo_kormlenii_2
+  - title: Шкаф 1
+    path: sh1
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №1
+        entities:
+          - number.sh1_verkh_limit_kisloroda
+          - number.sh1_niz_limit_kisloroda
+          - number.sh1_otkl_kisloroda
+          - number.sh1_vkl_kisloroda
+          - number.sh1_verkh_limit_temperatury
+          - number.sh1_niz_limit_temperatury
+  - title: Шкаф 2
+    path: sh2
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №2 
+        entities:
+          - number.sh2_verkh_limit_kisloroda
+          - number.sh2_niz_limit_kisloroda
+          - number.sh2_otkl_kisloroda
+          - number.sh2_vkl_kisloroda
+          - number.sh2_verkh_limit_temperatury
+          - number.sh2_niz_limit_temperatury
+  - title: Шкаф 3
+    path: sh3
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №3 
+        entities:
+          - number.sh3_verkh_limit_kisloroda
+          - number.sh3_niz_limit_kisloroda
+          - number.sh3_otkl_kisloroda
+          - number.sh3_vkl_kisloroda
+          - number.sh3_verkh_limit_temperatury
+          - number.sh3_niz_limit_temperatury
+  - title: Шкаф 4
+    path: sh4
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №4 
+        entities:
+          - number.sh4_verkh_limit_kisloroda
+          - number.sh4_niz_limit_kisloroda
+          - number.sh4_otkl_kisloroda
+          - number.sh4_vkl_kisloroda
+          - number.sh4_verkh_limit_temperatury
+          - number.sh4_niz_limit_temperatury
+  - title: Шкаф 5
+    path: sh5
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №5 
+        entities:
+          - number.sh5_verkh_limit_kisloroda
+          - number.sh5_niz_limit_kisloroda
+          - number.sh5_otkl_kisloroda
+          - number.sh5_vkl_kisloroda
+          - number.sh5_verkh_limit_temperatury
+          - number.sh5_niz_limit_temperatury
+  - title: Шкаф 6
+    path: sh6
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №6 
+        entities:
+          - number.sh6_verkh_limit_kisloroda
+          - number.sh6_niz_limit_kisloroda
+          - number.sh6_otkl_kisloroda
+          - number.sh6_vkl_kisloroda
+          - number.sh6_verkh_limit_temperatury
+          - number.sh6_niz_limit_temperatury
+  - title: Шкаф 7
+    path: sh7
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №7
+        entities:
+          - number.sh7_verkh_limit_kisloroda
+          - number.sh7_niz_limit_kisloroda
+          - number.sh7_otkl_kisloroda
+          - number.sh7_vkl_kisloroda
+          - number.sh7_verkh_limit_temperatury
+          - number.sh7_niz_limit_temperatury
+  - title: Шкаф 8
+    path: sh8
+    icon: mdi:file-cabinet
+    cards:
+      - type: entities
+        title: Шкаф №8
+        entities:
+          - number.sh8_verkh_limit_kisloroda
+          - number.sh8_niz_limit_kisloroda
+          - number.sh8_otkl_kisloroda
+          - number.sh8_vkl_kisloroda
+          - number.sh8_verkh_limit_temperatury
+          - number.sh8_niz_limit_temperatury
