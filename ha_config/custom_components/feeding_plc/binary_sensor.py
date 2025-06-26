@@ -65,6 +65,8 @@ def create_items(
     binary_sensors_config = [
         (f"Б{plc_feeding_number:02} Автомат", address_offset + 0, 0, "plug"),
         (f"Б{plc_feeding_number:02} Ручной", address_offset + 0, 1, "plug"),
+        (f"Б{plc_feeding_number:02} Оксигенератор", address_offset + 0, 2, "running"),
+        (f"Б{plc_feeding_number:02} Клапан кислорода", address_offset + 0, 3, "running"),
         (f"Б{plc_feeding_number:02} Корм 1 работа", address_offset + 1, 0, "running"),
         (f"Б{plc_feeding_number:02} Корм 1 пуск", address_offset + 1, 1, "plug"),
         (f"Б{plc_feeding_number:02} Корм 2 работа", address_offset + 8, 0, "running"),

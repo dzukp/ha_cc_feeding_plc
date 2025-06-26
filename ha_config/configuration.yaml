@@ -20,7 +20,9 @@ logger:
 lovelace:
   mode: yaml
   resources:
-  - url: /local/custom_lovelace/upload_csv_card/upload-csv-card.js
+  - url: /local/upload-csv-card.js
+    type: module
+  - url: /local/button-card.js
     type: module
 
 feeding_plc:
@@ -168,3 +170,4 @@ recorder:
     entity_globs:
       - sensor.b*_sled_korm_1
       - sensor.b*_sled_korm_2
+      - sensor.sh*_vremia

@@ -1,7 +1,3 @@
-resources:
-  - url: /local/custom_lovelace/html_card/html-card.js
-    type: js
-
 title: Кормление
 views:
   - title: CSV №Загрузка
@@ -9,6 +5,52 @@ views:
     icon: mdi:upload
     cards:
       - type: custom:upload-csv-card
+  - title: Б 1-20
+    path: b1_20
+    cards:
+      - !include lovelace/cards/pool_1.yaml
+      - !include lovelace/cards/pool_2.yaml
+      - !include lovelace/cards/pool_3.yaml
+      - !include lovelace/cards/pool_4.yaml
+      - !include lovelace/cards/pool_5.yaml
+      - !include lovelace/cards/pool_6.yaml
+      - !include lovelace/cards/pool_7.yaml
+      - !include lovelace/cards/pool_8.yaml
+      - !include lovelace/cards/pool_9.yaml
+      - !include lovelace/cards/pool_10.yaml
+      - !include lovelace/cards/pool_11.yaml
+      - !include lovelace/cards/pool_12.yaml
+      - !include lovelace/cards/pool_13.yaml
+      - !include lovelace/cards/pool_14.yaml
+      - !include lovelace/cards/pool_15.yaml
+      - !include lovelace/cards/pool_16.yaml
+      - !include lovelace/cards/pool_17.yaml
+      - !include lovelace/cards/pool_18.yaml
+      - !include lovelace/cards/pool_19.yaml
+      - !include lovelace/cards/pool_20.yaml
+  - title: Б 21-40
+    path: b21_40
+    cards:
+      - !include lovelace/cards/pool_21.yaml
+      - !include lovelace/cards/pool_22.yaml
+      - !include lovelace/cards/pool_23.yaml
+      - !include lovelace/cards/pool_24.yaml
+      - !include lovelace/cards/pool_25.yaml
+      - !include lovelace/cards/pool_26.yaml
+      - !include lovelace/cards/pool_27.yaml
+      - !include lovelace/cards/pool_28.yaml
+      - !include lovelace/cards/pool_29.yaml
+      - !include lovelace/cards/pool_30.yaml
+      - !include lovelace/cards/pool_31.yaml
+      - !include lovelace/cards/pool_32.yaml
+      - !include lovelace/cards/pool_33.yaml
+      - !include lovelace/cards/pool_34.yaml
+      - !include lovelace/cards/pool_35.yaml
+      - !include lovelace/cards/pool_36.yaml
+      - !include lovelace/cards/pool_37.yaml
+      - !include lovelace/cards/pool_38.yaml
+      - !include lovelace/cards/pool_39.yaml
+      - !include lovelace/cards/pool_40.yaml
   - title: Б№1
     path: pool_1
     cards:
@@ -28,6 +70,8 @@ views:
               - binary_sensor.b01_avtomat
               - binary_sensor.b01_ruchnoi
               - sensor.b01_avariia
+              - binary_sensor.b01_oksigenerator
+              - binary_sensor.b01_klapan_kisloroda
           - type: entities
             title: Кормушка 1
             entities:
@@ -1974,7 +2018,7 @@ views:
     icon: mdi:file-cabinet
     cards:
       - type: entities
-        title: Шкаф №1
+        title: Уставки
         entities:
           - number.sh1_verkh_limit_kisloroda
           - number.sh1_niz_limit_kisloroda
@@ -1982,6 +2026,10 @@ views:
           - number.sh1_vkl_kisloroda
           - number.sh1_verkh_limit_temperatury
           - number.sh1_niz_limit_temperatury
+      - type: entities
+        title: Датчики
+        entities:
+          - sensor.sh1_vremia
   - title: Шкаф 2
     path: sh2
     icon: mdi:file-cabinet
