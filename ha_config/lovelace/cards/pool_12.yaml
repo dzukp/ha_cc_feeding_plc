@@ -7,21 +7,21 @@ styles:
   card:
     - background-color: '#f5f5f5'
     - border-radius: 5%
-    - padding: 10%
-    - font-size: 16px
+    - padding: 5%
+    - font-size: 14px
   grid:
     - grid-template-areas: '"n n" "temp oxy" "oxy_valve oxy_gen" "mode alarm" "feeding_1 feeding_2"'
-    - grid-template-columns: 1fr min-content
+    - grid-template-columns: 1fr 1fr
     - grid-template-rows: min-content min-content min-content min-content
   name:
     - font-weight: bold
-    - font-size: 20px
+    - font-size: 16px
     - align-self: middle
     - justify-self: start
-    - padding-bottom: 12px
+    - padding-bottom: 8px
   custom_fields:
     temp:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >
@@ -34,7 +34,7 @@ styles:
             return '';
           ]]]
     oxy:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >
@@ -47,7 +47,7 @@ styles:
             return '';
           ]]]
     mode:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >
@@ -57,7 +57,7 @@ styles:
               return (m === 'on' && a !== 'on') ? 'orange' : (a === 'on' && m !== 'on') ? '' : 'red'; 
           ]]]
     alarm:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >
@@ -65,7 +65,7 @@ styles:
             return states['sensor.b12_avariia'].state !== 'Ошибок нет' ? 'red' : '';
           ]]]
     feeding_1:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >
@@ -76,7 +76,7 @@ styles:
             return ''; 
           ]]]
     feeding_2:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >
@@ -87,7 +87,7 @@ styles:
             return ''; 
           ]]]
     oxy_gen:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >
@@ -95,7 +95,7 @@ styles:
             return states['binary_sensor.b12_oksigenerator'].state == 'on' ? 'green' : '';
           ]]]
     oxy_valve:
-      - padding-bottom: 12px
+      - padding-bottom: 8px
       - align-self: middle
       - justify-self: start
       - --color-sensor: >

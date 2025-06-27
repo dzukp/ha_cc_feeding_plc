@@ -1,0 +1,68 @@
+title: Б 21-40 (корм)
+sections:
+  - type: grid
+    cards:
+      - !include cards/feeding_21.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_22.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_23.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_24.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_25.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_26.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_27.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_28.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_29.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_30.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_31.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_32.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_33.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_34.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_35.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_36.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_37.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_38.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_39.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_40.yaml
+header:
+  card:
+    type: markdown
+    content: '## Бассейны 21-40'
+    text_only: true
+

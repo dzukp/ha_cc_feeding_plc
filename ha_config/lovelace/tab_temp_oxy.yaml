@@ -1,0 +1,194 @@
+title: Температура и Кислород
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш1
+      - type: entities
+        entities:
+          - entity: number.sh1_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh1_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh1_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh1_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh1_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh1_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш2
+      - type: entities
+        entities:
+          - entity: number.sh2_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh2_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh2_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh2_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh2_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh2_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш3
+      - type: entities
+        entities:
+          - entity: number.sh3_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh3_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh3_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh3_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh3_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh3_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш4
+      - type: entities
+        entities:
+          - entity: number.sh4_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh4_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh4_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh4_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh4_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh4_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш5
+      - type: entities
+        entities:
+          - entity: number.sh5_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh5_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh5_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh5_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh5_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh5_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш6
+      - type: entities
+        entities:
+          - entity: number.sh6_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh6_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh6_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh6_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh6_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh6_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш7
+      - type: entities
+        entities:
+          - entity: number.sh7_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh7_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh7_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh7_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh7_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh7_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box
+  - type: grid
+    cards:
+      - type: heading
+        heading: Ш8
+      - type: entities
+        entities:
+          - entity: number.sh8_verkh_limit_kisloroda
+            name: Верх. предел O₂
+            mode: box
+          - entity: number.sh8_niz_limit_kisloroda
+            name: Ниж. предел O₂
+            mode: box
+          - entity: number.sh8_otkl_kisloroda
+            name: Откл. O₂
+            mode: box
+          - entity: number.sh8_vkl_kisloroda
+            name: Вкл. O₂
+            mode: box
+          - entity: number.sh8_verkh_limit_temperatury
+            name: Верх. предел T°
+            mode: box
+          - entity: number.sh8_niz_limit_temperatury
+            name: Ниж. предел T°
+            mode: box

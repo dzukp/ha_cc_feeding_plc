@@ -1,7 +1,7 @@
 import logging
 from datetime import time
 
-from homeassistant.components.number import NumberEntity
+from homeassistant.components.number import NumberEntity, NumberMode
 from homeassistant.components.time import TimeEntity
 from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
 
@@ -12,23 +12,30 @@ logger = logging.getLogger('feeding')
 
 
 class ModbusNumber(CoordinatorEntity, NumberEntity):
-    def __init__(self, coordinator, entry_id, client, name, address, unit=None, min_value=0, max_value=9999):
+    def __init__(self, coordinator, entry_id, client, name, address, unit=None, min_value=0, max_value=9999, ratio=None):
         super().__init__(coordinator)
         self._client = client
         self._attr_name = name
         self._address = address
         self._unit = unit
+        self._ratio = ratio
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_{address:03}"
         self._attr_native_min_value = min_value
         self._attr_native_max_value = max_value
         self._attr_native_step = 1
+        self._attr_mode = NumberMode.BOX
         logger.debug(f'number created addr: {self._address:03} uid: `{self._attr_unique_id}` name: `{self._attr_name}`')
 
     @property
     def native_value(self):
-        return self.coordinator.data.get(self._address)
+        val = self.coordinator.data.get(self._address)
+        if self._ratio:
+            return val * self._ratio
+        return val
 
     async def async_set_native_value(self, value: float) -> None:
+        if self._ratio:
+            value = value / self._ratio
         self._client.write_register(self._address, int(value))
         await self.coordinator.async_request_refresh()
 
