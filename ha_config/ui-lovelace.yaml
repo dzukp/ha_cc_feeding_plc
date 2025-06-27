@@ -51,6 +51,52 @@ views:
       - !include lovelace/cards/pool_38.yaml
       - !include lovelace/cards/pool_39.yaml
       - !include lovelace/cards/pool_40.yaml
+  - title: Б 1-20 (корм)
+    path: feeding01_20
+    cards:
+      - !include lovelace/cards/feeding_1.yaml
+      - !include lovelace/cards/feeding_2.yaml
+      - !include lovelace/cards/feeding_3.yaml
+      - !include lovelace/cards/feeding_4.yaml
+      - !include lovelace/cards/feeding_5.yaml
+      - !include lovelace/cards/feeding_6.yaml
+      - !include lovelace/cards/feeding_7.yaml
+      - !include lovelace/cards/feeding_8.yaml
+      - !include lovelace/cards/feeding_9.yaml
+      - !include lovelace/cards/feeding_10.yaml
+      - !include lovelace/cards/feeding_11.yaml
+      - !include lovelace/cards/feeding_12.yaml
+      - !include lovelace/cards/feeding_13.yaml
+      - !include lovelace/cards/feeding_14.yaml
+      - !include lovelace/cards/feeding_15.yaml
+      - !include lovelace/cards/feeding_16.yaml
+      - !include lovelace/cards/feeding_17.yaml
+      - !include lovelace/cards/feeding_18.yaml
+      - !include lovelace/cards/feeding_19.yaml
+      - !include lovelace/cards/feeding_20.yaml
+  - title: Б 21-40 (корм)
+    path: feeding21_40
+    cards:
+      - !include lovelace/cards/feeding_21.yaml
+      - !include lovelace/cards/feeding_22.yaml
+      - !include lovelace/cards/feeding_23.yaml
+      - !include lovelace/cards/feeding_24.yaml
+      - !include lovelace/cards/feeding_25.yaml
+      - !include lovelace/cards/feeding_26.yaml
+      - !include lovelace/cards/feeding_27.yaml
+      - !include lovelace/cards/feeding_28.yaml
+      - !include lovelace/cards/feeding_29.yaml
+      - !include lovelace/cards/feeding_30.yaml
+      - !include lovelace/cards/feeding_31.yaml
+      - !include lovelace/cards/feeding_32.yaml
+      - !include lovelace/cards/feeding_33.yaml
+      - !include lovelace/cards/feeding_34.yaml
+      - !include lovelace/cards/feeding_35.yaml
+      - !include lovelace/cards/feeding_36.yaml
+      - !include lovelace/cards/feeding_37.yaml
+      - !include lovelace/cards/feeding_38.yaml
+      - !include lovelace/cards/feeding_39.yaml
+      - !include lovelace/cards/feeding_40.yaml
   - title: Б№1
     path: pool_1
     cards:

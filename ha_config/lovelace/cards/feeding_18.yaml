@@ -1,0 +1,220 @@
+type: custom:button-card
+name: Бассейн 18
+tap_action:
+  action: navigate
+  navigation_path: /lovelace/pool_18
+styles:
+  card:
+    - background-color: '#f5f5f5'
+    - border-radius: 5%
+    - padding: 10%
+    - font-size: 16px
+  grid:
+    - grid-template-areas: '"n n n" "start_name start_time_1 start_time_2" "duration_name duration_1 duration_2" "period_name period_1 period_2" "quantity_name quantity_1 quantity_2"'
+    - grid-template-columns: 1fr 1fr 1fr
+    - grid-template-rows: min-content min-content min-content min-content min-content
+  name:
+    - font-weight: bold
+    - font-size: 20px
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 12px
+  custom_fields:
+    start_name:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: start
+      - font-weight: bold
+    duration_name:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: start
+      - font-weight: bold
+    period_name:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: start
+      - font-weight: bold
+    quantity_name:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: start
+      - font-weight: bold
+    start_time_1:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: middle
+    duration_1:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: middle
+    period_1:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: middle
+    quantity_1:
+      - padding-bottom: 12px
+      - padding-right: 12px
+      - align-self: middle
+      - justify-self: middle
+    start_time_2:
+      - padding-bottom: 12px
+      - align-self: middle
+      - justify-self: middle
+    duration_2:
+      - padding-bottom: 12px
+      - align-self: middle
+      - justify-self: middle
+    period_2:
+      - padding-bottom: 12px
+      - align-self: middle
+      - justify-self: middle
+    quantity_2:
+      - padding-bottom: 12px
+      - align-self: middle
+      - justify-self: middle
+
+custom_fields:
+  start_name: >
+    [[[ return '<span>Начало</span>' ]]]
+  duration_name: >
+    [[[ return '<span>Длит-ть</span>' ]]]
+  period_name: >
+    [[[ return '<span>Период</span>' ]]]
+  quantity_name: >
+    [[[ return '<span>Кол-во</span>' ]]]
+  start_time_1: >
+    [[[ 
+      function formatTime(raw) {
+        const seconds = parseInt(raw, 10);
+        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
+          const h = Math.floor(seconds / 3600);
+          const m = Math.floor((seconds - h * 3600) / 60);
+          const s = seconds % 60;
+          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+        if (typeof raw === "string" && /^\d{1,2}:\d{2}$/.test(raw.trim())) {
+          return raw.trim();
+        }
+        return "??:??";
+      }
+      const start_time = states["number.b18_ust_vremia_nachala_1"].state;
+      console.log(start_time);
+      const value = formatTime(String(parseInt(start_time) * 60))
+      return `
+        <span>${value}</span>`
+    ]]]
+  duration_1: >
+    [[[
+      function formatTime(raw) {
+        const seconds = parseInt(raw, 10);
+        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
+          const h = Math.floor(seconds / 3600);
+          const m = Math.floor((seconds - h * 3600) / 60);
+          const s = seconds % 60;
+          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+        if (typeof raw === "string" && /^\d{1,2}:\d{2}:\d{2}$/.test(raw.trim())) {
+          return raw.trim();
+        }
+        return "??:??";
+      }
+      const value = formatTime(states["number.b18_ust_dlitelnost_1"].state);
+      return `
+          <span>${value}</span>`
+    ]]]
+  period_1: >
+    [[[
+      function formatTime(raw) {
+        const seconds = parseInt(raw, 10);
+        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
+          const h = Math.floor(seconds / 3600);
+          const m = Math.floor((seconds - h * 3600) / 60);
+          const s = seconds % 60;
+          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+        if (typeof raw === "string" && /^\d{1,2}:\d{2}:\d{2}$/.test(raw.trim())) {
+          return raw.trim();
+        }
+        return "??:??";
+      }
+      const value = formatTime(states["number.b18_ust_period_1"].state);
+      return `
+          <span>${value}</span>`
+    ]]]
+  quantity_1: >
+    [[[ 
+      return `
+        <span>${states["number.b18_ust_kol_vo_kormlenii_1"].state}</span>`
+    ]]]
+  start_time_2: >
+    [[[ 
+      function formatTime(raw) {
+        const seconds = parseInt(raw, 10);
+        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
+          const h = Math.floor(seconds / 3600);
+          const m = Math.floor((seconds - h * 3600) / 60);
+          const s = seconds % 60;
+          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+        if (typeof raw === "string" && /^\d{1,2}:\d{2}$/.test(raw.trim())) {
+          return raw.trim();
+        }
+        return "??:??";
+      }
+      const start_time = states["number.b18_ust_vremia_nachala_2"].state;
+      console.log(start_time);
+      const value = formatTime(String(parseInt(start_time) * 60))
+      return `
+        <span>${value}</span>`
+    ]]]
+  duration_2: >
+    [[[
+      function formatTime(raw) {
+        const seconds = parseInt(raw, 10);
+        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
+          const h = Math.floor(seconds / 3600);
+          const m = Math.floor((seconds - h * 3600) / 60);
+          const s = seconds % 60;
+          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+        if (typeof raw === "string" && /^\d{1,2}:\d{2}:\d{2}$/.test(raw.trim())) {
+          return raw.trim();
+        }
+        return "??:??";
+      }
+      const value = formatTime(states["number.b18_ust_dlitelnost_2"].state);
+      return `
+          <span>${value}</span>`
+    ]]]
+  period_2: >
+    [[[
+      function formatTime(raw) {
+        const seconds = parseInt(raw, 10);
+        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
+          const h = Math.floor(seconds / 3600);
+          const m = Math.floor((seconds - h * 3600) / 60);
+          const s = seconds % 60;
+          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+        if (typeof raw === "string" && /^\d{1,2}:\d{2}:\d{2}$/.test(raw.trim())) {
+          return raw.trim();
+        }
+        return "??:??";
+      }
+      const value = formatTime(states["number.b18_ust_period_2"].state);
+      return `
+          <span>${value}</span>`
+    ]]]
+  quantity_2: >
+    [[[ 
+      return `
+        <span>${states["number.b18_ust_kol_vo_kormlenii_2"].state}</span>` 
+    ]]]
