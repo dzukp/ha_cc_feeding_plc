@@ -51,6 +51,6 @@ def create_items(
 ):
     return [
         PlcTimeModbusSensor(coordinator, device_id, f"Ш{plc_number} Время",5),
-        ModbusSensor(coordinator, device_id, f"Ш{plc_number} NH4", 9, unit='мг/л', ratio=0.01),
-        ModbusSensor(coordinator, device_id, f"Ш{plc_number} pH", 10, ratio=0.01),
+        ModbusSensor(coordinator, device_id, f"Ш{plc_number} NH4", 9, unit='мг/л', ratio=0.01, signed=True),
+        ModbusSensor(coordinator, device_id, f"Ш{plc_number} pH", 10, ratio=0.01, signed=True),
     ]

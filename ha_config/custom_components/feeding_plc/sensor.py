@@ -1,4 +1,5 @@
 import logging
+import struct
 
 from homeassistant.components.sensor import SensorEntity
 from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
@@ -10,7 +11,7 @@ logger = logging.getLogger('feeding')
 
 
 class ModbusSensor(CoordinatorEntity, SensorEntity):
-    def __init__(self, coordinator, entry_id, name, address, unit=None, map_fn=None, ratio=None):
+    def __init__(self, coordinator, entry_id, name, address, unit=None, map_fn=None, ratio=None, signed=False):
         super().__init__(coordinator)
         self._ratio = ratio
         self._attr_name = name
@@ -18,14 +19,19 @@ class ModbusSensor(CoordinatorEntity, SensorEntity):
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_{address:03}"
         self._unit = unit
         self._map_fn = map_fn
+        self._signed = signed
         logger.debug(f'sensor created addr: {self._address:03} uid: `{self._attr_unique_id}` name: `{self._attr_name}`')
 
     @property
     def native_value(self):
         value = self.coordinator.data.get(self._address)
-        if self._ratio and value is not None:
-            value *= self._ratio
-        return self._map_fn(value) if self._map_fn and value is not None else value
+        if value is not None:
+            if self._signed:
+                value = struct.unpack('h', struct.pack('H', value))[0]
+            if self._ratio:
+                value *= self._ratio
+            return self._map_fn(value) if self._map_fn else value
+        return value
 
     @property
     def native_unit_of_measurement(self):
@@ -98,11 +104,11 @@ def create_items(
     sensors = [
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Температура", address_offset + 15, "°C",
-            ratio=0.01
+            ratio=0.01, signed=True
         ),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кислород", address_offset + 16, "мг/л",
-            ratio=0.01
+            ratio=0.01, signed=True
         ),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кормление 1", address_offset + 5,
