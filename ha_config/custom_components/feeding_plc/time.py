@@ -25,14 +25,14 @@ class ModbusTime(CoordinatorEntity, TimeEntity):
         value = self.coordinator.data.get(self._address)
         if value is None:
             return None
-        value *= self._ratio
+        value = int(value * self._ratio)
         hours = value // 3600
         minutes = (value - hours * 3600) // 60
         seconds = value % 60
         return time(hour=hours, minute=minutes, second=seconds)
 
     async def async_set_value(self, value: time) -> None:
-        number_value = timedelta(hours=time.hour, minutes=time.minute, seconds=time.second).total_seconds()
+        number_value = timedelta(hours=value.hour, minutes=value.minute, seconds=value.second).total_seconds()
         number_value /= self._ratio
         self._client.write_register(self._address, round(number_value))
         await self.coordinator.async_request_refresh()
@@ -82,7 +82,7 @@ def create_items(
         ),
         ModbusTime(
             coordinator, device_id, client, f"Б{pool_number:02} Период 1",
-            address_offset + 3,
+            address_offset + 3, ratio=60.0
         ),
         ModbusTime(
             coordinator, device_id, client, f"Б{pool_number:02} Время начала 2",
@@ -94,6 +94,6 @@ def create_items(
         ),
         ModbusTime(
             coordinator, device_id, client, f"Б{pool_number:02} Период 2",
-            address_offset + 9,
+            address_offset + 9, ratio=60.0
         ),
     ]
