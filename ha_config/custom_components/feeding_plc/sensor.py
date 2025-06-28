@@ -1,7 +1,7 @@
 import logging
 import struct
 
-from homeassistant.components.sensor import SensorEntity
+from homeassistant.components.sensor import SensorEntity, SensorDeviceClass
 from homeassistant.helpers.update_coordinator import CoordinatorEntity, DataUpdateCoordinator
 
 from .const import DOMAIN
@@ -11,12 +11,17 @@ logger = logging.getLogger('feeding')
 
 
 class ModbusSensor(CoordinatorEntity, SensorEntity):
-    def __init__(self, coordinator, entry_id, name, address, unit=None, map_fn=None, ratio=None, signed=False):
+    def __init__(
+            self, coordinator, entry_id, name, address, unit=None, map_fn=None, ratio=None, signed=False,
+            device_class : SensorDeviceClass | None = None
+    ):
         super().__init__(coordinator)
         self._ratio = ratio
         self._attr_name = name
         self._address = address
         self._attr_unique_id = f"{DOMAIN}_{entry_id}_{address:03}"
+        if device_class:
+            self._attr_device_class = device_class
         self._unit = unit
         self._map_fn = map_fn
         self._signed = signed
@@ -104,7 +109,7 @@ def create_items(
     sensors = [
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Температура", address_offset + 15, "°C",
-            ratio=0.01, signed=True
+            ratio=0.01, signed=True, device_class=SensorDeviceClass.TEMPERATURE
         ),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кислород", address_offset + 16, "мг/л",
