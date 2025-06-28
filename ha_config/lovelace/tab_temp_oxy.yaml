@@ -3,7 +3,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш1
+        heading: Ш1 (Б 1-5)
       - type: entities
         entities:
           - entity: number.sh1_verkh_limit_kisloroda
@@ -27,7 +27,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш2
+        heading: Ш2 (Б 6-10)
       - type: entities
         entities:
           - entity: number.sh2_verkh_limit_kisloroda
@@ -51,7 +51,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш3
+        heading: Ш3 (Б 11-15)
       - type: entities
         entities:
           - entity: number.sh3_verkh_limit_kisloroda
@@ -75,7 +75,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш4
+        heading: Ш4 (Б 16-20)
       - type: entities
         entities:
           - entity: number.sh4_verkh_limit_kisloroda
@@ -99,7 +99,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш5
+        heading: Ш5 (Б 21-25)
       - type: entities
         entities:
           - entity: number.sh5_verkh_limit_kisloroda
@@ -123,7 +123,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш6
+        heading: Ш6 (Б 26-30)
       - type: entities
         entities:
           - entity: number.sh6_verkh_limit_kisloroda
@@ -147,7 +147,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш7
+        heading: Ш7 (Б 31-36)
       - type: entities
         entities:
           - entity: number.sh7_verkh_limit_kisloroda
@@ -171,7 +171,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Ш8
+        heading: Ш8 (Б 36-40)
       - type: entities
         entities:
           - entity: number.sh8_verkh_limit_kisloroda

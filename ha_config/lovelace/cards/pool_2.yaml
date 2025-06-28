@@ -5,7 +5,7 @@ tap_action:
   navigation_path: /lovelace/pool_2
 styles:
   card:
-    - background-color: '#f5f5f5'
+    - background-color: var(--card-background-color)
     - border-radius: 5%
     - padding: 5%
     - font-size: 14px
