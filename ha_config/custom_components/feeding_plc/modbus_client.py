@@ -24,7 +24,7 @@ class PLCModbusClient:
         async def _update():
             all_data = {}
             try:
-                for start, count in ((1, 100), (101, 100), (201, 98)):
+                for start, count in ((0, 120), (120, 120), (240, 120)):
                     data = self.read_all(start, count)
                     if data:
                         all_data.update(data)

@@ -71,6 +71,14 @@ def create_items(
         (f"Б{plc_feeding_number:02} Корм 1 пуск", address_offset + 1, 1, "plug"),
         (f"Б{plc_feeding_number:02} Корм 2 работа", address_offset + 8, 0, "running"),
         (f"Б{plc_feeding_number:02} Корм 2 пуск", address_offset + 8, 1, "plug"),
+        (f"Б{plc_feeding_number:02} Авария высокая температура", address_offset + 17, 0),
+        (f"Б{plc_feeding_number:02} Авария низкая температура", address_offset + 17, 1),
+        (f"Б{plc_feeding_number:02} Авария высокий кислород", address_offset + 17, 2),
+        (f"Б{plc_feeding_number:02} Авария низкий кислород", address_offset + 17, 3),
+        (f"Б{plc_feeding_number:02} Авария оксигенератора", address_offset + 17, 4),
+        (f"Б{plc_feeding_number:02} Авария кормушка 1", address_offset + 17, 5),
+        (f"Б{plc_feeding_number:02} Авария кормушка 2", address_offset + 17, 6),
+        (f"Б{plc_feeding_number:02} Авария датчика ксилорода", address_offset + 17, 7),
     ]
     sensors = []
     for name, address, bit, device_class in binary_sensors_config:
