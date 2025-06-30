@@ -1,5 +1,4 @@
 import logging
-from datetime import time
 
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 

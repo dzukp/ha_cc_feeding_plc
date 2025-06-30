@@ -1,6 +1,6 @@
 import logging
 
-from homeassistant.components.binary_sensor import BinarySensorEntity
+from homeassistant.components.binary_sensor import BinarySensorEntity, BinarySensorDeviceClass
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 
@@ -63,22 +63,22 @@ def create_items(
         coordinator: DataUpdateCoordinator, client, device_id: str, plc_feeding_number: int, address_offset: int
 ) -> list[BinarySensorEntity]:
     binary_sensors_config = [
-        (f"Б{plc_feeding_number:02} Автомат", address_offset + 0, 0, "plug"),
-        (f"Б{plc_feeding_number:02} Ручной", address_offset + 0, 1, "plug"),
-        (f"Б{plc_feeding_number:02} Оксигенератор", address_offset + 0, 2, "running"),
-        (f"Б{plc_feeding_number:02} Клапан кислорода", address_offset + 0, 3, "running"),
-        (f"Б{plc_feeding_number:02} Корм 1 работа", address_offset + 1, 0, "running"),
-        (f"Б{plc_feeding_number:02} Корм 1 пуск", address_offset + 1, 1, "plug"),
-        (f"Б{plc_feeding_number:02} Корм 2 работа", address_offset + 8, 0, "running"),
-        (f"Б{plc_feeding_number:02} Корм 2 пуск", address_offset + 8, 1, "plug"),
-        (f"Б{plc_feeding_number:02} Авария высокая температура", address_offset + 17, 0),
-        (f"Б{plc_feeding_number:02} Авария низкая температура", address_offset + 17, 1),
-        (f"Б{plc_feeding_number:02} Авария высокий кислород", address_offset + 17, 2),
-        (f"Б{plc_feeding_number:02} Авария низкий кислород", address_offset + 17, 3),
-        (f"Б{plc_feeding_number:02} Авария оксигенератора", address_offset + 17, 4),
-        (f"Б{plc_feeding_number:02} Авария кормушка 1", address_offset + 17, 5),
-        (f"Б{plc_feeding_number:02} Авария кормушка 2", address_offset + 17, 6),
-        (f"Б{plc_feeding_number:02} Авария датчика ксилорода", address_offset + 17, 7),
+        (f"Б{plc_feeding_number:02} Автомат", address_offset + 0, 0, BinarySensorDeviceClass.PLUG),
+        (f"Б{plc_feeding_number:02} Ручной", address_offset + 0, 1, BinarySensorDeviceClass.PLUG),
+        (f"Б{plc_feeding_number:02} Оксигенератор", address_offset + 0, 2, BinarySensorDeviceClass.RUNNING),
+        (f"Б{plc_feeding_number:02} Клапан кислорода", address_offset + 0, 3, BinarySensorDeviceClass.RUNNING),
+        (f"Б{plc_feeding_number:02} Корм 1 работа", address_offset + 1, 0, BinarySensorDeviceClass.RUNNING),
+        (f"Б{plc_feeding_number:02} Корм 1 пуск", address_offset + 1, 1, BinarySensorDeviceClass.PLUG),
+        (f"Б{plc_feeding_number:02} Корм 2 работа", address_offset + 8, 0, BinarySensorDeviceClass.RUNNING),
+        (f"Б{plc_feeding_number:02} Корм 2 пуск", address_offset + 8, 1, BinarySensorDeviceClass.PLUG),
+        (f"Б{plc_feeding_number:02} Авария высокая температура", address_offset + 17, 0, BinarySensorDeviceClass.PROBLEM),
+        (f"Б{plc_feeding_number:02} Авария низкая температура", address_offset + 17, 1, BinarySensorDeviceClass.PROBLEM),
+        (f"Б{plc_feeding_number:02} Авария высокий кислород", address_offset + 17, 2, BinarySensorDeviceClass.PROBLEM),
+        (f"Б{plc_feeding_number:02} Авария низкий кислород", address_offset + 17, 3, BinarySensorDeviceClass.PROBLEM),
+        (f"Б{plc_feeding_number:02} Авария оксигенератора", address_offset + 17, 4, BinarySensorDeviceClass.PROBLEM),
+        (f"Б{plc_feeding_number:02} Авария кормушка 1", address_offset + 17, 5, BinarySensorDeviceClass.PROBLEM),
+        (f"Б{plc_feeding_number:02} Авария кормушка 2", address_offset + 17, 6, BinarySensorDeviceClass.PROBLEM),
+        (f"Б{plc_feeding_number:02} Авария датчика ксилорода", address_offset + 17, 7, BinarySensorDeviceClass.PROBLEM),
     ]
     sensors = []
     for name, address, bit, device_class in binary_sensors_config:
