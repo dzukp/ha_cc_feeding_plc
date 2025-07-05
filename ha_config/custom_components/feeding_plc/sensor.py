@@ -1,3 +1,4 @@
+import datetime
 import logging
 import struct
 
@@ -41,6 +42,15 @@ class ModbusSensor(CoordinatorEntity, SensorEntity):
     @property
     def native_unit_of_measurement(self):
         return self._unit
+
+
+class ModbusTimeSensor(ModbusSensor):
+    @property
+    def native_value(self):
+        value = self.coordinator.data.get(self._address)
+        if value is not None:
+            return datetime.time(hour=value // 3600, minute=(value % 3600) // 60, second=value % 60)
+        return value
 
 
 class ModbusBitMaskListSensor(ModbusSensor):
@@ -119,16 +129,16 @@ def create_items(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кормление 1", address_offset + 5,
             map_fn=lambda v: feeding_state_map.get(v, f"? ({v})")
         ),
-        ModbusSensor(
-            coordinator, device_id, f"Б{plc_feeding_number:02} След корм 1", address_offset + 6, "сек"
+        ModbusTimeSensor(
+            coordinator, device_id, f"Б{plc_feeding_number:02} След корм 1", address_offset + 6,
         ),
         ModbusSensor(coordinator, device_id, f"Б{plc_feeding_number:02} Прошло корм 1", address_offset + 7),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кормление 2", address_offset + 12,
             map_fn=lambda v: feeding_state_map.get(v, f"? ({v})")
         ),
-        ModbusSensor(
-            coordinator, device_id, f"Б{plc_feeding_number:02} След корм 2", address_offset + 13, "сек"
+        ModbusTimeSensor(
+            coordinator, device_id, f"Б{plc_feeding_number:02} След корм 2", address_offset + 13
         ),
         ModbusSensor(coordinator, device_id, f"Б{plc_feeding_number:02} Прошло корм 2", address_offset + 14),
         ModbusBitMaskListSensor(

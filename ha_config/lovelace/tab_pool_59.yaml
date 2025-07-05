@@ -76,14 +76,14 @@ sections:
       - type: entities
         entities:
           - entity: time.b59_vremia_nachala_1
-            name: Начало
+            name: Начало кормления
           - entity: time.b59_period_1
-            name: Период
+            name: Периодичность
           - entity: number.b59_ust_kol_vo_kormlenii_1
             name: Кол-во
             icon: mdi:counter
           - entity: number.b59_ust_dlitelnost_1
-            name: Длительность
+            name: Длительность, сек
             icon: mdi:timer
   - type: grid
     cards:
@@ -108,14 +108,14 @@ sections:
       - type: entities
         entities:
           - entity: time.b59_vremia_nachala_2
-            name: Начало
+            name: Начало кормления
           - entity: time.b59_period_2
-            name: Период
+            name: Периодичность
           - entity: number.b59_ust_kol_vo_kormlenii_2
             name: Кол-во
             icon: mdi:counter
           - entity: number.b59_ust_dlitelnost_2
-            name: Длительность
+            name: Длительность, сек
             icon: mdi:timer
   - type: grid
     cards:
