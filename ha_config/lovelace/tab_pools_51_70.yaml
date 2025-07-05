@@ -63,6 +63,6 @@ sections:
 header:
   card:
     type: markdown
-    content: '## Бассейны 21-40'
+    content: '## Бассейны 51-70'
     text_only: true
 
