@@ -72,7 +72,7 @@ styles:
           [[[ 
             const state = states['sensor.b51_kormlenie_1'].state;
             const feeding_alarm = states['binary_sensor.b51_avariia_kormushka_1'].state;
-            if (feeding_alarm)
+            if (feeding_alarm == 'on')
               return 'red';
             if (state == 'Ожидание следующего' || state == 'Кормление')
               return 'green';
@@ -85,6 +85,9 @@ styles:
       - --color-sensor: >
           [[[ 
             const state = states['sensor.b51_kormlenie_2'].state;
+            const feeding_alarm = states['binary_sensor.b51_avariia_kormushka_2'].state;
+            if (feeding_alarm == 'on')
+              return 'red';
             if (state == 'Ожидание следующего' || state == 'Кормление')
               return 'green';
             return ''; 
