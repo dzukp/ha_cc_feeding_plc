@@ -1,0 +1,138 @@
+title: Б 54
+path: pool_54
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Состояние
+      - graph: line
+        type: sensor
+        entity: sensor.b54_kislorod
+        detail: 1
+        name: Кислород
+        icon: mdi:chart-bubble
+        grid_options:
+          columns: 12
+          rows: 2
+      - graph: line
+        type: sensor
+        entity: sensor.b54_temperatura
+        detail: 1
+        name: Температура
+        grid_options:
+          columns: full
+          rows: 2
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: binary_sensor.b54_avtomat
+            name: Автомат
+            icon: mdi:desktop-classic
+          - entity: binary_sensor.b54_ruchnoi
+            name: Ручной
+            icon: mdi:hand-back-left
+          - entity: binary_sensor.b54_oksigenerator
+            name: Оксигенератор
+            icon: mdi:tree
+          - entity: binary_sensor.b54_klapan_kisloroda
+            name: Клапан O₂
+            icon: mdi:pipe-valve
+        columns: 4
+        state_color: true
+      - type: tile
+        entity: sensor.b54_avariia
+        features_position: bottom
+        vertical: true
+        icon: mdi:alarm-light
+        show_entity_picture: false
+        name: Авария
+        grid_options:
+          columns: 12
+          rows: 2
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Кормушка 1
+        icon: mdi:food-apple
+        badges: []
+      - type: entities
+        entities:
+          - entity: sensor.b54_kormlenie_1
+            name: Состояние
+          - entity: sensor.b54_proshlo_korm_1
+            name: Прошло кормлений
+            icon: mdi:counter
+          - entity: sensor.b54_sled_korm_1
+            name: Следующее кормление
+            icon: mdi:timer
+          - entity: binary_sensor.b54_korm_1_rabota
+            name: Состояние кормушки
+          - entity: binary_sensor.b54_korm_1_pusk
+            name: Пуск кормушки
+      - type: entities
+        entities:
+          - entity: time.b54_vremia_nachala_1
+            name: Начало
+          - entity: time.b54_period_1
+            name: Период
+          - entity: number.b54_ust_kol_vo_kormlenii_1
+            name: Кол-во
+            icon: mdi:counter
+          - entity: number.b54_ust_dlitelnost_1
+            name: Длительность
+            icon: mdi:timer
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Кормушка 2
+        icon: mdi:food-apple
+      - type: entities
+        entities:
+          - entity: sensor.b54_kormlenie_2
+            name: Состояние
+          - entity: sensor.b54_proshlo_korm_2
+            name: Прошло кормлений
+            icon: mdi:counter
+          - entity: sensor.b54_sled_korm_2
+            name: Следующее кормление
+            icon: mdi:timer
+          - entity: binary_sensor.b54_korm_2_rabota
+            name: Состояние кормушки
+          - entity: binary_sensor.b54_korm_2_pusk
+            name: Пуск кормушки
+      - type: entities
+        entities:
+          - entity: time.b54_vremia_nachala_2
+            name: Начало
+          - entity: time.b54_period_2
+            name: Период
+          - entity: number.b54_ust_kol_vo_kormlenii_2
+            name: Кол-во
+            icon: mdi:counter
+          - entity: number.b54_ust_dlitelnost_2
+            name: Длительность
+            icon: mdi:timer
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Шкаф
+        icon: mdi:file-cabinet
+      - type: entities
+        entities:
+          - entity: sensor.sh11_vremia
+            icon: mdi:clock-time-nine
+            name: Время
+          - entity: binary_sensor.sh11_pitanie
+            icon: mdi:power
+            name: Питание
+header:
+  card:
+    type: markdown
+    content: '# Бассейн 54'
+    text_only: true
