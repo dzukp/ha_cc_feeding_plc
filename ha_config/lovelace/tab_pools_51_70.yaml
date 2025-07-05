@@ -1,0 +1,68 @@
+title: Б 51-70
+sections:
+  - type: grid
+    cards:
+      - !include cards/pool_51.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_52.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_53.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_54.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_55.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_56.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_57.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_58.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_59.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_60.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_61.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_62.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_63.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_64.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_65.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_66.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_67.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_68.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_69.yaml
+  - type: grid
+    cards:
+      - !include cards/pool_70.yaml
+header:
+  card:
+    type: markdown
+    content: '## Бассейны 21-40'
+    text_only: true
+

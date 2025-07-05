@@ -71,6 +71,9 @@ styles:
       - --color-sensor: >
           [[[ 
             const state = states['sensor.b03_kormlenie_1'].state;
+            const feeding_alarm = states['binary_sensor.b03_avariia_kormushka_1'].state;
+            if (feeding_alarm)
+              return 'red';
             if (state == 'Ожидание следующего' || state == 'Кормление')
               return 'green';
             return ''; 
@@ -106,16 +109,22 @@ styles:
 custom_fields:
   temp: >
     [[[ 
+      let icon = "mdi:thermometer";
+      const fact = parseFloat(states['sensor.b03_temperatura'].state);
+      if (fact < parseFloat(states['number.sh1_niz_limit_temperatury'].state) )
+        icon = "mdi:thermometer-low";
+      else if (fact > parseFloat(states['number.sh1_verkh_limit_temperatury'].state) )
+        icon = "mdi:thermometer-high";
       return `
-        <ha-icon icon="mdi:thermometer" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-        <span>${states["sensor.b03_temperatura"].state}</span>
+        <ha-icon icon="${icon}" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+        <span>${fact}</span>
         <span>${states["sensor.b03_temperatura"].attributes.unit_of_measurement}</span>`
     ]]]
   oxy: >
     [[[ 
       return `
         <ha-icon icon="mdi:chart-bubble" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-        <span>${states["sensor.b03_kislorod"].state}</span>
+        <span>${parseFloat(states["sensor.b03_kislorod"].state)}</span>
         <span>${states["sensor.b03_kislorod"].attributes.unit_of_measurement}</span>` 
     ]]]
   mode: >
@@ -125,14 +134,14 @@ custom_fields:
       if (m === 'on' && a !== 'on') 
         return `
           <ha-icon icon="mdi:hand-back-left" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-          <span>Ручной</span>`;
+          <span>Ручной режим</span>`;
       if (a === 'on' && m !== 'on') 
         return `
            <ha-icon icon="mdi:desktop-classic" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
            <span>Автомат</span>`;
       return `
            <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-           <span>0</span>`;
+           <span>Отключен</span>`;
     ]]]
   alarm: >
     [[[
@@ -156,7 +165,8 @@ custom_fields:
     ]]]
   oxy_gen: >
     [[[
-      return `<ha-icon icon="mdi:tree" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>`
+      return `<ha-icon icon="mdi:tree" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+      <span>LOXY</span>`
     ]]]
   oxy_valve: >
     [[[

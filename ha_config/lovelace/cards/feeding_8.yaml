@@ -85,9 +85,9 @@ custom_fields:
   start_name: >
     [[[ return '<span>Начало</span>' ]]]
   duration_name: >
-    [[[ return '<span>Длит-ть</span>' ]]]
+    [[[ return '<span>Длительность</span>' ]]]
   period_name: >
-    [[[ return '<span>Период</span>' ]]]
+    [[[ return '<span>Периодичность</span>' ]]]
   quantity_name: >
     [[[ return '<span>Кол-во</span>' ]]]
   start_time_1: >
