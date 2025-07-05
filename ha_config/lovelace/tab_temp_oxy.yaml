@@ -102,22 +102,22 @@ sections:
         heading: Ш11 (Б 51-55)
       - type: entities
         entities:
-          - entity: number.ыр11_verkh_limit_kisloroda
+          - entity: number.sh11_verkh_limit_kisloroda
             name: Верх. предел O₂
             mode: box
-          - entity: number.ыр11_niz_limit_kisloroda
+          - entity: number.sh11_niz_limit_kisloroda
             name: Ниж. предел O₂
             mode: box
-          - entity: number.ыр11_otkl_kisloroda
+          - entity: number.sh11_otkl_kisloroda
             name: Откл. O₂
             mode: box
-          - entity: number.ыр11_vkl_kisloroda
+          - entity: number.sh11_vkl_kisloroda
             name: Вкл. O₂
             mode: box
-          - entity: number.ыр11_verkh_limit_temperatury
+          - entity: number.sh11_verkh_limit_temperatury
             name: Верх. предел T°
             mode: box
-          - entity: number.ыр11_niz_limit_temperatury
+          - entity: number.sh11_niz_limit_temperatury
             name: Ниж. предел T°
             mode: box
   - type: grid
@@ -126,22 +126,22 @@ sections:
         heading: Ш12 (Б 56-60)
       - type: entities
         entities:
-          - entity: number.ыр12_verkh_limit_kisloroda
+          - entity: number.sh12_verkh_limit_kisloroda
             name: Верх. предел O₂
             mode: box
-          - entity: number.ыр12_niz_limit_kisloroda
+          - entity: number.sh12_niz_limit_kisloroda
             name: Ниж. предел O₂
             mode: box
-          - entity: number.ыр12_otkl_kisloroda
+          - entity: number.sh12_otkl_kisloroda
             name: Откл. O₂
             mode: box
-          - entity: number.ыр12_vkl_kisloroda
+          - entity: number.sh12_vkl_kisloroda
             name: Вкл. O₂
             mode: box
-          - entity: number.ыр12_verkh_limit_temperatury
+          - entity: number.sh12_verkh_limit_temperatury
             name: Верх. предел T°
             mode: box
-          - entity: number.ыр12_niz_limit_temperatury
+          - entity: number.sh12_niz_limit_temperatury
             name: Ниж. предел T°
             mode: box
   - type: grid
@@ -150,22 +150,22 @@ sections:
         heading: Ш13 (Б 61-66)
       - type: entities
         entities:
-          - entity: number.ыр13_verkh_limit_kisloroda
+          - entity: number.sh13_verkh_limit_kisloroda
             name: Верх. предел O₂
             mode: box
-          - entity: number.ыр13_niz_limit_kisloroda
+          - entity: number.sh13_niz_limit_kisloroda
             name: Ниж. предел O₂
             mode: box
-          - entity: number.ыр13_otkl_kisloroda
+          - entity: number.sh13_otkl_kisloroda
             name: Откл. O₂
             mode: box
-          - entity: number.ыр13_vkl_kisloroda
+          - entity: number.sh13_vkl_kisloroda
             name: Вкл. O₂
             mode: box
-          - entity: number.ыр13_verkh_limit_temperatury
+          - entity: number.sh13_verkh_limit_temperatury
             name: Верх. предел T°
             mode: box
-          - entity: number.ыр13_niz_limit_temperatury
+          - entity: number.sh13_niz_limit_temperatury
             name: Ниж. предел T°
             mode: box
   - type: grid
@@ -174,21 +174,21 @@ sections:
         heading: Ш14 (Б 66-70)
       - type: entities
         entities:
-          - entity: number.ыр14_verkh_limit_kisloroda
+          - entity: number.sh14_verkh_limit_kisloroda
             name: Верх. предел O₂
             mode: box
-          - entity: number.ыр14_niz_limit_kisloroda
+          - entity: number.sh14_niz_limit_kisloroda
             name: Ниж. предел O₂
             mode: box
-          - entity: number.ыр14_otkl_kisloroda
+          - entity: number.sh14_otkl_kisloroda
             name: Откл. O₂
             mode: box
-          - entity: number.ыр14_vkl_kisloroda
+          - entity: number.sh14_vkl_kisloroda
             name: Вкл. O₂
             mode: box
-          - entity: number.ыр14_verkh_limit_temperatury
+          - entity: number.sh14_verkh_limit_temperatury
             name: Верх. предел T°
             mode: box
-          - entity: number.ыр14_niz_limit_temperatury
+          - entity: number.sh14_niz_limit_temperatury
             name: Ниж. предел T°
             mode: box
