@@ -151,8 +151,11 @@ custom_fields:
     ]]]
   quantity_1: >
     [[[ 
-      return `
-        <span>${states["number.b67_ust_kol_vo_kormlenii_1"].state}</span>`
+      let fact = parseFloat(states["number.b67_ust_kol_vo_kormlenii_1"].state);
+      if (Number.isNaN(fact)) {
+        fact = "&mdash;";
+      }
+      return `<span>${fact}</span>` 
     ]]]
   start_time_2: >
     [[[ 
@@ -215,6 +218,9 @@ custom_fields:
     ]]]
   quantity_2: >
     [[[ 
-      return `
-        <span>${states["number.b67_ust_kol_vo_kormlenii_2"].state}</span>` 
+      let fact = parseFloat(states["number.b67_ust_kol_vo_kormlenii_2"].state);
+      if (Number.isNaN(fact)) {
+        fact = "&mdash;";
+      }
+      return `<span>${fact}</span>` 
     ]]]

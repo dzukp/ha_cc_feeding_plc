@@ -62,7 +62,13 @@ styles:
       - justify-self: start
       - --color-sensor: >
           [[[
-            return states['sensor.b69_avariia'].state !== 'Ошибок нет' ? 'red' : '';
+            const value = states['sensor.b69_avariia'].state;
+            console.log(value);
+            if (value === 'Ошибок нет')
+              return '';
+            if (value === 'unknown' || value === 'Нет данных')
+              return '';
+            return 'red';
           ]]]
     feeding_1:
       - padding-bottom: 8px
@@ -113,11 +119,16 @@ custom_fields:
   temp: >
     [[[ 
       let icon = "mdi:thermometer";
-      const fact = parseFloat(states['sensor.b69_temperatura'].state);
-      if (fact < parseFloat(states['number.sh14_niz_limit_temperatury'].state) )
-        icon = "mdi:thermometer-low";
-      else if (fact > parseFloat(states['number.sh14_verkh_limit_temperatury'].state) )
-        icon = "mdi:thermometer-high";
+      let fact = parseFloat(states['sensor.b69_temperatura'].state);
+      if (!Number.isNaN(fact)) {
+        if (fact < parseFloat(states['number.sh14_niz_limit_temperatury'].state) )
+          icon = "mdi:thermometer-low";
+        else if (fact > parseFloat(states['number.sh14_verkh_limit_temperatury'].state) )
+          icon = "mdi:thermometer-high";    
+      }
+      else {
+        fact = "&mdash;";
+      }
       return `
         <ha-icon icon="${icon}" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
         <span>${fact}</span>
@@ -125,9 +136,13 @@ custom_fields:
     ]]]
   oxy: >
     [[[ 
+      let fact = parseFloat(states['sensor.b69_kislorod'].state);
+      if (Number.isNaN(fact)) {
+        fact = "&mdash;";
+      }
       return `
         <ha-icon icon="mdi:chart-bubble" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-        <span>${parseFloat(states["sensor.b69_kislorod"].state)}</span>
+        <span>${fact}</span>
         <span>${states["sensor.b69_kislorod"].attributes.unit_of_measurement}</span>` 
     ]]]
   mode: >
@@ -142,9 +157,18 @@ custom_fields:
         return `
            <ha-icon icon="mdi:desktop-classic" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
            <span>Автомат</span>`;
-      return `
-           <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-           <span>Отключен</span>`;
+      if (a === 'off' && m === 'off')
+        return `
+             <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+             <span>Отключен</span>`;
+      if (a === 'on' && m === 'on')
+        return `
+             <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+             <span>Ошибка</span>`;
+      if (a === 'unknown' || m === 'unknown')
+        return `
+             <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+             <span>&mdash;</span>`;
     ]]]
   alarm: >
     [[[
@@ -152,19 +176,21 @@ custom_fields:
     ]]]
   feeding_1: >
     [[[
+      const value = 
+        `${states['sensor.b69_proshlo_korm_1'].state} / ${states['number.b69_ust_kol_vo_kormlenii_1'].state}`
+          .replaceAll('unknown', '&mdash;');
       return `
         <ha-icon icon="mdi:food-apple" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-        <span">
-          ${states['sensor.b69_proshlo_korm_1'].state} / ${states['number.b69_ust_kol_vo_kormlenii_1'].state}
-        </span>`
+        <span">${value}</span>`
     ]]]
   feeding_2: >
     [[[
+      const value = 
+        `${states['sensor.b69_proshlo_korm_2'].state} / ${states['number.b69_ust_kol_vo_kormlenii_2'].state}`
+          .replaceAll('unknown', '&mdash;');
       return `
         <ha-icon icon="mdi:food-apple" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
-        <span">
-          ${states['sensor.b69_proshlo_korm_2'].state} / ${states['number.b69_ust_kol_vo_kormlenii_2'].state}
-        </span>`
+        <span">${value}</span>`
     ]]]
   oxy_gen: >
     [[[
