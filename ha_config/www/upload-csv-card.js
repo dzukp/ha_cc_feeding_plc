@@ -58,7 +58,9 @@ class UploadCsvCard extends HTMLElement {
 
           if (response.ok) {
             const resp_data = await response.json();
-            statusEl.textContent = `Загружено для ${resp_data.results.length} кормушек(-ки)`;
+            const success_cnt = resp_data.results.filter(item => !item.errors || item.errors.length === 0).length;
+            const failed_cnt = resp_data.results.filter(item => item.errors && item.errors.length > 0).length;
+            statusEl.textContent = `Загружено для ${success_cnt} кормушек(-ки). С ошибками ${failed_cnt} кормушек(-ки)`;
           } else {
             statusEl.textContent = "Ошибка загрузки данных";
           }

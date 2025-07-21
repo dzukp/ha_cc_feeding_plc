@@ -1,4 +1,6 @@
 import csv
+import datetime
+
 from homeassistant.components.http import HomeAssistantView
 from homeassistant.core import HomeAssistant, callback
 import logging
@@ -6,6 +8,10 @@ import io
 
 
 logger = logging.getLogger('feeding_api')
+
+
+class MoreThenMaxValue(BaseException):
+    pass
 
 
 class RecipeCsvUploadView(HomeAssistantView):
@@ -21,7 +27,7 @@ class RecipeCsvUploadView(HomeAssistantView):
             return self.json({"error": "No CSV data provided"}, status_code=400)
 
         results = await load_csv_data(csv_text, request.app["hass"])
-        if results.get('errors'):
+        if results.get('error'):
             return self.json(results, status_code=400)
         else:
             return self.json(results)
@@ -55,11 +61,23 @@ async def load_csv_data(csv_text: str, hass: HomeAssistant) -> dict:
         }
         for key, value in row_data.items():
             try:
-                entity_id = f'number.{ENTYTIES[key].format(pool=pool.zfill(2), feeding=feeding)}'
-                value = int(value)
+                if key in ('start_time', 'period'):
+                    value = datetime.datetime.strptime(value, '%H:%M:%S').time()
+                    value = value.hour * 60 + value.minute
+                    domain = 'number'
+                elif key == 'duration':
+                    value = datetime.datetime.strptime(value, '%H:%M:%S').time()
+                    value = value.hour * 3600 + value.minute * 60 + value.second
+                    if value > 32000:
+                        raise MoreThenMaxValue
+                    domain = 'number'
+                else:
+                    value = int(value)
+                    domain = 'number'
+                entity_id = f'{domain}.{ENTYTIES[key].format(pool=pool.zfill(2), feeding=feeding)}'
                 logger.debug(f'set {entity_id} = {value}')
                 await hass.services.async_call(
-                    "number", "set_value",
+                    domain, "set_value",
                     {"entity_id": entity_id, "value": value},
                     blocking=True
                 )
@@ -69,6 +87,12 @@ async def load_csv_data(csv_text: str, hass: HomeAssistant) -> dict:
                     feeding_result['errors'] = []
                 feeding_result['errors'].append(f'неверный формат данных `{key}`, `{value}`')
                 logger.error(f'Bad format {key} = {value}')
+                continue
+            except MoreThenMaxValue:
+                if 'errors' not in feeding_result:
+                    feeding_result['errors'] = []
+                feeding_result['errors'].append(f'слишком большое значение `{key}`, `{value}`')
+                logger.error(f'Very big value {key} = {value}')
                 continue
             except Exception as e:
                 if 'errors' not in feeding_result:
