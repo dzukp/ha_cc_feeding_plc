@@ -10,6 +10,26 @@ views:
   - !include lovelace/tab_feeding_1_20.yaml
   - !include lovelace/tab_feeding_51_70.yaml
   - !include lovelace/tab_temp_oxy.yaml
+  - title: Датчики
+    sections:
+      - type: grid
+        cards:
+          - graph: line
+            type: sensor
+            entity: sensor.sh4_ph
+            detail: 1
+            name: pH
+          - graph: line
+            type: sensor
+            entity: sensor.sh4_nh4
+            detail: 1
+            name: NH4
+        column_span: 1
+    header:
+      card:
+        type: markdown
+        content: '# Датчики'
+        text_only: true
   - !include lovelace/tab_pool_1.yaml
   - !include lovelace/tab_pool_2.yaml
   - !include lovelace/tab_pool_3.yaml
