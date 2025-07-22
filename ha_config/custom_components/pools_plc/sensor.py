@@ -27,11 +27,12 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 
     device_id = discovery_info["device_id"]
     plc_number = discovery_info['plc_number']
+    extra_sensors = discovery_info['extra_sensors']
     data = hass.data[DOMAIN][device_id]
     coordinator = data["coordinator"]
     client = data["client"]
 
-    entities = create_items(coordinator, device_id, plc_number)
+    entities = create_items(coordinator, device_id, plc_number, extra_sensors)
     async_add_entities(entities)
 
 
@@ -47,10 +48,17 @@ class PlcTimeModbusSensor(ModbusSensor):
 
 
 def create_items(
-        coordinator: DataUpdateCoordinator, device_id: str, plc_number: int
+        coordinator: DataUpdateCoordinator, device_id: str, plc_number: int, extra_sensors: bool
 ):
-    return [
+    items = [
         PlcTimeModbusSensor(coordinator, device_id, f"Ш{plc_number} Время",5),
-        ModbusSensor(coordinator, device_id, f"Ш{plc_number} NH4", 9, unit='мг/л', ratio=0.1, signed=True),
-        ModbusSensor(coordinator, device_id, f"Ш{plc_number} pH", 10, ratio=0.01, signed=True),
     ]
+    if extra_sensors:
+        items.extend([
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} NH4", 9, unit='мг/л', ratio=0.1, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} pH", 10, unit='', ratio=0.01, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} Кислород", 11, unit='мг/л', ratio=0.01, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} Температура", 12, unit='°C', ratio=0.01, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} Глубина", 13, unit='мм', signed=True),
+        ])
+    return items

@@ -14,7 +14,7 @@ logger:
   logs:
     feeding: info
     feeding_api: debug
-    pools_plc: debug
+    pools_plc: info
     homeassistant.helpers.entity: debug
 
 lovelace:
@@ -156,6 +156,7 @@ pools_plc:
     number: 3
   - host: 192.168.14.23
     number: 4
+    extra_sensors: true
   - host: 192.168.14.24
     number: 11
   - host: 192.168.14.25

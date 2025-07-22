@@ -24,6 +24,16 @@ views:
             entity: sensor.sh4_nh4
             detail: 1
             name: NH4
+          - graph: line
+            type: sensor
+            entity: sensor.sh4_kislorod
+            detail: 1
+            name: Кислород
+          - graph: line
+            type: sensor
+            entity: sensor.sh4_temperatura
+            detail: 1
+            name: Температура
         column_span: 1
     header:
       card:
