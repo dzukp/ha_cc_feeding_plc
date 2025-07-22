@@ -91,25 +91,12 @@ custom_fields:
   quantity_name: >
     [[[ return '<span>Кол-во</span>' ]]]
   start_time_1: >
-    [[[ 
-      function formatTime(raw) {
-        const seconds = parseInt(raw, 10);
-        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
-          const h = Math.floor(seconds / 3600);
-          const m = Math.floor((seconds - h * 3600) / 60);
-          const s = seconds % 60;
-          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
-        if (typeof raw === "string" && /^\d{1,2}:\d{2}$/.test(raw.trim())) {
-          return raw.trim();
-        }
-        return "??:??";
+    [[[
+      let value = states["time.b66_vremia_nachala_1"].state;
+      if (value == 'unknown') {
+        value = '??:??';
       }
-      const start_time = states["number.b66_ust_vremia_nachala_1"].state;
-      console.log(start_time);
-      const value = formatTime(String(parseInt(start_time) * 60))
-      return `
-        <span>${value}</span>`
+      return `<span>${value}</span>`
     ]]]
   duration_1: >
     [[[
@@ -132,22 +119,11 @@ custom_fields:
     ]]]
   period_1: >
     [[[
-      function formatTime(raw) {
-        const seconds = parseInt(raw, 10);
-        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
-          const h = Math.floor(seconds / 3600);
-          const m = Math.floor((seconds - h * 3600) / 60);
-          const s = seconds % 60;
-          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
-        if (typeof raw === "string" && /^\d{1,2}:\d{2}:\d{2}$/.test(raw.trim())) {
-          return raw.trim();
-        }
-        return "??:??";
+      let value = states["time.b66_period_1"].state;
+      if (value == 'unknown') {
+        value = '??:??';
       }
-      const value = formatTime(states["number.b66_ust_period_1"].state);
-      return `
-          <span>${value}</span>`
+      return `<span>${value}</span>`
     ]]]
   quantity_1: >
     [[[ 
@@ -159,24 +135,11 @@ custom_fields:
     ]]]
   start_time_2: >
     [[[ 
-      function formatTime(raw) {
-        const seconds = parseInt(raw, 10);
-        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
-          const h = Math.floor(seconds / 3600);
-          const m = Math.floor((seconds - h * 3600) / 60);
-          const s = seconds % 60;
-          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
-        if (typeof raw === "string" && /^\d{1,2}:\d{2}$/.test(raw.trim())) {
-          return raw.trim();
-        }
-        return "??:??";
+      let value = states["time.b66_vremia_nachala_2"].state;
+      if (value == 'unknown') {
+        value = '??:??';
       }
-      const start_time = states["number.b66_ust_vremia_nachala_2"].state;
-      console.log(start_time);
-      const value = formatTime(String(parseInt(start_time) * 60))
-      return `
-        <span>${value}</span>`
+      return `<span>${value}</span>`
     ]]]
   duration_2: >
     [[[
@@ -199,22 +162,11 @@ custom_fields:
     ]]]
   period_2: >
     [[[
-      function formatTime(raw) {
-        const seconds = parseInt(raw, 10);
-        if (!isNaN(seconds) && String(seconds) === raw.trim()) {
-          const h = Math.floor(seconds / 3600);
-          const m = Math.floor((seconds - h * 3600) / 60);
-          const s = seconds % 60;
-          return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-        }
-        if (typeof raw === "string" && /^\d{1,2}:\d{2}:\d{2}$/.test(raw.trim())) {
-          return raw.trim();
-        }
-        return "??:??";
+      let value = states["time.b66_period_2"].state;
+      if (value == 'unknown') {
+        value = '??:??';
       }
-      const value = formatTime(states["number.b66_ust_period_2"].state);
-      return `
-          <span>${value}</span>`
+      return `<span>${value}</span>`
     ]]]
   quantity_2: >
     [[[ 
