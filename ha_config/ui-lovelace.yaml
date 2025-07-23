@@ -34,6 +34,11 @@ views:
             entity: sensor.sh4_temperatura
             detail: 1
             name: Температура
+          - graph: line
+            type: sensor
+            entity: sensor.sh4_glubina
+            detail: 1
+            name: Глубина
         column_span: 1
     header:
       card:
