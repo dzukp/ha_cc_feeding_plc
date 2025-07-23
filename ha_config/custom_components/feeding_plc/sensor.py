@@ -48,9 +48,12 @@ class ModbusTimeSensor(ModbusSensor):
     @property
     def native_value(self):
         value = self.coordinator.data.get(self._address)
-        if value is not None:
+        if value is None:
+            return value
+        try:
             return datetime.time(hour=value // 3600, minute=(value % 3600) // 60, second=value % 60)
-        return value
+        except ValueError:
+            return None
 
 
 class ModbusBitMaskListSensor(ModbusSensor):

@@ -44,7 +44,10 @@ class PlcTimeModbusSensor(ModbusSensor):
         second = self.coordinator.data.get(self._address + 2)
         if None in (hour, minute, second):
             return None
-        return datetime.time(hour=hour, minute=minute, second=second)
+        try:
+            return datetime.time(hour=hour, minute=minute, second=second)
+        except ValueError:
+            return None
 
 
 def create_items(
