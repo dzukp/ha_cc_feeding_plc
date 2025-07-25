@@ -180,7 +180,7 @@ custom_fields:
         `${states['sensor.b11_proshlo_korm_1'].state} / ${states['number.b11_ust_kol_vo_kormlenii_1'].state}`
           .replaceAll('unknown', '&mdash;');
       return `
-        <ha-icon icon="mdi:food-apple" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+        <ha-icon icon="mdi:shaker" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
         <span">${value}</span>`
     ]]]
   feeding_2: >
@@ -189,7 +189,7 @@ custom_fields:
         `${states['sensor.b11_proshlo_korm_2'].state} / ${states['number.b11_ust_kol_vo_kormlenii_2'].state}`
           .replaceAll('unknown', '&mdash;');
       return `
-        <ha-icon icon="mdi:food-apple" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+        <ha-icon icon="mdi:shaker" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
         <span">${value}</span>`
     ]]]
   oxy_gen: >

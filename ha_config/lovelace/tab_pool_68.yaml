@@ -57,7 +57,7 @@ sections:
       - type: heading
         heading_style: title
         heading: Кормушка 1
-        icon: mdi:food-apple
+        icon: mdi:shaker
         badges: []
       - type: entities
         entities:
@@ -90,7 +90,7 @@ sections:
       - type: heading
         heading_style: title
         heading: Кормушка 2
-        icon: mdi:food-apple
+        icon: mdi:shaker
       - type: entities
         entities:
           - entity: sensor.b68_kormlenie_2

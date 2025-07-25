@@ -47,11 +47,10 @@ class UploadCsvCard extends HTMLElement {
       reader.onload = async (e) => {
         const csvText = e.target.result;
         try {
-          const response = await fetch("/api/pool/recipe_csv", {
+          const response = await this._hass.fetchWithAuth("/api/pool/recipe_csv", {
             method: "POST",
             headers: {
-              "Content-Type": "application/json",
-              "Authorization": `Bearer ${this._hass.auth.accessToken}`,
+              "Content-Type": "application/json"
             },
             body: JSON.stringify({ csv: csvText }),
           });
@@ -61,8 +60,9 @@ class UploadCsvCard extends HTMLElement {
             const success_cnt = resp_data.results.filter(item => !item.errors || item.errors.length === 0).length;
             const failed_cnt = resp_data.results.filter(item => item.errors && item.errors.length > 0).length;
             statusEl.textContent = `Загружено для ${success_cnt} кормушек(-ки). С ошибками ${failed_cnt} кормушек(-ки)`;
-          } else {
-            statusEl.textContent = "Ошибка загрузки данных";
+          }
+          else {
+            statusEl.textContent = `Ошибка загрузки данных ${response.status}`;
           }
         } catch (err) {
           statusEl.textContent = `Ошибка: ${err}`;
