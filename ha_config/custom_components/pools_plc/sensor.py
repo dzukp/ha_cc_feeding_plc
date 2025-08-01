@@ -58,7 +58,7 @@ def create_items(
     ]
     if extra_sensors:
         items.extend([
-            ModbusSensor(coordinator, device_id, f"Ш{plc_number} NH4", 9, unit='мг/л', ratio=0.1, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} NH4", 9, unit='мг/л', ratio=0.01, signed=True),
             ModbusSensor(coordinator, device_id, f"Ш{plc_number} pH", 10, unit='', ratio=0.01, signed=True),
             ModbusSensor(coordinator, device_id, f"Ш{plc_number} Кислород", 11, unit='мг/л', ratio=0.01, signed=True),
             ModbusSensor(coordinator, device_id, f"Ш{plc_number} Температура", 12, unit='°C', ratio=0.01, signed=True),
