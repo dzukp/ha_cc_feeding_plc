@@ -172,3 +172,14 @@ recorder:
       - sensor.b*_sled_korm_1
       - sensor.b*_sled_korm_2
       - sensor.sh*_vremia
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_token
+    allowed_chat_ids:
+      - !secret telegram_chat_id
+
+notify:
+  - name: telegram
+    platform: telegram
+    chat_id: !secret telegram_chat_id

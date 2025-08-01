@@ -42,6 +42,29 @@ sections:
             icon: mdi:pipe-valve
         columns: 4
         state_color: true
+      - type: entities
+        entities:
+        - entity: binary_sensor.b66_avariia_vysokaia_temperatura
+          name: Высокая температура
+          secondary_info: last-changed
+        - entity: binary_sensor.b66_avariia_nizkaia_temperatura
+          name: Низкая температура
+          secondary_info: last-changed
+        - entity: binary_sensor.b66_avariia_vysokii_kislorod
+          name: Высокий кислород
+          secondary_info: last-changed
+        - entity: binary_sensor.b66_avariia_nizkii_kislorod
+          name: Низкий кислород
+          secondary_info: last-changed
+        - entity: binary_sensor.b66_avariia_datchika_ksiloroda
+          name: Ошибка датчика кислорода
+          secondary_info: last-changed
+        - entity: binary_sensor.b66_avariia_kormushka_1
+          name: Не включилась кормушка 1
+          secondary_info: last-changed
+        - entity: binary_sensor.b66_avariia_kormushka_2
+          name: Не включилась кормушка 2
+          secondary_info: last-changed
       - type: tile
         entity: sensor.b66_avariia
         features_position: bottom
