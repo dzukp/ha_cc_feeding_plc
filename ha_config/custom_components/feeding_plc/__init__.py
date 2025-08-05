@@ -37,7 +37,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
             "coordinator": client.coordinator,
         }
 
-        for platform in ["sensor", "number", "binary_sensor", "time"]:
+        for platform in ["sensor", "number", "binary_sensor", "time", "switch"]:
             hass.async_create_task(
                 async_load_platform(
                     hass, platform, DOMAIN,
@@ -69,7 +69,7 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
 
     await hass.config_entries.async_forward_entry_setups(
         entry,
-        ["sensor", "number", "binary_sensor", "time"]
+        ["sensor", "number", "binary_sensor", "time", "switch"]
     )
 
     return True

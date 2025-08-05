@@ -42,29 +42,6 @@ sections:
             icon: mdi:pipe-valve
         columns: 4
         state_color: true
-      - type: entities
-        entities:
-        - entity: binary_sensor.b58_avariia_vysokaia_temperatura
-          name: Высокая температура
-          secondary_info: last-changed
-        - entity: binary_sensor.b58_avariia_nizkaia_temperatura
-          name: Низкая температура
-          secondary_info: last-changed
-        - entity: binary_sensor.b58_avariia_vysokii_kislorod
-          name: Высокий кислород
-          secondary_info: last-changed
-        - entity: binary_sensor.b58_avariia_nizkii_kislorod
-          name: Низкий кислород
-          secondary_info: last-changed
-        - entity: binary_sensor.b58_avariia_datchika_ksiloroda
-          name: Ошибка датчика кислорода
-          secondary_info: last-changed
-        - entity: binary_sensor.b58_avariia_kormushka_1
-          name: Не включилась кормушка 1
-          secondary_info: last-changed
-        - entity: binary_sensor.b58_avariia_kormushka_2
-          name: Не включилась кормушка 2
-          secondary_info: last-changed
       - type: tile
         entity: sensor.b58_avariia
         features_position: bottom
@@ -75,6 +52,18 @@ sections:
         grid_options:
           columns: 12
           rows: 2
+      - type: heading
+        heading_style: title
+        heading: Шкаф
+        icon: mdi:file-cabinet
+      - type: entities
+        entities:
+          - entity: sensor.sh12_vremia
+            icon: mdi:clock-time-nine
+            name: Время
+          - entity: binary_sensor.sh12_pitanie
+            icon: mdi:power
+            name: Питание
   - type: grid
     cards:
       - type: heading
@@ -144,16 +133,47 @@ sections:
     cards:
       - type: heading
         heading_style: title
-        heading: Шкаф
-        icon: mdi:file-cabinet
+        heading: Аварии
+        icon: mdi:alarm-light
       - type: entities
         entities:
-          - entity: sensor.sh12_vremia
-            icon: mdi:clock-time-nine
-            name: Время
-          - entity: binary_sensor.sh12_pitanie
-            icon: mdi:power
-            name: Питание
+          - entity: binary_sensor.b58_avariia_vysokaia_temperatura
+            name: Высокая температура
+            secondary_info: last-changed
+          - entity: binary_sensor.b58_avariia_nizkaia_temperatura
+            name: Низкая температура
+            secondary_info: last-changed
+          - entity: binary_sensor.b58_avariia_vysokii_kislorod
+            name: Высокий кислород
+            secondary_info: last-changed
+          - entity: binary_sensor.b58_avariia_nizkii_kislorod
+            name: Низкий кислород
+            secondary_info: last-changed
+          - entity: binary_sensor.b58_avariia_datchika_ksiloroda
+            name: Ошибка датчика кислорода
+            secondary_info: last-changed
+          - entity: binary_sensor.b58_avariia_kormushka_1
+            name: Не включилась кормушка 1
+            secondary_info: last-changed
+          - entity: binary_sensor.b58_avariia_kormushka_2
+            name: Не включилась кормушка 2
+            secondary_info: last-changed
+      - type: heading
+        heading_style: title
+        heading: Игнорирование аварий
+        icon: mdi:toggle-switch-variant
+      - type: entities
+        entities:
+          - entity: switch.b58_ignor_avarii_temperatury
+            name: Температура
+          - entity: switch.b58_ignor_avarii_kisloroda
+            name: Кислород
+          - entity: switch.b58_ignor_avarii_oksigeneratora
+            name: Оксигенератор
+          - entity: switch.b58_ignor_avarii_kormushki_1
+            name: Кормушка 1
+          - entity: switch.b58_ignor_avarii_kormushki_2
+            name: Кормушка 2
 header:
   card:
     type: markdown
