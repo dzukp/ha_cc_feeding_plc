@@ -152,6 +152,9 @@ sections:
           - entity: binary_sensor.b18_avariia_datchika_ksiloroda
             name: Ошибка датчика кислорода
             secondary_info: last-changed
+          - entity: binary_sensor.b18_avariia_oksigeneratora
+            name: Отключен оксигенератор
+            secondary_info: last-changed
           - entity: binary_sensor.b18_avariia_kormushka_1
             name: Не включилась кормушка 1
             secondary_info: last-changed
