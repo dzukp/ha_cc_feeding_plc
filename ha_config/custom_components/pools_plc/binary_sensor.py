@@ -35,7 +35,7 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
 
 
 def create_items(
-        coordinator: DataUpdateCoordinator, device_id: str, client, plc_number: int
+    coordinator: DataUpdateCoordinator, device_id: str, client, plc_number: int
 ):
     return [
         ModbusBinarySensor(coordinator, device_id, client, f"Ш{plc_number} Питание",9, 0),

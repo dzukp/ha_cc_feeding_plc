@@ -442,3 +442,54 @@
         {{ pool_num }}.🫧🫧 Кислород {{ states(sensor) }}мг/л > {{ states(limit_sensor)
         }}мг/л'
   mode: queued
+- alias: Notify Telegram on no connect
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.sh1_pitanie
+        - binary_sensor.sh2_pitanie
+        - binary_sensor.sh3_pitanie
+        - binary_sensor.sh4_pitanie
+        - binary_sensor.sh5_pitanie
+        - binary_sensor.sh11_pitanie
+        - binary_sensor.sh12_pitanie
+        - binary_sensor.sh13_pitanie
+        - binary_sensor.sh14_pitanie
+        - binary_sensor.sh15_pitanie
+      to:
+        - 'unknown'
+        - 'unavailable'
+  action:
+    - service: notify.telegram
+      data:
+        message: >
+          {% set num = trigger.entity_id.split(".")[1][2:4].rstrip('_') | int %}
+          ‼️ ПЛК {{ num }}. ⛓️‍💥 Нет связи
+  mode: queued
+- alias: Notify Telegram on no connect repeat
+  trigger:
+    - platform: time_pattern
+      minutes: "0"
+  condition:
+    - condition: state
+      entity_id:
+        - binary_sensor.sh1_pitanie
+        - binary_sensor.sh2_pitanie
+        - binary_sensor.sh3_pitanie
+        - binary_sensor.sh4_pitanie
+        - binary_sensor.sh5_pitanie
+        - binary_sensor.sh11_pitanie
+        - binary_sensor.sh12_pitanie
+        - binary_sensor.sh13_pitanie
+        - binary_sensor.sh14_pitanie
+        - binary_sensor.sh15_pitanie
+      state:
+        - 'unknown'
+        - 'unavailable'
+  action:
+    - service: notify.telegram
+      data:
+        message: >
+          {% set num = trigger.entity_id.split(".")[1][2:4].rstrip('_') | int %}
+          ⏰ Напоминание! ‼️ ПЛК {{ num }}. ⛓️‍💥 Нет связи
+  mode: queued
