@@ -24,6 +24,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
         host = device_conf["host"]
         pool_number = device_conf["number"]
         pool_plc_index = device_conf["pool_plc_index"]
+        fry = device_conf.get("fry", False)
 
         client = PLCModbusClient(hass, host)
         client.setup_coordinator()
@@ -34,7 +35,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
 
         hass.data[DOMAIN][device_id] = {
             "client": client,
-            "coordinator": client.coordinator,
+            "coordinator": client.coordinator
         }
 
         for platform in ["sensor", "number", "binary_sensor", "time", "switch"]:
@@ -44,7 +45,8 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
                     {
                         "device_id": device_id,
                         "pool_number": pool_number,
-                        "pool_plc_index": pool_plc_index
+                        "pool_plc_index": pool_plc_index,
+                        "fry": fry
                     },
                     config,
                 )

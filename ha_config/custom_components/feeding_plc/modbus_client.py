@@ -26,13 +26,13 @@ class PLCModbusClient:
         async def _update():
             all_data = {}
             try:
-                for start, count in ((0, 120), (120, 120), (240, 120)):
+                for start, count in ((0, 120), (120, 120), (240, 120), (360, 120)):
                     data = self.read_all(start, count)
                     if data:
                         all_data.update(data)
             except ConnectionException:
                 logger.error(f'ConnectionException {self._host}')
-                self._cache = {i: None for i in range(1, 299)}
+                self._cache = {i: None for i in range(1, 480)}
                 return {}
             return all_data
 

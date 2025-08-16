@@ -39,9 +39,11 @@ async def async_setup_platform(hass, config, async_add_entities, discovery_info=
     device_id = discovery_info["device_id"]
     pool_plc_index = discovery_info["pool_plc_index"]
     pool_number = discovery_info["pool_number"]
+    fry = discovery_info['fry']
     data = hass.data[DOMAIN][device_id]
     coordinator = data["coordinator"]
-    address_offset = 214 + (pool_plc_index - 1) * 20
+    start_address = 254 if fry else 214
+    address_offset = start_address + (pool_plc_index - 1) * 20
     client = data["client"]
     switches = create_items(
         coordinator=coordinator, device_id=device_id, pool_number=pool_number, client=client,

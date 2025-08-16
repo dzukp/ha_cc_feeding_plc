@@ -21,6 +21,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
         host = device_conf["host"]
         plc_number = device_conf["number"]
         extra_sensors = device_conf.get("extra_sensors", False)
+        fry = device_conf.get("fry", False)
 
         client = PLCModbusClient(hass, host)
         client.setup_coordinator()
@@ -41,7 +42,8 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
                     {
                         "device_id": device_id,
                         "plc_number": plc_number,
-                        "extra_sensors": extra_sensors
+                        "extra_sensors": extra_sensors,
+                        "fry": fry
                     },
                     config,
                 )
