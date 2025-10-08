@@ -1,0 +1,35 @@
+title: Датчики
+sections:
+  - type: grid
+    cards:
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_ph
+        detail: 1
+        name: pH
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_nh4
+        detail: 1
+        name: NH4
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_kislorod
+        detail: 1
+        name: Кислород
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_temperatura
+        detail: 1
+        name: Температура
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_glubina
+        detail: 1
+        name: Глубина
+    column_span: 1
+header:
+  card:
+    type: markdown
+    content: '# Датчики'
+    text_only: true

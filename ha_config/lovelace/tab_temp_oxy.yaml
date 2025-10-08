@@ -4,194 +4,314 @@ sections:
     cards:
       - type: heading
         heading: Шкаф №1 (Бассейны 1-5)
-      - type: entities
-        entities:
-          - entity: number.sh1_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh1_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh1_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh1_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh1_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh1_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh1_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh1_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh1_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh1_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh1_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh1_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh1_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh1_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh1_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh1_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh1_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh1_niz_limit_temperatury').replace('unknown', '-') }} |
   - type: grid
     cards:
       - type: heading
         heading: Шкаф №2 (Бассейны 6-10)
-      - type: entities
-        entities:
-          - entity: number.sh2_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh2_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh2_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh2_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh2_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh2_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh2_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh2_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh2_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh2_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh2_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh2_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh2_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh2_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh2_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh2_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh2_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh2_niz_limit_temperatury').replace('unknown', '-') }} |
   - type: grid
     cards:
       - type: heading
         heading: Шкаф №3 (Бассейны 11-15)
-      - type: entities
-        entities:
-          - entity: number.sh3_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh3_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh3_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh3_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh3_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh3_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh3_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh3_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh3_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh3_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh3_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh3_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh3_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh3_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh3_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh3_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh3_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh3_niz_limit_temperatury').replace('unknown', '-') }} |
   - type: grid
     cards:
       - type: heading
         heading: Шкаф №4 (Бассейны 16-20)
-      - type: entities
-        entities:
-          - entity: number.sh4_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh4_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh4_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh4_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh4_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh4_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh4_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh4_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh4_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh4_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh4_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh4_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh4_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh4_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh4_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh4_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh4_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh4_niz_limit_temperatury').replace('unknown', '-') }} |
   - type: grid
     cards:
       - type: heading
         heading: Шкаф №11 (Бассейны 51-55)
-      - type: entities
-        entities:
-          - entity: number.sh11_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh11_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh11_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh11_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh11_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh11_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh11_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh11_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh11_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh11_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh11_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh11_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh11_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh11_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh11_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh11_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh11_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh11_niz_limit_temperatury').replace('unknown', '-') }} |
   - type: grid
     cards:
       - type: heading
         heading: Шкаф №12 (Бассейны 56-60)
-      - type: entities
-        entities:
-          - entity: number.sh12_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh12_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh12_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh12_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh12_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh12_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh12_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh12_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh12_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh12_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh12_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh12_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh12_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh12_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh12_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh12_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh12_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh12_niz_limit_temperatury').replace('unknown', '-') }} |
   - type: grid
     cards:
       - type: heading
         heading: Шкаф №13 (Бассейны 61-66)
-      - type: entities
-        entities:
-          - entity: number.sh13_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh13_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh13_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh13_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh13_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh13_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh13_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh13_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh13_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh13_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh13_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh13_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh13_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh13_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh13_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh13_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh13_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh13_niz_limit_temperatury').replace('unknown', '-') }} |
   - type: grid
     cards:
       - type: heading
         heading: Шкаф №14 (Бассейны 66-70)
-      - type: entities
-        entities:
-          - entity: number.sh14_verkh_limit_kisloroda
-            name: Верхний предел O₂
-            mode: box
-          - entity: number.sh14_niz_limit_kisloroda
-            name: Нижний предел O₂
-            mode: box
-          - entity: number.sh14_otkl_kisloroda
-            name: Отключение подачи O₂
-            mode: box
-          - entity: number.sh14_vkl_kisloroda
-            name: Включение подачи O₂
-            mode: box
-          - entity: number.sh14_verkh_limit_temperatury
-            name: Верхний предел T°
-            mode: box
-          - entity: number.sh14_niz_limit_temperatury
-            name: Нижний предел T°
-            mode: box
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: number.sh14_verkh_limit_kisloroda
+                name: Верхний предел O₂
+                mode: box
+              - entity: number.sh14_niz_limit_kisloroda
+                name: Нижний предел O₂
+                mode: box
+              - entity: number.sh14_otkl_kisloroda
+                name: Отключение подачи O₂
+                mode: box
+              - entity: number.sh14_vkl_kisloroda
+                name: Включение подачи O₂
+                mode: box
+              - entity: number.sh14_verkh_limit_temperatury
+                name: Верхний предел T°
+                mode: box
+              - entity: number.sh14_niz_limit_temperatury
+                name: Нижний предел T°
+                mode: box
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Верхний предел O₂** | {{ states('number.sh14_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh14_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh14_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh14_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh14_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh14_niz_limit_temperatury').replace('unknown', '-') }} |
 header:
   card:
     type: markdown

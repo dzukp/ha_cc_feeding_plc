@@ -102,10 +102,11 @@ def create_items(
         coordinator: DataUpdateCoordinator, device_id: str, plc_feeding_number: int, address_offset: int
 ) -> list[SensorEntity]:
     feeding_state_map = {
-        0: "Ожидание начала",
+        0: "Отключено",
         1: "Ожидание следующего",
         2: "Кормление",
         3: "Закончено",
+        4: "Пауза",
     }
 
     error_bitmask = {
@@ -126,6 +127,10 @@ def create_items(
         ),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кислород", address_offset + 16, "мг/л",
+            ratio=0.01, signed=True
+        ),
+        ModbusSensor(
+            coordinator, device_id, f"Б{plc_feeding_number:02} Кислород средн", address_offset + 18, "мг/л",
             ratio=0.01, signed=True
         ),
         ModbusSensor(
