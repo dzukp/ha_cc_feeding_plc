@@ -27,6 +27,31 @@ sections:
         entity: sensor.sh4_glubina
         detail: 1
         name: Глубина
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_ph_2
+        detail: 1
+        name: pH
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_nh4_2
+        detail: 1
+        name: NH4
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_kislorod_2
+        detail: 1
+        name: Кислород
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_temperatura_2
+        detail: 1
+        name: Температура
+      - graph: line
+        type: sensor
+        entity: sensor.sh4_glubina_2
+        detail: 1
+        name: Глубина
     column_span: 1
 header:
   card:
