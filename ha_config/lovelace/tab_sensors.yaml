@@ -2,56 +2,76 @@ title: Датчики
 sections:
   - type: grid
     cards:
+      - type: heading
+        heading_style: title
+        heading: Входной канал Карджин
+        icon: mdi:import
       - graph: line
         type: sensor
         entity: sensor.sh4_ph
         detail: 1
         name: pH
+        icon: mdi:ph
       - graph: line
         type: sensor
         entity: sensor.sh4_nh4
         detail: 1
         name: NH4
+        icon: mdi:radioactive
       - graph: line
         type: sensor
         entity: sensor.sh4_kislorod
         detail: 1
         name: Кислород
+        icon: mdi:chart-bubble
       - graph: line
         type: sensor
         entity: sensor.sh4_temperatura
         detail: 1
         name: Температура
+        icon: mdi:thermometer-water
       - graph: line
         type: sensor
         entity: sensor.sh4_glubina
         detail: 1
         name: Глубина
+        icon: mdi:waves-arrow-up
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Выходной канал Карджин
+        icon: mdi:export
       - graph: line
         type: sensor
         entity: sensor.sh4_ph_2
         detail: 1
         name: pH
+        icon: mdi:ph
       - graph: line
         type: sensor
         entity: sensor.sh4_nh4_2
         detail: 1
         name: NH4
+        icon: mdi:radioactive
       - graph: line
         type: sensor
         entity: sensor.sh4_kislorod_2
         detail: 1
         name: Кислород
+        icon: mdi:chart-bubble
       - graph: line
         type: sensor
         entity: sensor.sh4_temperatura_2
         detail: 1
         name: Температура
+        icon: mdi:thermometer-water
       - graph: line
         type: sensor
         entity: sensor.sh4_glubina_2
         detail: 1
         name: Глубина
+        icon: mdi:waves-arrow-up
     column_span: 1
 header:
   card:
