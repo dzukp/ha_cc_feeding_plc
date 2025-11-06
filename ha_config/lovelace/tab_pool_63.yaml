@@ -85,18 +85,31 @@ sections:
             name: Состояние кормушки
           - entity: binary_sensor.b63_korm_1_pusk
             name: Пуск кормушки
-      - type: entities
-        entities:
-          - entity: time.b63_vremia_nachala_1
-            name: Начало кормления
-          - entity: time.b63_period_1
-            name: Периодичность
-          - entity: number.b63_ust_kol_vo_kormlenii_1
-            name: Кол-во
-            icon: mdi:counter
-          - entity: number.b63_ust_dlitelnost_1
-            name: Длительность, сек
-            icon: mdi:timer
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.b63_vremia_nachala_1
+                name: Начало кормления
+              - entity: time.b63_period_1
+                name: Периодичность
+              - entity: number.b63_ust_kol_vo_kormlenii_1
+                name: Кол-во
+                icon: mdi:counter
+              - entity: number.b63_ust_dlitelnost_1
+                name: Длительность, сек
+                icon: mdi:timer
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Начало кормления** | {{ states('time.b63_vremia_nachala_1').replace('unknown', '-') }} |
+              | **Периодичность** | {{ states('time.b63_period_1').replace('unknown', '-') }} |
+              | **Кол-во** | {{ states('number.b63_ust_kol_vo_kormlenii_1').replace('unknown', '-') }} |
+              | **Длительность** | {{ states('number.b63_ust_dlitelnost_1').replace('unknown', '-') }} сек |
   - type: grid
     cards:
       - type: heading
@@ -117,18 +130,31 @@ sections:
             name: Состояние кормушки
           - entity: binary_sensor.b63_korm_2_pusk
             name: Пуск кормушки
-      - type: entities
-        entities:
-          - entity: time.b63_vremia_nachala_2
-            name: Начало кормления
-          - entity: time.b63_period_2
-            name: Периодичность
-          - entity: number.b63_ust_kol_vo_kormlenii_2
-            name: Кол-во
-            icon: mdi:counter
-          - entity: number.b63_ust_dlitelnost_2
-            name: Длительность, сек
-            icon: mdi:timer
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.b63_vremia_nachala_2
+                name: Начало кормления
+              - entity: time.b63_period_2
+                name: Периодичность
+              - entity: number.b63_ust_kol_vo_kormlenii_2
+                name: Кол-во
+                icon: mdi:counter
+              - entity: number.b63_ust_dlitelnost_2
+                name: Длительность, сек
+                icon: mdi:timer
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Начало кормления** | {{ states('time.b63_vremia_nachala_2').replace('unknown', '-') }} |
+              | **Периодичность** | {{ states('time.b63_period_2').replace('unknown', '-') }} |
+              | **Кол-во** | {{ states('number.b63_ust_kol_vo_kormlenii_2').replace('unknown', '-') }} |
+              | **Длительность** | {{ states('number.b63_ust_dlitelnost_2').replace('unknown', '-') }} сек |
   - type: grid
     cards:
       - type: heading
@@ -165,18 +191,34 @@ sections:
         heading_style: title
         heading: Игнорирование аварий
         icon: mdi:toggle-switch-variant
-      - type: entities
-        entities:
-          - entity: switch.b63_ignor_avarii_temperatury
-            name: Температура
-          - entity: switch.b63_ignor_avarii_kisloroda
-            name: Кислород
-          - entity: switch.b63_ignor_avarii_oksigeneratora
-            name: Оксигенератор
-          - entity: switch.b63_ignor_avarii_kormushki_1
-            name: Кормушка 1
-          - entity: switch.b63_ignor_avarii_kormushki_2
-            name: Кормушка 2
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: switch.b63_ignor_avarii_temperatury
+                name: Температура
+              - entity: switch.b63_ignor_avarii_kisloroda
+                name: Кислород
+              - entity: switch.b63_ignor_avarii_oksigeneratora
+                name: Оксигенератор
+              - entity: switch.b63_ignor_avarii_kormushki_1
+                name: Кормушка 1
+              - entity: switch.b63_ignor_avarii_kormushki_2
+                name: Кормушка 2
+          user:
+            type: markdown
+            content: |
+              |   |   |
+              |-----------|-----------|
+              | **Температура** | {{ states('switch.b63_ignor_avarii_temperatury') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Кислород** | {{ states('switch.b63_ignor_avarii_kisloroda') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Оксигенератор** | {{ states('switch.b63_ignor_avarii_oksigeneratora') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Кормушка 1** | {{ states('switch.b63_ignor_avarii_kormushki_1') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Кормушка 2** | {{ states('switch.b63_ignor_avarii_kormushki_2') | replace('on', '✔️') | replace('off', '✖️') }} |
+
+
 header:
   card:
     type: markdown

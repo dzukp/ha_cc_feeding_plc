@@ -63,5 +63,10 @@ def create_items(
             ModbusSensor(coordinator, device_id, f"Ш{plc_number} Кислород", 11, unit='мг/л', ratio=0.01, signed=True),
             ModbusSensor(coordinator, device_id, f"Ш{plc_number} Температура", 12, unit='°C', ratio=0.01, signed=True),
             ModbusSensor(coordinator, device_id, f"Ш{plc_number} Глубина", 13, unit='мм', signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} NH4 2", 14, unit='мг/л', ratio=0.01, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} pH 2", 15, unit='', ratio=0.01, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} Кислород 2", 16, unit='мг/л', ratio=0.01, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} Температура 2", 17, unit='°C', ratio=0.01, signed=True),
+            ModbusSensor(coordinator, device_id, f"Ш{plc_number} Глубина 2", 18, unit='мм', signed=True),
         ])
     return items

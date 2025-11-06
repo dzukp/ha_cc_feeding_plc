@@ -24,6 +24,8 @@ lovelace:
     type: module
   - url: /local/button-card.js
     type: module
+  - url: /local/state-switch.js
+    type: module
 
 feeding_plc:
   - host: 192.168.14.20
