@@ -1,0 +1,68 @@
+title: Б 1-20 (корм)
+sections:
+  - type: grid
+    cards:
+      - !include cards/feeding_1.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_2.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_3.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_4.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_5.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_6.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_7.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_8.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_9.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_10.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_11.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_12.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_13.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_14.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_15.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_16.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_17.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_18.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_19.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_20.yaml
+header:
+  card:
+    type: markdown
+    content: '## Бассейны 1-20'
+    text_only: true
+
