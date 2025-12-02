@@ -4,33 +4,35 @@ class UploadCsvCard extends HTMLElement {
   }
 
   setConfig(config) {
-    this.config = config;
-    this.innerHTML = `
-      <ha-card header="Загрузка расписания кормления">
-        <div class="card-content">
-          <p>Выберите CSV-файл и нажмите "Загрузить"</p>
-          <input type="file" id="csvFile" accept=".csv" hidden />
-          <mwc-button raised label="Открыть" id="openFileBtn"></mwc-button>
-          <mwc-button raised label="Загрузить" id="uploadBtn"></mwc-button>
-          <div id="status"></div>
-        </div>
-      </ha-card>
+    const root = this.attachShadow({ mode: "open" });
+
+    const card = document.createElement("ha-card");
+    card.header = "Загрузка расписания кормления";
+
+    const content = document.createElement("div");
+    content.className = "card-content";
+
+    content.innerHTML = `
+      <p>Выберите CSV-файл и нажмите "Загрузить"</p>
+      <input type="file" id="csvFile" accept=".csv" hidden />
+      <div id="status"></div>
       <style>
-        ha-card {
-          max-width: 500px;
-          margin: auto;
-        }
-        .card-content {
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
-        #status {
-          font-size: 14px;
-          color: var(--primary-text-color);
-        }
+        .card-content { display: flex; flex-direction: column; gap: 16px; }
       </style>
     `;
+
+    const btnOpen = document.createElement("mwc-button");
+    btnOpen.setAttribute("raised", "");
+    btnOpen.label = "Открыть";
+
+    const btnUpload = document.createElement("mwc-button");
+    btnUpload.setAttribute("raised", "");
+    btnUpload.label = "Загрузить";
+
+    content.appendChild(btnOpen);
+    content.appendChild(btnUpload);
+    card.appendChild(content);
+    root.appendChild(card);
 
     this.querySelector("#uploadBtn").addEventListener("click", async () => {
       const fileInput = this.querySelector("#csvFile");
