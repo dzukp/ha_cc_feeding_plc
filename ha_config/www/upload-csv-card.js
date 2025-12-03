@@ -10,8 +10,8 @@ class UploadCsvCard extends HTMLElement {
         <div class="card-content">
           <p>Выберите CSV-файл и нажмите "Загрузить"</p>
           <input type="file" id="csvFile" accept=".csv" hidden />
-          <mwc-button raised label="Открыть" id="openFileBtn"></mwc-button>
-          <mwc-button raised label="Загрузить" id="uploadBtn"></mwc-button>
+          <ha-button raised id="openFileBtn">Открыть</ha-button>
+          <ha-button raised id="uploadBtn">Загрузить</ha-button>
           <div id="status"></div>
         </div>
       </ha-card>
