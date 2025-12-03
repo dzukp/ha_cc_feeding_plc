@@ -3,7 +3,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Шкаф №1 (Бассейны 1-5)
+        heading: Шкаф №1 (Бассейны 1-10)
       - type: custom:state-switch
         entity: group
         states:
@@ -42,7 +42,7 @@ sections:
   - type: grid
     cards:
       - type: heading
-        heading: Шкаф №2 (Бассейны 6-10)
+        heading: Шкаф №2 (Бассейны 11-20)
       - type: custom:state-switch
         entity: group
         states:
