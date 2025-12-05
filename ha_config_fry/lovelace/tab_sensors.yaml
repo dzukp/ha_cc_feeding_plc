@@ -4,20 +4,8 @@ sections:
     cards:
       - type: heading
         heading_style: title
-        heading: Входной канал Карджин
+        heading: Вход в инкубатор МК Карджин
         icon: mdi:import
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_ph
-        detail: 1
-        name: pH
-        icon: mdi:ph
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_nh4
-        detail: 1
-        name: NH4
-        icon: mdi:radioactive
       - graph: line
         type: sensor
         entity: sensor.sh2_kislorod
@@ -30,49 +18,6 @@ sections:
         detail: 1
         name: Температура
         icon: mdi:thermometer-water
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_glubina
-        detail: 1
-        name: Глубина
-        icon: mdi:waves-arrow-up
-  - type: grid
-    cards:
-      - type: heading
-        heading_style: title
-        heading: Выходной канал Карджин
-        icon: mdi:export
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_ph_2
-        detail: 1
-        name: pH
-        icon: mdi:ph
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_nh4_2
-        detail: 1
-        name: NH4
-        icon: mdi:radioactive
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_kislorod_2
-        detail: 1
-        name: Кислород
-        icon: mdi:chart-bubble
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_temperatura_2
-        detail: 1
-        name: Температура
-        icon: mdi:thermometer-water
-      - graph: line
-        type: sensor
-        entity: sensor.sh2_glubina_2
-        detail: 1
-        name: Глубина
-        icon: mdi:waves-arrow-up
-    column_span: 1
 header:
   card:
     type: markdown
