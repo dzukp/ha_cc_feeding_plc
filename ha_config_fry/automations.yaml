@@ -1,0 +1,217 @@
+- alias: Notify Telegram on alarm avariia_datchika_ksiloroda
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_datchika_ksiloroda
+    - binary_sensor.b02_avariia_datchika_ksiloroda
+    - binary_sensor.b03_avariia_datchika_ksiloroda
+    - binary_sensor.b04_avariia_datchika_ksiloroda
+    - binary_sensor.b05_avariia_datchika_ksiloroda
+    - binary_sensor.b06_avariia_datchika_ksiloroda
+    - binary_sensor.b07_avariia_datchika_ksiloroda
+    - binary_sensor.b08_avariia_datchika_ksiloroda
+    - binary_sensor.b09_avariia_datchika_ksiloroda
+    - binary_sensor.b10_avariia_datchika_ksiloroda
+    - binary_sensor.b11_avariia_datchika_ksiloroda
+    - binary_sensor.b12_avariia_datchika_ksiloroda
+    - binary_sensor.b13_avariia_datchika_ksiloroda
+    - binary_sensor.b14_avariia_datchika_ksiloroda
+    - binary_sensor.b15_avariia_datchika_ksiloroda
+    - binary_sensor.b16_avariia_datchika_ksiloroda
+    - binary_sensor.b17_avariia_datchika_ksiloroda
+    - binary_sensor.b18_avariia_datchika_ksiloroda
+    - binary_sensor.b19_avariia_datchika_ksiloroda
+    - binary_sensor.b20_avariia_datchika_ksiloroda
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}‼️
+        Бассейн {{ pool_num }}. 🫧🌡 Ошибка датчика кислорода'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_nizkaia_temperatura
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_nizkaia_temperatura
+    - binary_sensor.b02_avariia_nizkaia_temperatura
+    - binary_sensor.b03_avariia_nizkaia_temperatura
+    - binary_sensor.b04_avariia_nizkaia_temperatura
+    - binary_sensor.b05_avariia_nizkaia_temperatura
+    - binary_sensor.b06_avariia_nizkaia_temperatura
+    - binary_sensor.b07_avariia_nizkaia_temperatura
+    - binary_sensor.b08_avariia_nizkaia_temperatura
+    - binary_sensor.b09_avariia_nizkaia_temperatura
+    - binary_sensor.b10_avariia_nizkaia_temperatura
+    - binary_sensor.b11_avariia_nizkaia_temperatura
+    - binary_sensor.b12_avariia_nizkaia_temperatura
+    - binary_sensor.b13_avariia_nizkaia_temperatura
+    - binary_sensor.b14_avariia_nizkaia_temperatura
+    - binary_sensor.b15_avariia_nizkaia_temperatura
+    - binary_sensor.b16_avariia_nizkaia_temperatura
+    - binary_sensor.b17_avariia_nizkaia_temperatura
+    - binary_sensor.b18_avariia_nizkaia_temperatura
+    - binary_sensor.b19_avariia_nizkaia_temperatura
+    - binary_sensor.b20_avariia_nizkaia_temperatura
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 10 + 1) ~ "_niz_limit_temperatury"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_temperatura" %}‼️
+        Бассейн {{ pool_num }}.🌡 Температура {{ states(sensor) }}°C < {{ states(limit_sensor)
+        }}°C'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_vysokaia_temperatura
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_vysokaia_temperatura
+    - binary_sensor.b02_avariia_vysokaia_temperatura
+    - binary_sensor.b03_avariia_vysokaia_temperatura
+    - binary_sensor.b04_avariia_vysokaia_temperatura
+    - binary_sensor.b05_avariia_vysokaia_temperatura
+    - binary_sensor.b06_avariia_vysokaia_temperatura
+    - binary_sensor.b07_avariia_vysokaia_temperatura
+    - binary_sensor.b08_avariia_vysokaia_temperatura
+    - binary_sensor.b09_avariia_vysokaia_temperatura
+    - binary_sensor.b10_avariia_vysokaia_temperatura
+    - binary_sensor.b11_avariia_vysokaia_temperatura
+    - binary_sensor.b12_avariia_vysokaia_temperatura
+    - binary_sensor.b13_avariia_vysokaia_temperatura
+    - binary_sensor.b14_avariia_vysokaia_temperatura
+    - binary_sensor.b15_avariia_vysokaia_temperatura
+    - binary_sensor.b16_avariia_vysokaia_temperatura
+    - binary_sensor.b17_avariia_vysokaia_temperatura
+    - binary_sensor.b18_avariia_vysokaia_temperatura
+    - binary_sensor.b19_avariia_vysokaia_temperatura
+    - binary_sensor.b20_avariia_vysokaia_temperatura
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 10 + 1) ~ "_verkh_limit_temperatury"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_temperatura" %}‼️
+        Бассейн {{ pool_num }}.🌡🌡 Температура {{ states(sensor) }}°C > {{ states(limit_sensor)
+        }}°C'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_nizkii_kislorod
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_nizkii_kislorod
+    - binary_sensor.b02_avariia_nizkii_kislorod
+    - binary_sensor.b03_avariia_nizkii_kislorod
+    - binary_sensor.b04_avariia_nizkii_kislorod
+    - binary_sensor.b05_avariia_nizkii_kislorod
+    - binary_sensor.b06_avariia_nizkii_kislorod
+    - binary_sensor.b07_avariia_nizkii_kislorod
+    - binary_sensor.b08_avariia_nizkii_kislorod
+    - binary_sensor.b09_avariia_nizkii_kislorod
+    - binary_sensor.b10_avariia_nizkii_kislorod
+    - binary_sensor.b11_avariia_nizkii_kislorod
+    - binary_sensor.b12_avariia_nizkii_kislorod
+    - binary_sensor.b13_avariia_nizkii_kislorod
+    - binary_sensor.b14_avariia_nizkii_kislorod
+    - binary_sensor.b15_avariia_nizkii_kislorod
+    - binary_sensor.b16_avariia_nizkii_kislorod
+    - binary_sensor.b17_avariia_nizkii_kislorod
+    - binary_sensor.b18_avariia_nizkii_kislorod
+    - binary_sensor.b19_avariia_nizkii_kislorod
+    - binary_sensor.b20_avariia_nizkii_kislorod
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 10 + 1) ~ "_niz_limit_kisloroda"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_kislorod" %}‼️ Бассейн
+        {{ pool_num }}.🫧 Кислород {{ states(sensor) }}мг/л < {{ states(limit_sensor)
+        }}мг/л'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_vysokii_kislorod
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_vysokii_kislorod
+    - binary_sensor.b02_avariia_vysokii_kislorod
+    - binary_sensor.b03_avariia_vysokii_kislorod
+    - binary_sensor.b04_avariia_vysokii_kislorod
+    - binary_sensor.b05_avariia_vysokii_kislorod
+    - binary_sensor.b06_avariia_vysokii_kislorod
+    - binary_sensor.b07_avariia_vysokii_kislorod
+    - binary_sensor.b08_avariia_vysokii_kislorod
+    - binary_sensor.b09_avariia_vysokii_kislorod
+    - binary_sensor.b10_avariia_vysokii_kislorod
+    - binary_sensor.b11_avariia_vysokii_kislorod
+    - binary_sensor.b12_avariia_vysokii_kislorod
+    - binary_sensor.b13_avariia_vysokii_kislorod
+    - binary_sensor.b14_avariia_vysokii_kislorod
+    - binary_sensor.b15_avariia_vysokii_kislorod
+    - binary_sensor.b16_avariia_vysokii_kislorod
+    - binary_sensor.b17_avariia_vysokii_kislorod
+    - binary_sensor.b18_avariia_vysokii_kislorod
+    - binary_sensor.b19_avariia_vysokii_kislorod
+    - binary_sensor.b20_avariia_vysokii_kislorod
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 10 + 1) ~ "_verkh_limit_kisloroda"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_kislorod" %}‼️ Бассейн
+        {{ pool_num }}.🫧🫧 Кислород {{ states(sensor) }}мг/л > {{ states(limit_sensor)
+        }}мг/л'
+  mode: queued
+- alias: Notify Telegram on no connect
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.sh1_pitanie
+        - binary_sensor.sh2_pitanie
+      to:
+        - 'unknown'
+        - 'unavailable'
+  action:
+    - service: notify.telegram
+      data:
+        message: >
+          {% set num = trigger.entity_id.split(".")[1][2:4].rstrip('_') | int %}
+          ‼️ ПЛК {{ num }}. ⛓️‍💥 Нет связи
+  mode: queued
+- alias: Notify Telegram on no connect repeat
+  trigger:
+    - platform: time_pattern
+      minutes: "0"
+  condition:
+    - condition: state
+      entity_id:
+        - binary_sensor.sh1_pitanie
+        - binary_sensor.sh2_pitanie
+      state:
+        - 'unknown'
+        - 'unavailable'
+  action:
+    - service: notify.telegram
+      data:
+        message: >
+          {% set num = trigger.entity_id.split(".")[1][2:4].rstrip('_') | int %}
+          ⏰ Напоминание! ‼️ ПЛК {{ num }}. ⛓️‍💥 Нет связи
+  mode: queued
