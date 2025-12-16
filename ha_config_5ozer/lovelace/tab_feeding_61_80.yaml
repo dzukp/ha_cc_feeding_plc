@@ -1,0 +1,68 @@
+title: Б 61-80 (корм)
+sections:
+  - type: grid
+    cards:
+      - !include cards/feeding_61.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_62.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_63.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_64.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_65.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_66.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_67.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_68.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_69.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_70.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_71.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_72.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_73.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_74.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_75.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_76.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_77.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_78.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_79.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_80.yaml
+header:
+  card:
+    type: markdown
+    content: '## Бассейны 61-80'
+    text_only: true
+
