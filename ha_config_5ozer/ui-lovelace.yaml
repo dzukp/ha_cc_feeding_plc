@@ -10,7 +10,10 @@ views:
           admin:
             type: custom:upload-csv-card
   - !include lovelace/tab_pools_1_20.yaml
-  - !include lovelace/tab_pools_51_70.yaml
+  - !include lovelace/tab_pools_21_40.yaml
+  - !include lovelace/tab_pools_41_60.yaml
+  - !include lovelace/tab_pools_61_80.yaml
+  - !include lovelace/tab_pools_81_100.yaml
   - !include lovelace/tab_feeding_1_20.yaml
   - !include lovelace/tab_feeding_21_40.yaml
   - !include lovelace/tab_feeding_41_60.yaml
