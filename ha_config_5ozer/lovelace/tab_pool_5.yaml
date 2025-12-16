@@ -1,0 +1,226 @@
+title: Б 5
+path: pool_5
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Состояние
+      - graph: line
+        type: sensor
+        entity: sensor.b05_kislorod
+        detail: 1
+        name: Кислород
+        icon: mdi:chart-bubble
+        grid_options:
+          columns: 12
+          rows: 2
+      - graph: line
+        type: sensor
+        entity: sensor.b05_temperatura
+        detail: 1
+        name: Температура
+        grid_options:
+          columns: full
+          rows: 2
+      - show_name: true
+        show_icon: true
+        show_state: true
+        type: glance
+        entities:
+          - entity: binary_sensor.b05_avtomat
+            name: Автомат
+            icon: mdi:desktop-classic
+          - entity: binary_sensor.b05_ruchnoi
+            name: Ручной
+            icon: mdi:hand-back-left
+          - entity: binary_sensor.b05_oksigenerator
+            name: Оксигенератор
+            icon: mdi:tree
+          - entity: binary_sensor.b05_klapan_kisloroda
+            name: Клапан O₂
+            icon: mdi:pipe-valve
+        columns: 4
+        state_color: true
+      - type: tile
+        entity: sensor.b05_avariia
+        features_position: bottom
+        vertical: true
+        icon: mdi:alarm-light
+        show_entity_picture: false
+        name: Авария
+        grid_options:
+          columns: 12
+          rows: 2
+      - type: heading
+        heading_style: title
+        heading: Шкаф
+        icon: mdi:file-cabinet
+      - type: entities
+        entities:
+          - entity: sensor.sh1_vremia
+            icon: mdi:clock-time-nine
+            name: Время
+          - entity: binary_sensor.sh1_pitanie
+            icon: mdi:power
+            name: Питание
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Кормушка 1
+        icon: mdi:shaker
+        badges: []
+      - type: entities
+        entities:
+          - entity: sensor.b05_kormlenie_1
+            name: Состояние
+          - entity: sensor.b05_proshlo_korm_1
+            name: Прошло кормлений
+            icon: mdi:counter
+          - entity: sensor.b05_sled_korm_1
+            name: Следующее кормление
+            icon: mdi:timer
+          - entity: binary_sensor.b05_korm_1_rabota
+            name: Состояние кормушки
+          - entity: binary_sensor.b05_korm_1_pusk
+            name: Пуск кормушки
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.b05_vremia_nachala_1
+                name: Начало кормления
+              - entity: time.b05_period_1
+                name: Периодичность
+              - entity: number.b05_ust_kol_vo_kormlenii_1
+                name: Кол-во
+                icon: mdi:counter
+              - entity: number.b05_ust_dlitelnost_1
+                name: Длительность, сек
+                icon: mdi:timer
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Начало кормления** | {{ states('time.b05_vremia_nachala_1').replace('unknown', '-') }} |
+              | **Периодичность** | {{ states('time.b05_period_1').replace('unknown', '-') }} |
+              | **Кол-во** | {{ states('number.b05_ust_kol_vo_kormlenii_1').replace('unknown', '-') }} |
+              | **Длительность** | {{ states('number.b05_ust_dlitelnost_1').replace('unknown', '-') }} сек |
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Кормушка 2
+        icon: mdi:shaker
+      - type: entities
+        entities:
+          - entity: sensor.b05_kormlenie_2
+            name: Состояние
+          - entity: sensor.b05_proshlo_korm_2
+            name: Прошло кормлений
+            icon: mdi:counter
+          - entity: sensor.b05_sled_korm_2
+            name: Следующее кормление
+            icon: mdi:timer
+          - entity: binary_sensor.b05_korm_2_rabota
+            name: Состояние кормушки
+          - entity: binary_sensor.b05_korm_2_pusk
+            name: Пуск кормушки
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.b05_vremia_nachala_2
+                name: Начало кормления
+              - entity: time.b05_period_2
+                name: Периодичность
+              - entity: number.b05_ust_kol_vo_kormlenii_2
+                name: Кол-во
+                icon: mdi:counter
+              - entity: number.b05_ust_dlitelnost_2
+                name: Длительность, сек
+                icon: mdi:timer
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Начало кормления** | {{ states('time.b05_vremia_nachala_2').replace('unknown', '-') }} |
+              | **Периодичность** | {{ states('time.b05_period_2').replace('unknown', '-') }} |
+              | **Кол-во** | {{ states('number.b05_ust_kol_vo_kormlenii_2').replace('unknown', '-') }} |
+              | **Длительность** | {{ states('number.b05_ust_dlitelnost_2').replace('unknown', '-') }} сек |
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
+        heading: Аварии
+        icon: mdi:alarm-light
+      - type: entities
+        entities:
+          - entity: binary_sensor.b05_avariia_vysokaia_temperatura
+            name: Высокая температура
+            secondary_info: last-changed
+          - entity: binary_sensor.b05_avariia_nizkaia_temperatura
+            name: Низкая температура
+            secondary_info: last-changed
+          - entity: binary_sensor.b05_avariia_vysokii_kislorod
+            name: Высокий кислород
+            secondary_info: last-changed
+          - entity: binary_sensor.b05_avariia_nizkii_kislorod
+            name: Низкий кислород
+            secondary_info: last-changed
+          - entity: binary_sensor.b05_avariia_datchika_ksiloroda
+            name: Ошибка датчика кислорода
+            secondary_info: last-changed
+          - entity: binary_sensor.b05_avariia_oksigeneratora
+            name: Отключен оксигенератор
+            secondary_info: last-changed
+          - entity: binary_sensor.b05_avariia_kormushka_1
+            name: Не включилась кормушка 1
+            secondary_info: last-changed
+          - entity: binary_sensor.b05_avariia_kormushka_2
+            name: Не включилась кормушка 2
+            secondary_info: last-changed
+      - type: heading
+        heading_style: title
+        heading: Игнорирование аварий
+        icon: mdi:toggle-switch-variant
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: switch.b05_ignor_avarii_temperatury
+                name: Температура
+              - entity: switch.b05_ignor_avarii_kisloroda
+                name: Кислород
+              - entity: switch.b05_ignor_avarii_oksigeneratora
+                name: Оксигенератор
+              - entity: switch.b05_ignor_avarii_kormushki_1
+                name: Кормушка 1
+              - entity: switch.b05_ignor_avarii_kormushki_2
+                name: Кормушка 2
+          user:
+            type: markdown
+            content: |
+              |   |   |
+              |-----------|-----------|
+              | **Температура** | {{ states('switch.b05_ignor_avarii_temperatury') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Кислород** | {{ states('switch.b05_ignor_avarii_kisloroda') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Оксигенератор** | {{ states('switch.b05_ignor_avarii_oksigeneratora') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Кормушка 1** | {{ states('switch.b05_ignor_avarii_kormushki_1') | replace('on', '✔️') | replace('off', '✖️') }} |
+              | **Кормушка 2** | {{ states('switch.b05_ignor_avarii_kormushki_2') | replace('on', '✔️') | replace('off', '✖️') }} |
+
+
+header:
+  card:
+    type: markdown
+    content: '# Бассейн 5'
+    text_only: true

@@ -1,0 +1,390 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+logger:
+  default: warning
+  logs:
+    feeding: info
+    feeding_api: debug
+    pools_plc: info
+    homeassistant.helpers.entity: debug
+
+lovelace:
+  mode: yaml
+  resources:
+  - url: /local/upload-csv-card.js
+    type: module
+  - url: /local/button-card.js
+    type: module
+  - url: /local/state-switch.js
+    type: module
+
+feeding_plc:
+  - host: 10.10.10.11
+    number: 1
+    pool_plc_index: 1
+  - host: 10.10.10.11
+    number: 2
+    pool_plc_index: 2
+  - host: 10.10.10.11
+    number: 3
+    pool_plc_index: 3
+  - host: 10.10.10.11
+    number: 4
+    pool_plc_index: 4
+  - host: 10.10.10.11
+    number: 5
+    pool_plc_index: 5
+  - host: 10.10.10.12
+    number: 6
+    pool_plc_index: 1
+  - host: 10.10.10.12
+    number: 7
+    pool_plc_index: 2
+  - host: 10.10.10.12
+    number: 8
+    pool_plc_index: 3
+  - host: 10.10.10.12
+    number: 9
+    pool_plc_index: 4
+  - host: 10.10.10.12
+    number: 10
+    pool_plc_index: 5
+  - host: 10.10.10.13
+    number: 11
+    pool_plc_index: 1
+  - host: 10.10.10.13
+    number: 12
+    pool_plc_index: 2
+  - host: 10.10.10.13
+    number: 13
+    pool_plc_index: 3
+  - host: 10.10.10.13
+    number: 14
+    pool_plc_index: 4
+  - host: 10.10.10.13
+    number: 15
+    pool_plc_index: 5
+  - host: 10.10.10.14
+    number: 16
+    pool_plc_index: 1
+  - host: 10.10.10.14
+    number: 17
+    pool_plc_index: 2
+  - host: 10.10.10.14
+    number: 18
+    pool_plc_index: 3
+  - host: 10.10.10.14
+    number: 19
+    pool_plc_index: 4
+  - host: 10.10.10.14
+    number: 20
+    pool_plc_index: 5
+  - host: 10.10.10.15
+    number: 21
+    pool_plc_index: 1
+  - host: 10.10.10.15
+    number: 22
+    pool_plc_index: 2
+  - host: 10.10.10.15
+    number: 23
+    pool_plc_index: 3
+  - host: 10.10.10.15
+    number: 24
+    pool_plc_index: 4
+  - host: 10.10.10.15
+    number: 25
+    pool_plc_index: 5
+  - host: 10.10.10.16
+    number: 26
+    pool_plc_index: 1
+  - host: 10.10.10.16
+    number: 27
+    pool_plc_index: 2
+  - host: 10.10.10.16
+    number: 28
+    pool_plc_index: 3
+  - host: 10.10.10.16
+    number: 29
+    pool_plc_index: 4
+  - host: 10.10.10.16
+    number: 30
+    pool_plc_index: 5
+  - host: 10.10.10.17
+    number: 31
+    pool_plc_index: 1
+  - host: 10.10.10.17
+    number: 32
+    pool_plc_index: 2
+  - host: 10.10.10.17
+    number: 33
+    pool_plc_index: 3
+  - host: 10.10.10.17
+    number: 34
+    pool_plc_index: 4
+  - host: 10.10.10.17
+    number: 35
+    pool_plc_index: 5
+  - host: 10.10.10.18
+    number: 36
+    pool_plc_index: 1
+  - host: 10.10.10.18
+    number: 37
+    pool_plc_index: 2
+  - host: 10.10.10.18
+    number: 38
+    pool_plc_index: 3
+  - host: 10.10.10.18
+    number: 39
+    pool_plc_index: 4
+  - host: 10.10.10.18
+    number: 40
+    pool_plc_index: 5
+  - host: 10.10.10.19
+    number: 41
+    pool_plc_index: 1
+  - host: 10.10.10.19
+    number: 42
+    pool_plc_index: 2
+  - host: 10.10.10.19
+    number: 43
+    pool_plc_index: 3
+  - host: 10.10.10.19
+    number: 44
+    pool_plc_index: 4
+  - host: 10.10.10.19
+    number: 45
+    pool_plc_index: 5
+  - host: 10.10.10.20
+    number: 46
+    pool_plc_index: 1
+  - host: 10.10.10.20
+    number: 47
+    pool_plc_index: 2
+  - host: 10.10.10.20
+    number: 48
+    pool_plc_index: 3
+  - host: 10.10.10.20
+    number: 49
+    pool_plc_index: 4
+  - host: 10.10.10.20
+    number: 50
+    pool_plc_index: 5
+  - host: 10.10.10.21
+    number: 51
+    pool_plc_index: 1
+  - host: 10.10.10.21
+    number: 52
+    pool_plc_index: 2
+  - host: 10.10.10.21
+    number: 53
+    pool_plc_index: 3
+  - host: 10.10.10.21
+    number: 54
+    pool_plc_index: 4
+  - host: 10.10.10.21
+    number: 55
+    pool_plc_index: 5
+  - host: 10.10.10.22
+    number: 56
+    pool_plc_index: 1
+  - host: 10.10.10.22
+    number: 57
+    pool_plc_index: 2
+  - host: 10.10.10.22
+    number: 58
+    pool_plc_index: 3
+  - host: 10.10.10.22
+    number: 59
+    pool_plc_index: 4
+  - host: 10.10.10.22
+    number: 60
+    pool_plc_index: 5
+  - host: 10.10.10.23
+    number: 61
+    pool_plc_index: 1
+  - host: 10.10.10.23
+    number: 62
+    pool_plc_index: 2
+  - host: 10.10.10.23
+    number: 63
+    pool_plc_index: 3
+  - host: 10.10.10.23
+    number: 64
+    pool_plc_index: 4
+  - host: 10.10.10.23
+    number: 65
+    pool_plc_index: 5
+  - host: 10.10.10.24
+    number: 66
+    pool_plc_index: 1
+  - host: 10.10.10.24
+    number: 67
+    pool_plc_index: 2
+  - host: 10.10.10.24
+    number: 68
+    pool_plc_index: 3
+  - host: 10.10.10.24
+    number: 69
+    pool_plc_index: 4
+  - host: 10.10.10.24
+    number: 70
+    pool_plc_index: 5
+  - host: 10.10.10.25
+    number: 71
+    pool_plc_index: 1
+  - host: 10.10.10.25
+    number: 72
+    pool_plc_index: 2
+  - host: 10.10.10.25
+    number: 73
+    pool_plc_index: 3
+  - host: 10.10.10.25
+    number: 74
+    pool_plc_index: 4
+  - host: 10.10.10.25
+    number: 75
+    pool_plc_index: 5
+  - host: 10.10.10.26
+    number: 76
+    pool_plc_index: 1
+  - host: 10.10.10.26
+    number: 77
+    pool_plc_index: 2
+  - host: 10.10.10.26
+    number: 78
+    pool_plc_index: 3
+  - host: 10.10.10.26
+    number: 79
+    pool_plc_index: 4
+  - host: 10.10.10.26
+    number: 80
+    pool_plc_index: 5
+  - host: 10.10.10.27
+    number: 81
+    pool_plc_index: 1
+  - host: 10.10.10.27
+    number: 82
+    pool_plc_index: 2
+  - host: 10.10.10.27
+    number: 83
+    pool_plc_index: 3
+  - host: 10.10.10.27
+    number: 84
+    pool_plc_index: 4
+  - host: 10.10.10.27
+    number: 85
+    pool_plc_index: 5
+  - host: 10.10.10.28
+    number: 86
+    pool_plc_index: 1
+  - host: 10.10.10.28
+    number: 87
+    pool_plc_index: 2
+  - host: 10.10.10.28
+    number: 88
+    pool_plc_index: 3
+  - host: 10.10.10.28
+    number: 89
+    pool_plc_index: 4
+  - host: 10.10.10.28
+    number: 90
+    pool_plc_index: 5
+  - host: 10.10.10.29
+    number: 91
+    pool_plc_index: 1
+  - host: 10.10.10.29
+    number: 92
+    pool_plc_index: 2
+  - host: 10.10.10.29
+    number: 93
+    pool_plc_index: 3
+  - host: 10.10.10.29
+    number: 94
+    pool_plc_index: 4
+  - host: 10.10.10.29
+    number: 95
+    pool_plc_index: 5
+  - host: 10.10.10.30
+    number: 96
+    pool_plc_index: 1
+  - host: 10.10.10.30
+    number: 97
+    pool_plc_index: 2
+  - host: 10.10.10.30
+    number: 98
+    pool_plc_index: 3
+  - host: 10.10.10.30
+    number: 99
+    pool_plc_index: 4
+  - host: 10.10.10.30
+    number: 100
+    pool_plc_index: 5
+
+pools_plc:
+  - host: 10.10.10.11
+    number: 1
+  - host: 10.10.10.12
+    number: 2
+  - host: 10.10.10.13
+    number: 3
+  - host: 10.10.10.14
+    number: 4
+  - host: 10.10.10.15
+    number: 5
+  - host: 10.10.10.16
+    number: 6
+  - host: 10.10.10.17
+    number: 7
+  - host: 10.10.10.18
+    number: 8
+  - host: 10.10.10.19
+    number: 9
+  - host: 10.10.10.20
+    number: 10
+  - host: 10.10.10.21
+    number: 11
+  - host: 10.10.10.22
+    number: 12
+  - host: 10.10.10.23
+    number: 13
+  - host: 10.10.10.24
+    number: 14
+  - host: 10.10.10.25
+    number: 15
+  - host: 10.10.10.26
+    number: 16
+  - host: 10.10.10.27
+    number: 17
+  - host: 10.10.10.28
+    number: 18
+  - host: 10.10.10.29
+    number: 19
+  - host: 10.10.10.30
+    number: 20
+
+recorder:
+  exclude:
+    entity_globs:
+      - sensor.b*_sled_korm_1
+      - sensor.b*_sled_korm_2
+      - sensor.sh*_vremia
+
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_token
+    allowed_chat_ids:
+      - !secret telegram_chat_id
+
+notify:
+  - name: telegram
+    platform: telegram
+    chat_id: !secret telegram_chat_id

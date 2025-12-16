@@ -1,0 +1,57 @@
+title: Кормление
+views:
+  - title: CSV №Загрузка
+    path: csv-upload
+    icon: mdi:upload
+    cards:
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: custom:upload-csv-card
+  - !include lovelace/tab_pools_1_20.yaml
+  - !include lovelace/tab_pools_51_70.yaml
+  - !include lovelace/tab_feeding_1_20.yaml
+  - !include lovelace/tab_feeding_51_70.yaml
+  - !include lovelace/tab_temp_oxy.yaml
+  - !include lovelace/tab_sensors.yaml
+  - !include lovelace/tab_pool_1.yaml
+  - !include lovelace/tab_pool_2.yaml
+  - !include lovelace/tab_pool_3.yaml
+  - !include lovelace/tab_pool_4.yaml
+  - !include lovelace/tab_pool_5.yaml
+  - !include lovelace/tab_pool_6.yaml
+  - !include lovelace/tab_pool_7.yaml
+  - !include lovelace/tab_pool_8.yaml
+  - !include lovelace/tab_pool_9.yaml
+  - !include lovelace/tab_pool_10.yaml
+  - !include lovelace/tab_pool_11.yaml
+  - !include lovelace/tab_pool_12.yaml
+  - !include lovelace/tab_pool_13.yaml
+  - !include lovelace/tab_pool_14.yaml
+  - !include lovelace/tab_pool_15.yaml
+  - !include lovelace/tab_pool_16.yaml
+  - !include lovelace/tab_pool_17.yaml
+  - !include lovelace/tab_pool_18.yaml
+  - !include lovelace/tab_pool_19.yaml
+  - !include lovelace/tab_pool_20.yaml
+  - !include lovelace/tab_pool_51.yaml
+  - !include lovelace/tab_pool_52.yaml
+  - !include lovelace/tab_pool_53.yaml
+  - !include lovelace/tab_pool_54.yaml
+  - !include lovelace/tab_pool_55.yaml
+  - !include lovelace/tab_pool_56.yaml
+  - !include lovelace/tab_pool_57.yaml
+  - !include lovelace/tab_pool_58.yaml
+  - !include lovelace/tab_pool_59.yaml
+  - !include lovelace/tab_pool_60.yaml
+  - !include lovelace/tab_pool_61.yaml
+  - !include lovelace/tab_pool_62.yaml
+  - !include lovelace/tab_pool_63.yaml
+  - !include lovelace/tab_pool_64.yaml
+  - !include lovelace/tab_pool_65.yaml
+  - !include lovelace/tab_pool_66.yaml
+  - !include lovelace/tab_pool_67.yaml
+  - !include lovelace/tab_pool_68.yaml
+  - !include lovelace/tab_pool_69.yaml
+  - !include lovelace/tab_pool_70.yaml
