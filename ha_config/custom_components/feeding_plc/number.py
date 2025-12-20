@@ -104,15 +104,15 @@ def create_items(
     return [
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Время начала 1",
-            address_offset + 1, 'мин', min_value=1, max_value=60 * 24
+            address_offset + 1, 'мин', min_value=0, max_value=60 * 24
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Длительность 1",
-            address_offset + 2, "сек", min_value=1, max_value=32000
+            address_offset + 2, "сек", min_value=0, max_value=32000
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Период 1",
-            address_offset + 3, "сек", min_value=1, max_value=32000
+            address_offset + 3, "сек", min_value=0, max_value=32000
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Кол-во кормлений 1",
@@ -120,15 +120,15 @@ def create_items(
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Время начала 2",
-            address_offset + 7, 'мин', min_value=1, max_value=60 * 24
+            address_offset + 7, 'мин', min_value=0, max_value=60 * 24
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Длительность 2",
-            address_offset + 8, "сек", min_value=1, max_value=32000
+            address_offset + 8, "сек", min_value=0, max_value=32000
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Период 2",
-            address_offset + 9, "сек", min_value=1, max_value=32000
+            address_offset + 9, "сек", min_value=0, max_value=32000
         ),
         ModbusNumber(
             coordinator, device_id, client, f"Б{pool_number:02} Уст Кол-во кормлений 2",
