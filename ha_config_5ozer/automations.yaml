@@ -76,6 +76,36 @@
     - binary_sensor.b18_avariia_kormushka_1
     - binary_sensor.b19_avariia_kormushka_1
     - binary_sensor.b20_avariia_kormushka_1
+    - binary_sensor.b21_avariia_kormushka_1
+    - binary_sensor.b22_avariia_kormushka_1
+    - binary_sensor.b23_avariia_kormushka_1
+    - binary_sensor.b24_avariia_kormushka_1
+    - binary_sensor.b25_avariia_kormushka_1
+    - binary_sensor.b26_avariia_kormushka_1
+    - binary_sensor.b27_avariia_kormushka_1
+    - binary_sensor.b28_avariia_kormushka_1
+    - binary_sensor.b29_avariia_kormushka_1
+    - binary_sensor.b30_avariia_kormushka_1
+    - binary_sensor.b31_avariia_kormushka_1
+    - binary_sensor.b32_avariia_kormushka_1
+    - binary_sensor.b33_avariia_kormushka_1
+    - binary_sensor.b34_avariia_kormushka_1
+    - binary_sensor.b35_avariia_kormushka_1
+    - binary_sensor.b36_avariia_kormushka_1
+    - binary_sensor.b37_avariia_kormushka_1
+    - binary_sensor.b38_avariia_kormushka_1
+    - binary_sensor.b39_avariia_kormushka_1
+    - binary_sensor.b40_avariia_kormushka_1
+    - binary_sensor.b41_avariia_kormushka_1
+    - binary_sensor.b42_avariia_kormushka_1
+    - binary_sensor.b43_avariia_kormushka_1
+    - binary_sensor.b44_avariia_kormushka_1
+    - binary_sensor.b45_avariia_kormushka_1
+    - binary_sensor.b46_avariia_kormushka_1
+    - binary_sensor.b47_avariia_kormushka_1
+    - binary_sensor.b48_avariia_kormushka_1
+    - binary_sensor.b49_avariia_kormushka_1
+    - binary_sensor.b50_avariia_kormushka_1
     - binary_sensor.b51_avariia_kormushka_1
     - binary_sensor.b52_avariia_kormushka_1
     - binary_sensor.b53_avariia_kormushka_1
@@ -96,6 +126,36 @@
     - binary_sensor.b68_avariia_kormushka_1
     - binary_sensor.b69_avariia_kormushka_1
     - binary_sensor.b70_avariia_kormushka_1
+    - binary_sensor.b71_avariia_kormushka_1
+    - binary_sensor.b72_avariia_kormushka_1
+    - binary_sensor.b73_avariia_kormushka_1
+    - binary_sensor.b74_avariia_kormushka_1
+    - binary_sensor.b75_avariia_kormushka_1
+    - binary_sensor.b76_avariia_kormushka_1
+    - binary_sensor.b77_avariia_kormushka_1
+    - binary_sensor.b78_avariia_kormushka_1
+    - binary_sensor.b79_avariia_kormushka_1
+    - binary_sensor.b80_avariia_kormushka_1
+    - binary_sensor.b81_avariia_kormushka_1
+    - binary_sensor.b82_avariia_kormushka_1
+    - binary_sensor.b83_avariia_kormushka_1
+    - binary_sensor.b84_avariia_kormushka_1
+    - binary_sensor.b85_avariia_kormushka_1
+    - binary_sensor.b86_avariia_kormushka_1
+    - binary_sensor.b87_avariia_kormushka_1
+    - binary_sensor.b88_avariia_kormushka_1
+    - binary_sensor.b89_avariia_kormushka_1
+    - binary_sensor.b90_avariia_kormushka_1
+    - binary_sensor.b91_avariia_kormushka_1
+    - binary_sensor.b92_avariia_kormushka_1
+    - binary_sensor.b93_avariia_kormushka_1
+    - binary_sensor.b94_avariia_kormushka_1
+    - binary_sensor.b95_avariia_kormushka_1
+    - binary_sensor.b96_avariia_kormushka_1
+    - binary_sensor.b97_avariia_kormushka_1
+    - binary_sensor.b98_avariia_kormushka_1
+    - binary_sensor.b99_avariia_kormushka_1
+    - binary_sensor.b100_avariia_kormushka_1
     to: 'on'
   condition:
   - condition: template
@@ -130,6 +190,36 @@
     - binary_sensor.b18_avariia_kormushka_2
     - binary_sensor.b19_avariia_kormushka_2
     - binary_sensor.b20_avariia_kormushka_2
+    - binary_sensor.b21_avariia_kormushka_2
+    - binary_sensor.b22_avariia_kormushka_2
+    - binary_sensor.b23_avariia_kormushka_2
+    - binary_sensor.b24_avariia_kormushka_2
+    - binary_sensor.b25_avariia_kormushka_2
+    - binary_sensor.b26_avariia_kormushka_2
+    - binary_sensor.b27_avariia_kormushka_2
+    - binary_sensor.b28_avariia_kormushka_2
+    - binary_sensor.b29_avariia_kormushka_2
+    - binary_sensor.b30_avariia_kormushka_2
+    - binary_sensor.b31_avariia_kormushka_2
+    - binary_sensor.b32_avariia_kormushka_2
+    - binary_sensor.b33_avariia_kormushka_2
+    - binary_sensor.b34_avariia_kormushka_2
+    - binary_sensor.b35_avariia_kormushka_2
+    - binary_sensor.b36_avariia_kormushka_2
+    - binary_sensor.b37_avariia_kormushka_2
+    - binary_sensor.b38_avariia_kormushka_2
+    - binary_sensor.b39_avariia_kormushka_2
+    - binary_sensor.b40_avariia_kormushka_2
+    - binary_sensor.b41_avariia_kormushka_2
+    - binary_sensor.b42_avariia_kormushka_2
+    - binary_sensor.b43_avariia_kormushka_2
+    - binary_sensor.b44_avariia_kormushka_2
+    - binary_sensor.b45_avariia_kormushka_2
+    - binary_sensor.b46_avariia_kormushka_2
+    - binary_sensor.b47_avariia_kormushka_2
+    - binary_sensor.b48_avariia_kormushka_2
+    - binary_sensor.b49_avariia_kormushka_2
+    - binary_sensor.b50_avariia_kormushka_2
     - binary_sensor.b51_avariia_kormushka_2
     - binary_sensor.b52_avariia_kormushka_2
     - binary_sensor.b53_avariia_kormushka_2
@@ -150,6 +240,36 @@
     - binary_sensor.b68_avariia_kormushka_2
     - binary_sensor.b69_avariia_kormushka_2
     - binary_sensor.b70_avariia_kormushka_2
+    - binary_sensor.b71_avariia_kormushka_2
+    - binary_sensor.b72_avariia_kormushka_2
+    - binary_sensor.b73_avariia_kormushka_2
+    - binary_sensor.b74_avariia_kormushka_2
+    - binary_sensor.b75_avariia_kormushka_2
+    - binary_sensor.b76_avariia_kormushka_2
+    - binary_sensor.b77_avariia_kormushka_2
+    - binary_sensor.b78_avariia_kormushka_2
+    - binary_sensor.b79_avariia_kormushka_2
+    - binary_sensor.b80_avariia_kormushka_2
+    - binary_sensor.b81_avariia_kormushka_2
+    - binary_sensor.b82_avariia_kormushka_2
+    - binary_sensor.b83_avariia_kormushka_2
+    - binary_sensor.b84_avariia_kormushka_2
+    - binary_sensor.b85_avariia_kormushka_2
+    - binary_sensor.b86_avariia_kormushka_2
+    - binary_sensor.b87_avariia_kormushka_2
+    - binary_sensor.b88_avariia_kormushka_2
+    - binary_sensor.b89_avariia_kormushka_2
+    - binary_sensor.b90_avariia_kormushka_2
+    - binary_sensor.b91_avariia_kormushka_2
+    - binary_sensor.b92_avariia_kormushka_2
+    - binary_sensor.b93_avariia_kormushka_2
+    - binary_sensor.b94_avariia_kormushka_2
+    - binary_sensor.b95_avariia_kormushka_2
+    - binary_sensor.b96_avariia_kormushka_2
+    - binary_sensor.b97_avariia_kormushka_2
+    - binary_sensor.b98_avariia_kormushka_2
+    - binary_sensor.b99_avariia_kormushka_2
+    - binary_sensor.b100_avariia_kormushka_2
     to: 'on'
   condition:
   - condition: template
@@ -184,6 +304,36 @@
     - binary_sensor.b18_avariia_oksigeneratora
     - binary_sensor.b19_avariia_oksigeneratora
     - binary_sensor.b20_avariia_oksigeneratora
+    - binary_sensor.b21_avariia_oksigeneratora
+    - binary_sensor.b22_avariia_oksigeneratora
+    - binary_sensor.b23_avariia_oksigeneratora
+    - binary_sensor.b24_avariia_oksigeneratora
+    - binary_sensor.b25_avariia_oksigeneratora
+    - binary_sensor.b26_avariia_oksigeneratora
+    - binary_sensor.b27_avariia_oksigeneratora
+    - binary_sensor.b28_avariia_oksigeneratora
+    - binary_sensor.b29_avariia_oksigeneratora
+    - binary_sensor.b30_avariia_oksigeneratora
+    - binary_sensor.b31_avariia_oksigeneratora
+    - binary_sensor.b32_avariia_oksigeneratora
+    - binary_sensor.b33_avariia_oksigeneratora
+    - binary_sensor.b34_avariia_oksigeneratora
+    - binary_sensor.b35_avariia_oksigeneratora
+    - binary_sensor.b36_avariia_oksigeneratora
+    - binary_sensor.b37_avariia_oksigeneratora
+    - binary_sensor.b38_avariia_oksigeneratora
+    - binary_sensor.b39_avariia_oksigeneratora
+    - binary_sensor.b40_avariia_oksigeneratora
+    - binary_sensor.b41_avariia_oksigeneratora
+    - binary_sensor.b42_avariia_oksigeneratora
+    - binary_sensor.b43_avariia_oksigeneratora
+    - binary_sensor.b44_avariia_oksigeneratora
+    - binary_sensor.b45_avariia_oksigeneratora
+    - binary_sensor.b46_avariia_oksigeneratora
+    - binary_sensor.b47_avariia_oksigeneratora
+    - binary_sensor.b48_avariia_oksigeneratora
+    - binary_sensor.b49_avariia_oksigeneratora
+    - binary_sensor.b50_avariia_oksigeneratora
     - binary_sensor.b51_avariia_oksigeneratora
     - binary_sensor.b52_avariia_oksigeneratora
     - binary_sensor.b53_avariia_oksigeneratora
@@ -204,6 +354,36 @@
     - binary_sensor.b68_avariia_oksigeneratora
     - binary_sensor.b69_avariia_oksigeneratora
     - binary_sensor.b70_avariia_oksigeneratora
+    - binary_sensor.b71_avariia_oksigeneratora
+    - binary_sensor.b72_avariia_oksigeneratora
+    - binary_sensor.b73_avariia_oksigeneratora
+    - binary_sensor.b74_avariia_oksigeneratora
+    - binary_sensor.b75_avariia_oksigeneratora
+    - binary_sensor.b76_avariia_oksigeneratora
+    - binary_sensor.b77_avariia_oksigeneratora
+    - binary_sensor.b78_avariia_oksigeneratora
+    - binary_sensor.b79_avariia_oksigeneratora
+    - binary_sensor.b80_avariia_oksigeneratora
+    - binary_sensor.b81_avariia_oksigeneratora
+    - binary_sensor.b82_avariia_oksigeneratora
+    - binary_sensor.b83_avariia_oksigeneratora
+    - binary_sensor.b84_avariia_oksigeneratora
+    - binary_sensor.b85_avariia_oksigeneratora
+    - binary_sensor.b86_avariia_oksigeneratora
+    - binary_sensor.b87_avariia_oksigeneratora
+    - binary_sensor.b88_avariia_oksigeneratora
+    - binary_sensor.b89_avariia_oksigeneratora
+    - binary_sensor.b90_avariia_oksigeneratora
+    - binary_sensor.b91_avariia_oksigeneratora
+    - binary_sensor.b92_avariia_oksigeneratora
+    - binary_sensor.b93_avariia_oksigeneratora
+    - binary_sensor.b94_avariia_oksigeneratora
+    - binary_sensor.b95_avariia_oksigeneratora
+    - binary_sensor.b96_avariia_oksigeneratora
+    - binary_sensor.b97_avariia_oksigeneratora
+    - binary_sensor.b98_avariia_oksigeneratora
+    - binary_sensor.b99_avariia_oksigeneratora
+    - binary_sensor.b100_avariia_oksigeneratora
     to: 'on'
   condition:
   - condition: template
@@ -238,6 +418,36 @@
     - binary_sensor.b18_avariia_nizkaia_temperatura
     - binary_sensor.b19_avariia_nizkaia_temperatura
     - binary_sensor.b20_avariia_nizkaia_temperatura
+    - binary_sensor.b21_avariia_nizkaia_temperatura
+    - binary_sensor.b22_avariia_nizkaia_temperatura
+    - binary_sensor.b23_avariia_nizkaia_temperatura
+    - binary_sensor.b24_avariia_nizkaia_temperatura
+    - binary_sensor.b25_avariia_nizkaia_temperatura
+    - binary_sensor.b26_avariia_nizkaia_temperatura
+    - binary_sensor.b27_avariia_nizkaia_temperatura
+    - binary_sensor.b28_avariia_nizkaia_temperatura
+    - binary_sensor.b29_avariia_nizkaia_temperatura
+    - binary_sensor.b30_avariia_nizkaia_temperatura
+    - binary_sensor.b31_avariia_nizkaia_temperatura
+    - binary_sensor.b32_avariia_nizkaia_temperatura
+    - binary_sensor.b33_avariia_nizkaia_temperatura
+    - binary_sensor.b34_avariia_nizkaia_temperatura
+    - binary_sensor.b35_avariia_nizkaia_temperatura
+    - binary_sensor.b36_avariia_nizkaia_temperatura
+    - binary_sensor.b37_avariia_nizkaia_temperatura
+    - binary_sensor.b38_avariia_nizkaia_temperatura
+    - binary_sensor.b39_avariia_nizkaia_temperatura
+    - binary_sensor.b40_avariia_nizkaia_temperatura
+    - binary_sensor.b41_avariia_nizkaia_temperatura
+    - binary_sensor.b42_avariia_nizkaia_temperatura
+    - binary_sensor.b43_avariia_nizkaia_temperatura
+    - binary_sensor.b44_avariia_nizkaia_temperatura
+    - binary_sensor.b45_avariia_nizkaia_temperatura
+    - binary_sensor.b46_avariia_nizkaia_temperatura
+    - binary_sensor.b47_avariia_nizkaia_temperatura
+    - binary_sensor.b48_avariia_nizkaia_temperatura
+    - binary_sensor.b49_avariia_nizkaia_temperatura
+    - binary_sensor.b50_avariia_nizkaia_temperatura
     - binary_sensor.b51_avariia_nizkaia_temperatura
     - binary_sensor.b52_avariia_nizkaia_temperatura
     - binary_sensor.b53_avariia_nizkaia_temperatura
@@ -258,6 +468,36 @@
     - binary_sensor.b68_avariia_nizkaia_temperatura
     - binary_sensor.b69_avariia_nizkaia_temperatura
     - binary_sensor.b70_avariia_nizkaia_temperatura
+    - binary_sensor.b71_avariia_nizkaia_temperatura
+    - binary_sensor.b72_avariia_nizkaia_temperatura
+    - binary_sensor.b73_avariia_nizkaia_temperatura
+    - binary_sensor.b74_avariia_nizkaia_temperatura
+    - binary_sensor.b75_avariia_nizkaia_temperatura
+    - binary_sensor.b76_avariia_nizkaia_temperatura
+    - binary_sensor.b77_avariia_nizkaia_temperatura
+    - binary_sensor.b78_avariia_nizkaia_temperatura
+    - binary_sensor.b79_avariia_nizkaia_temperatura
+    - binary_sensor.b80_avariia_nizkaia_temperatura
+    - binary_sensor.b81_avariia_nizkaia_temperatura
+    - binary_sensor.b82_avariia_nizkaia_temperatura
+    - binary_sensor.b83_avariia_nizkaia_temperatura
+    - binary_sensor.b84_avariia_nizkaia_temperatura
+    - binary_sensor.b85_avariia_nizkaia_temperatura
+    - binary_sensor.b86_avariia_nizkaia_temperatura
+    - binary_sensor.b87_avariia_nizkaia_temperatura
+    - binary_sensor.b88_avariia_nizkaia_temperatura
+    - binary_sensor.b89_avariia_nizkaia_temperatura
+    - binary_sensor.b90_avariia_nizkaia_temperatura
+    - binary_sensor.b91_avariia_nizkaia_temperatura
+    - binary_sensor.b92_avariia_nizkaia_temperatura
+    - binary_sensor.b93_avariia_nizkaia_temperatura
+    - binary_sensor.b94_avariia_nizkaia_temperatura
+    - binary_sensor.b95_avariia_nizkaia_temperatura
+    - binary_sensor.b96_avariia_nizkaia_temperatura
+    - binary_sensor.b97_avariia_nizkaia_temperatura
+    - binary_sensor.b98_avariia_nizkaia_temperatura
+    - binary_sensor.b99_avariia_nizkaia_temperatura
+    - binary_sensor.b100_avariia_nizkaia_temperatura
     to: 'on'
   condition:
   - condition: template
@@ -295,6 +535,36 @@
     - binary_sensor.b18_avariia_vysokaia_temperatura
     - binary_sensor.b19_avariia_vysokaia_temperatura
     - binary_sensor.b20_avariia_vysokaia_temperatura
+    - binary_sensor.b21_avariia_vysokaia_temperatura
+    - binary_sensor.b22_avariia_vysokaia_temperatura
+    - binary_sensor.b23_avariia_vysokaia_temperatura
+    - binary_sensor.b24_avariia_vysokaia_temperatura
+    - binary_sensor.b25_avariia_vysokaia_temperatura
+    - binary_sensor.b26_avariia_vysokaia_temperatura
+    - binary_sensor.b27_avariia_vysokaia_temperatura
+    - binary_sensor.b28_avariia_vysokaia_temperatura
+    - binary_sensor.b29_avariia_vysokaia_temperatura
+    - binary_sensor.b30_avariia_vysokaia_temperatura
+    - binary_sensor.b31_avariia_vysokaia_temperatura
+    - binary_sensor.b32_avariia_vysokaia_temperatura
+    - binary_sensor.b33_avariia_vysokaia_temperatura
+    - binary_sensor.b34_avariia_vysokaia_temperatura
+    - binary_sensor.b35_avariia_vysokaia_temperatura
+    - binary_sensor.b36_avariia_vysokaia_temperatura
+    - binary_sensor.b37_avariia_vysokaia_temperatura
+    - binary_sensor.b38_avariia_vysokaia_temperatura
+    - binary_sensor.b39_avariia_vysokaia_temperatura
+    - binary_sensor.b40_avariia_vysokaia_temperatura
+    - binary_sensor.b41_avariia_vysokaia_temperatura
+    - binary_sensor.b42_avariia_vysokaia_temperatura
+    - binary_sensor.b43_avariia_vysokaia_temperatura
+    - binary_sensor.b44_avariia_vysokaia_temperatura
+    - binary_sensor.b45_avariia_vysokaia_temperatura
+    - binary_sensor.b46_avariia_vysokaia_temperatura
+    - binary_sensor.b47_avariia_vysokaia_temperatura
+    - binary_sensor.b48_avariia_vysokaia_temperatura
+    - binary_sensor.b49_avariia_vysokaia_temperatura
+    - binary_sensor.b50_avariia_vysokaia_temperatura
     - binary_sensor.b51_avariia_vysokaia_temperatura
     - binary_sensor.b52_avariia_vysokaia_temperatura
     - binary_sensor.b53_avariia_vysokaia_temperatura
@@ -315,6 +585,36 @@
     - binary_sensor.b68_avariia_vysokaia_temperatura
     - binary_sensor.b69_avariia_vysokaia_temperatura
     - binary_sensor.b70_avariia_vysokaia_temperatura
+    - binary_sensor.b71_avariia_vysokaia_temperatura
+    - binary_sensor.b72_avariia_vysokaia_temperatura
+    - binary_sensor.b73_avariia_vysokaia_temperatura
+    - binary_sensor.b74_avariia_vysokaia_temperatura
+    - binary_sensor.b75_avariia_vysokaia_temperatura
+    - binary_sensor.b76_avariia_vysokaia_temperatura
+    - binary_sensor.b77_avariia_vysokaia_temperatura
+    - binary_sensor.b78_avariia_vysokaia_temperatura
+    - binary_sensor.b79_avariia_vysokaia_temperatura
+    - binary_sensor.b80_avariia_vysokaia_temperatura
+    - binary_sensor.b81_avariia_vysokaia_temperatura
+    - binary_sensor.b82_avariia_vysokaia_temperatura
+    - binary_sensor.b83_avariia_vysokaia_temperatura
+    - binary_sensor.b84_avariia_vysokaia_temperatura
+    - binary_sensor.b85_avariia_vysokaia_temperatura
+    - binary_sensor.b86_avariia_vysokaia_temperatura
+    - binary_sensor.b87_avariia_vysokaia_temperatura
+    - binary_sensor.b88_avariia_vysokaia_temperatura
+    - binary_sensor.b89_avariia_vysokaia_temperatura
+    - binary_sensor.b90_avariia_vysokaia_temperatura
+    - binary_sensor.b91_avariia_vysokaia_temperatura
+    - binary_sensor.b92_avariia_vysokaia_temperatura
+    - binary_sensor.b93_avariia_vysokaia_temperatura
+    - binary_sensor.b94_avariia_vysokaia_temperatura
+    - binary_sensor.b95_avariia_vysokaia_temperatura
+    - binary_sensor.b96_avariia_vysokaia_temperatura
+    - binary_sensor.b97_avariia_vysokaia_temperatura
+    - binary_sensor.b98_avariia_vysokaia_temperatura
+    - binary_sensor.b99_avariia_vysokaia_temperatura
+    - binary_sensor.b100_avariia_vysokaia_temperatura
     to: 'on'
   condition:
   - condition: template
@@ -352,6 +652,36 @@
     - binary_sensor.b18_avariia_nizkii_kislorod
     - binary_sensor.b19_avariia_nizkii_kislorod
     - binary_sensor.b20_avariia_nizkii_kislorod
+    - binary_sensor.b21_avariia_nizkii_kislorod
+    - binary_sensor.b22_avariia_nizkii_kislorod
+    - binary_sensor.b23_avariia_nizkii_kislorod
+    - binary_sensor.b24_avariia_nizkii_kislorod
+    - binary_sensor.b25_avariia_nizkii_kislorod
+    - binary_sensor.b26_avariia_nizkii_kislorod
+    - binary_sensor.b27_avariia_nizkii_kislorod
+    - binary_sensor.b28_avariia_nizkii_kislorod
+    - binary_sensor.b29_avariia_nizkii_kislorod
+    - binary_sensor.b30_avariia_nizkii_kislorod
+    - binary_sensor.b31_avariia_nizkii_kislorod
+    - binary_sensor.b32_avariia_nizkii_kislorod
+    - binary_sensor.b33_avariia_nizkii_kislorod
+    - binary_sensor.b34_avariia_nizkii_kislorod
+    - binary_sensor.b35_avariia_nizkii_kislorod
+    - binary_sensor.b36_avariia_nizkii_kislorod
+    - binary_sensor.b37_avariia_nizkii_kislorod
+    - binary_sensor.b38_avariia_nizkii_kislorod
+    - binary_sensor.b39_avariia_nizkii_kislorod
+    - binary_sensor.b40_avariia_nizkii_kislorod
+    - binary_sensor.b41_avariia_nizkii_kislorod
+    - binary_sensor.b42_avariia_nizkii_kislorod
+    - binary_sensor.b43_avariia_nizkii_kislorod
+    - binary_sensor.b44_avariia_nizkii_kislorod
+    - binary_sensor.b45_avariia_nizkii_kislorod
+    - binary_sensor.b46_avariia_nizkii_kislorod
+    - binary_sensor.b47_avariia_nizkii_kislorod
+    - binary_sensor.b48_avariia_nizkii_kislorod
+    - binary_sensor.b49_avariia_nizkii_kislorod
+    - binary_sensor.b50_avariia_nizkii_kislorod
     - binary_sensor.b51_avariia_nizkii_kislorod
     - binary_sensor.b52_avariia_nizkii_kislorod
     - binary_sensor.b53_avariia_nizkii_kislorod
@@ -372,6 +702,36 @@
     - binary_sensor.b68_avariia_nizkii_kislorod
     - binary_sensor.b69_avariia_nizkii_kislorod
     - binary_sensor.b70_avariia_nizkii_kislorod
+    - binary_sensor.b71_avariia_nizkii_kislorod
+    - binary_sensor.b72_avariia_nizkii_kislorod
+    - binary_sensor.b73_avariia_nizkii_kislorod
+    - binary_sensor.b74_avariia_nizkii_kislorod
+    - binary_sensor.b75_avariia_nizkii_kislorod
+    - binary_sensor.b76_avariia_nizkii_kislorod
+    - binary_sensor.b77_avariia_nizkii_kislorod
+    - binary_sensor.b78_avariia_nizkii_kislorod
+    - binary_sensor.b79_avariia_nizkii_kislorod
+    - binary_sensor.b80_avariia_nizkii_kislorod
+    - binary_sensor.b81_avariia_nizkii_kislorod
+    - binary_sensor.b82_avariia_nizkii_kislorod
+    - binary_sensor.b83_avariia_nizkii_kislorod
+    - binary_sensor.b84_avariia_nizkii_kislorod
+    - binary_sensor.b85_avariia_nizkii_kislorod
+    - binary_sensor.b86_avariia_nizkii_kislorod
+    - binary_sensor.b87_avariia_nizkii_kislorod
+    - binary_sensor.b88_avariia_nizkii_kislorod
+    - binary_sensor.b89_avariia_nizkii_kislorod
+    - binary_sensor.b90_avariia_nizkii_kislorod
+    - binary_sensor.b91_avariia_nizkii_kislorod
+    - binary_sensor.b92_avariia_nizkii_kislorod
+    - binary_sensor.b93_avariia_nizkii_kislorod
+    - binary_sensor.b94_avariia_nizkii_kislorod
+    - binary_sensor.b95_avariia_nizkii_kislorod
+    - binary_sensor.b96_avariia_nizkii_kislorod
+    - binary_sensor.b97_avariia_nizkii_kislorod
+    - binary_sensor.b98_avariia_nizkii_kislorod
+    - binary_sensor.b99_avariia_nizkii_kislorod
+    - binary_sensor.b100_avariia_nizkii_kislorod
     to: 'on'
   condition:
   - condition: template
@@ -409,6 +769,36 @@
     - binary_sensor.b18_avariia_vysokii_kislorod
     - binary_sensor.b19_avariia_vysokii_kislorod
     - binary_sensor.b20_avariia_vysokii_kislorod
+    - binary_sensor.b21_avariia_vysokii_kislorod
+    - binary_sensor.b22_avariia_vysokii_kislorod
+    - binary_sensor.b23_avariia_vysokii_kislorod
+    - binary_sensor.b24_avariia_vysokii_kislorod
+    - binary_sensor.b25_avariia_vysokii_kislorod
+    - binary_sensor.b26_avariia_vysokii_kislorod
+    - binary_sensor.b27_avariia_vysokii_kislorod
+    - binary_sensor.b28_avariia_vysokii_kislorod
+    - binary_sensor.b29_avariia_vysokii_kislorod
+    - binary_sensor.b30_avariia_vysokii_kislorod
+    - binary_sensor.b31_avariia_vysokii_kislorod
+    - binary_sensor.b32_avariia_vysokii_kislorod
+    - binary_sensor.b33_avariia_vysokii_kislorod
+    - binary_sensor.b34_avariia_vysokii_kislorod
+    - binary_sensor.b35_avariia_vysokii_kislorod
+    - binary_sensor.b36_avariia_vysokii_kislorod
+    - binary_sensor.b37_avariia_vysokii_kislorod
+    - binary_sensor.b38_avariia_vysokii_kislorod
+    - binary_sensor.b39_avariia_vysokii_kislorod
+    - binary_sensor.b40_avariia_vysokii_kislorod
+    - binary_sensor.b41_avariia_vysokii_kislorod
+    - binary_sensor.b42_avariia_vysokii_kislorod
+    - binary_sensor.b43_avariia_vysokii_kislorod
+    - binary_sensor.b44_avariia_vysokii_kislorod
+    - binary_sensor.b45_avariia_vysokii_kislorod
+    - binary_sensor.b46_avariia_vysokii_kislorod
+    - binary_sensor.b47_avariia_vysokii_kislorod
+    - binary_sensor.b48_avariia_vysokii_kislorod
+    - binary_sensor.b49_avariia_vysokii_kislorod
+    - binary_sensor.b50_avariia_vysokii_kislorod
     - binary_sensor.b51_avariia_vysokii_kislorod
     - binary_sensor.b52_avariia_vysokii_kislorod
     - binary_sensor.b53_avariia_vysokii_kislorod
@@ -429,6 +819,36 @@
     - binary_sensor.b68_avariia_vysokii_kislorod
     - binary_sensor.b69_avariia_vysokii_kislorod
     - binary_sensor.b70_avariia_vysokii_kislorod
+    - binary_sensor.b71_avariia_vysokii_kislorod
+    - binary_sensor.b72_avariia_vysokii_kislorod
+    - binary_sensor.b73_avariia_vysokii_kislorod
+    - binary_sensor.b74_avariia_vysokii_kislorod
+    - binary_sensor.b75_avariia_vysokii_kislorod
+    - binary_sensor.b76_avariia_vysokii_kislorod
+    - binary_sensor.b77_avariia_vysokii_kislorod
+    - binary_sensor.b78_avariia_vysokii_kislorod
+    - binary_sensor.b79_avariia_vysokii_kislorod
+    - binary_sensor.b80_avariia_vysokii_kislorod
+    - binary_sensor.b81_avariia_vysokii_kislorod
+    - binary_sensor.b82_avariia_vysokii_kislorod
+    - binary_sensor.b83_avariia_vysokii_kislorod
+    - binary_sensor.b84_avariia_vysokii_kislorod
+    - binary_sensor.b85_avariia_vysokii_kislorod
+    - binary_sensor.b86_avariia_vysokii_kislorod
+    - binary_sensor.b87_avariia_vysokii_kislorod
+    - binary_sensor.b88_avariia_vysokii_kislorod
+    - binary_sensor.b89_avariia_vysokii_kislorod
+    - binary_sensor.b90_avariia_vysokii_kislorod
+    - binary_sensor.b91_avariia_vysokii_kislorod
+    - binary_sensor.b92_avariia_vysokii_kislorod
+    - binary_sensor.b93_avariia_vysokii_kislorod
+    - binary_sensor.b94_avariia_vysokii_kislorod
+    - binary_sensor.b95_avariia_vysokii_kislorod
+    - binary_sensor.b96_avariia_vysokii_kislorod
+    - binary_sensor.b97_avariia_vysokii_kislorod
+    - binary_sensor.b98_avariia_vysokii_kislorod
+    - binary_sensor.b99_avariia_vysokii_kislorod
+    - binary_sensor.b100_avariia_vysokii_kislorod
     to: 'on'
   condition:
   - condition: template
@@ -451,11 +871,21 @@
         - binary_sensor.sh3_pitanie
         - binary_sensor.sh4_pitanie
         - binary_sensor.sh5_pitanie
+        - binary_sensor.sh6_pitanie
+        - binary_sensor.sh7_pitanie
+        - binary_sensor.sh8_pitanie
+        - binary_sensor.sh9_pitanie
+        - binary_sensor.sh10_pitanie
         - binary_sensor.sh11_pitanie
         - binary_sensor.sh12_pitanie
         - binary_sensor.sh13_pitanie
         - binary_sensor.sh14_pitanie
         - binary_sensor.sh15_pitanie
+        - binary_sensor.sh16_pitanie
+        - binary_sensor.sh17_pitanie
+        - binary_sensor.sh18_pitanie
+        - binary_sensor.sh19_pitanie
+        - binary_sensor.sh20_pitanie
       to:
         - 'unknown'
         - 'unavailable'
@@ -478,11 +908,21 @@
         - binary_sensor.sh3_pitanie
         - binary_sensor.sh4_pitanie
         - binary_sensor.sh5_pitanie
+        - binary_sensor.sh6_pitanie
+        - binary_sensor.sh7_pitanie
+        - binary_sensor.sh8_pitanie
+        - binary_sensor.sh9_pitanie
+        - binary_sensor.sh10_pitanie
         - binary_sensor.sh11_pitanie
         - binary_sensor.sh12_pitanie
         - binary_sensor.sh13_pitanie
         - binary_sensor.sh14_pitanie
         - binary_sensor.sh15_pitanie
+        - binary_sensor.sh16_pitanie
+        - binary_sensor.sh17_pitanie
+        - binary_sensor.sh18_pitanie
+        - binary_sensor.sh19_pitanie
+        - binary_sensor.sh20_pitanie
       state:
         - 'unknown'
         - 'unavailable'
