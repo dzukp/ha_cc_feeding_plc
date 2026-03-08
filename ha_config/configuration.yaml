@@ -88,6 +88,66 @@ feeding_plc:
   - host: 192.168.14.23
     number: 20
     pool_plc_index: 5
+  - host: 192.168.14.29
+    number: 21
+    pool_plc_index: 1
+  - host: 192.168.14.29
+    number: 22
+    pool_plc_index: 2
+  - host: 192.168.14.29
+    number: 23
+    pool_plc_index: 3
+  - host: 192.168.14.29
+    number: 24
+    pool_plc_index: 4
+  - host: 192.168.14.29
+    number: 25
+    pool_plc_index: 5
+  - host: 192.168.14.30
+    number: 26
+    pool_plc_index: 1
+  - host: 192.168.14.30
+    number: 27
+    pool_plc_index: 2
+  - host: 192.168.14.30
+    number: 28
+    pool_plc_index: 3
+  - host: 192.168.14.30
+    number: 29
+    pool_plc_index: 4
+  - host: 192.168.14.30
+    number: 30
+    pool_plc_index: 5
+  - host: 192.168.14.31
+    number: 31
+    pool_plc_index: 1
+  - host: 192.168.14.31
+    number: 32
+    pool_plc_index: 2
+  - host: 192.168.14.31
+    number: 33
+    pool_plc_index: 3
+  - host: 192.168.14.31
+    number: 34
+    pool_plc_index: 4
+  - host: 192.168.14.31
+    number: 35
+    pool_plc_index: 5
+  - host: 192.168.14.32
+    number: 36
+    pool_plc_index: 1
+  - host: 192.168.14.32
+    number: 37
+    pool_plc_index: 2
+  - host: 192.168.14.32
+    number: 38
+    pool_plc_index: 3
+  - host: 192.168.14.32
+    number: 39
+    pool_plc_index: 4
+  - host: 192.168.14.32
+    number: 40
+    pool_plc_index: 5
   - host: 192.168.14.24
     number: 51
     pool_plc_index: 1
@@ -148,6 +208,66 @@ feeding_plc:
   - host: 192.168.14.27
     number: 70
     pool_plc_index: 5
+  - host: 192.168.14.33
+    number: 71
+    pool_plc_index: 1
+  - host: 192.168.14.33
+    number: 72
+    pool_plc_index: 2
+  - host: 192.168.14.33
+    number: 73
+    pool_plc_index: 3
+  - host: 192.168.14.33
+    number: 74
+    pool_plc_index: 4
+  - host: 192.168.14.33
+    number: 75
+    pool_plc_index: 5
+  - host: 192.168.14.34
+    number: 76
+    pool_plc_index: 1
+  - host: 192.168.14.34
+    number: 77
+    pool_plc_index: 2
+  - host: 192.168.14.34
+    number: 78
+    pool_plc_index: 3
+  - host: 192.168.14.34
+    number: 79
+    pool_plc_index: 4
+  - host: 192.168.14.34
+    number: 80
+    pool_plc_index: 5
+  - host: 192.168.14.35
+    number: 81
+    pool_plc_index: 1
+  - host: 192.168.14.35
+    number: 82
+    pool_plc_index: 2
+  - host: 192.168.14.35
+    number: 83
+    pool_plc_index: 3
+  - host: 192.168.14.35
+    number: 84
+    pool_plc_index: 4
+  - host: 192.168.14.35
+    number: 85
+    pool_plc_index: 5
+  - host: 192.168.14.36
+    number: 86
+    pool_plc_index: 1
+  - host: 192.168.14.36
+    number: 87
+    pool_plc_index: 2
+  - host: 192.168.14.36
+    number: 88
+    pool_plc_index: 3
+  - host: 192.168.14.36
+    number: 89
+    pool_plc_index: 4
+  - host: 192.168.14.36
+    number: 90
+    pool_plc_index: 5
 
 pools_plc:
   - host: 192.168.14.20
@@ -159,6 +279,14 @@ pools_plc:
   - host: 192.168.14.23
     number: 4
     extra_sensors: true
+  - host: 192.168.14.29
+    number: 5
+  - host: 192.168.14.30
+    number: 6
+  - host: 192.168.14.31
+    number: 7
+  - host: 192.168.14.32
+    number: 8
   - host: 192.168.14.24
     number: 11
   - host: 192.168.14.25
@@ -167,6 +295,14 @@ pools_plc:
     number: 13
   - host: 192.168.14.27
     number: 14
+  - host: 192.168.14.33
+    number: 15
+  - host: 192.168.14.34
+    number: 16
+  - host: 192.168.14.35
+    number: 17
+  - host: 192.168.14.36
+    number: 18
 
 recorder:
   exclude:
