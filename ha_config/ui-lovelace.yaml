@@ -1,10 +1,6 @@
 title: Кормление
 views:
-  - title: CSV №Загрузка
-    path: csv-upload
-    icon: mdi:upload
-    cards:
-      - type: custom:upload-csv-card
+  - !include lovelace/tab_csv_upload.yaml
   - !include lovelace/tab_pools_1_20.yaml
   - !include lovelace/tab_pools_21_40.yaml
   - !include lovelace/tab_pools_51_70.yaml

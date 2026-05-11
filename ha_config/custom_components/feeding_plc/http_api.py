@@ -36,7 +36,7 @@ class ParametersCsvExportView(HomeAssistantView):
             if (
                 re.match(r'^number\.b\d\d', entity.entity_id)
                 or re.match(r'^number\.sh\d', entity.entity_id)
-                or re.match(r'^switch\.b\d\d', entity.entity_id)
+                # or re.match(r'^switch\.b\d\d', entity.entity_id)
             ) and (
                 entity.state not in ('unknown', 'undefined')
             ):
