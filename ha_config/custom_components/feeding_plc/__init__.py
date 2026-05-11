@@ -7,7 +7,7 @@ from homeassistant.helpers.typing import ConfigType
 from homeassistant.const import CONF_HOST
 
 from .const import DOMAIN, SENSOR_ADDRESSES, STATE_MAP, ALARM_MASK, INPUT_ADDRESSES
-from .http_api import RecipeCsvUploadView
+from .http_api import RecipeCsvUploadView, ParametersCsvExportView, ParametersCsvUploadView
 from .modbus_client import PLCModbusClient
 
 logger = logging.getLogger('feeding')
@@ -51,6 +51,8 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
             )
 
     hass.http.register_view(RecipeCsvUploadView)
+    hass.http.register_view(ParametersCsvExportView)
+    hass.http.register_view(ParametersCsvUploadView)
 
     return True
 
@@ -66,6 +68,10 @@ async def async_setup_entry(hass: HomeAssistant, entry: ConfigEntry):
         "client": client,
         "coordinator": client.coordinator,
     }
+
+    hass.http.register_view(RecipeCsvUploadView)
+    hass.http.register_view(ParametersCsvExportView)
+    hass.http.register_view(ParametersCsvUploadView)
 
     await hass.config_entries.async_forward_entry_setups(
         entry,
