@@ -22,6 +22,8 @@ lovelace:
   resources:
   - url: /local/upload-csv-card.js
     type: module
+  - url: /local/params-csv-card.js
+    type: module
   - url: /local/button-card.js
     type: module
 

@@ -5,6 +5,7 @@ views:
     icon: mdi:upload
     cards:
       - type: custom:upload-csv-card
+      - type: custom:params-csv-card
   - !include lovelace/tab_pools_1_20.yaml
   - !include lovelace/tab_pools_51_70.yaml
   - !include lovelace/tab_feeding_1_20.yaml
