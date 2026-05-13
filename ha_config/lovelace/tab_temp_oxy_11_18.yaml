@@ -10,6 +10,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh11_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh11_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -33,6 +36,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh11_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh11_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh11_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh11_otkl_kisloroda').replace('unknown', '-') }} |
@@ -49,6 +53,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh12_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh12_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -72,6 +79,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh12_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh12_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh12_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh12_otkl_kisloroda').replace('unknown', '-') }} |
@@ -88,6 +96,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh13_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh13_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -111,6 +122,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh13_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh13_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh13_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh13_otkl_kisloroda').replace('unknown', '-') }} |
@@ -127,6 +139,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh14_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh14_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -150,6 +165,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh14_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh14_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh14_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh14_otkl_kisloroda').replace('unknown', '-') }} |
@@ -166,6 +182,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh15_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh15_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -189,6 +208,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh15_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh15_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh15_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh15_otkl_kisloroda').replace('unknown', '-') }} |
@@ -205,6 +225,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh16_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh16_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -228,6 +251,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh16_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh16_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh16_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh16_otkl_kisloroda').replace('unknown', '-') }} |
@@ -244,6 +268,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh17_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh17_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -267,6 +294,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh17_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh17_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh17_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh17_otkl_kisloroda').replace('unknown', '-') }} |
@@ -283,6 +311,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh18_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh18_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -306,6 +337,7 @@ sections:
             content: |
               |  |  |
               |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh18_vremia_smeny_sutok').replace('unknown', '-') }} |
               | **Верхний предел O₂** | {{ states('number.sh18_verkh_limit_kisloroda').replace('unknown', '-') }} |
               | **Нижний предел O₂** | {{ states('number.sh18_niz_limit_kisloroda').replace('unknown', '-') }} |
               | **Отключение подачи O₂** | {{ states('number.sh18_otkl_kisloroda').replace('unknown', '-') }} |

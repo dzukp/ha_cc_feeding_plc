@@ -34,7 +34,7 @@ async def async_setup(hass: HomeAssistant, config: ConfigType):
             "coordinator": client.coordinator,
         }
 
-        for platform in ["sensor", "number", "binary_sensor"]:
+        for platform in ["sensor", "number", "binary_sensor", "time"]:
             hass.async_create_task(
                 async_load_platform(
                     hass, platform, DOMAIN,

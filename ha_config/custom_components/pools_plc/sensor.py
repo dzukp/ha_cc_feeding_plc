@@ -54,6 +54,7 @@ def create_items(
         coordinator: DataUpdateCoordinator, device_id: str, plc_number: int, extra_sensors: bool
 ):
     items = [
+        ModbusSensor(coordinator, device_id, f"Ш{plc_number} Версия ПО", 1, signed=False),
         PlcTimeModbusSensor(coordinator, device_id, f"Ш{plc_number} Время",5),
     ]
     if extra_sensors:
