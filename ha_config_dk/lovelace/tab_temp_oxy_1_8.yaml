@@ -1,0 +1,290 @@
+title: T&O₂ (1-8)
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №1 (Бассейны 1-5)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh1_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh1_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh1_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh1_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh1_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh1_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh1_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh1_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh1_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh1_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh1_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh1_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh1_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh1_niz_limit_temperatury').replace('unknown', '-') }} |
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №2 (Бассейны 6-10)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh2_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh2_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh2_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh2_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh2_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh2_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh2_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh2_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh2_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh2_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh2_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh2_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh2_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh2_niz_limit_temperatury').replace('unknown', '-') }} |
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №3 (Бассейны 11-15)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh3_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh3_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh3_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh3_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh3_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh3_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh3_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh3_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh3_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh3_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh3_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh3_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh3_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh3_niz_limit_temperatury').replace('unknown', '-') }} |
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №4 (Бассейны 16-20)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh4_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh4_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh4_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh4_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh4_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh4_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh4_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh4_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh4_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh4_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh4_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh4_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh4_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh4_niz_limit_temperatury').replace('unknown', '-') }} |
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №5 (Бассейны 21-25)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh5_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh5_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh5_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh5_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh5_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh5_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh5_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh5_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh5_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh5_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh5_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh5_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh5_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh5_niz_limit_temperatury').replace('unknown', '-') }} |
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №6 (Бассейны 26-30)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh6_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh6_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh6_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh6_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh6_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh6_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh6_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh6_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh6_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh6_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh6_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh6_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh6_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh6_niz_limit_temperatury').replace('unknown', '-') }} |
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №7 (Бассейны 31-35)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh7_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh7_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh7_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh7_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh7_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh7_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh7_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh7_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh7_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh7_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh7_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh7_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh7_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh7_niz_limit_temperatury').replace('unknown', '-') }} |
+  - type: grid
+    cards:
+      - type: heading
+        heading: Шкаф №8 (Бассейны 36-40)
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.sh8_vremia_smeny_sutok
+                name: Время смены суток
+              - entity: number.sh8_verkh_limit_kisloroda
+                name: Верхний предел O₂
+              - entity: number.sh8_niz_limit_kisloroda
+                name: Нижний предел O₂
+              - entity: number.sh8_otkl_kisloroda
+                name: Отключение подачи O₂
+              - entity: number.sh8_vkl_kisloroda
+                name: Включение подачи O₂
+              - entity: number.sh8_verkh_limit_temperatury
+                name: Верхний предел T°
+              - entity: number.sh8_niz_limit_temperatury
+                name: Нижний предел T°
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Время смены суток** | {{ states('time.sh8_vremia_smeny_sutok').replace('unknown', '-') }} |
+              | **Верхний предел O₂** | {{ states('number.sh8_verkh_limit_kisloroda').replace('unknown', '-') }} |
+              | **Нижний предел O₂** | {{ states('number.sh8_niz_limit_kisloroda').replace('unknown', '-') }} |
+              | **Отключение подачи O₂** | {{ states('number.sh8_otkl_kisloroda').replace('unknown', '-') }} |
+              | **Включение подачи O₂** | {{ states('number.sh8_vkl_kisloroda').replace('unknown', '-') }} |
+              | **Верхний предел T°** | {{ states('number.sh8_verkh_limit_temperatury').replace('unknown', '-') }} |
+              | **Нижний предел T°** | {{ states('number.sh8_niz_limit_temperatury').replace('unknown', '-') }} |

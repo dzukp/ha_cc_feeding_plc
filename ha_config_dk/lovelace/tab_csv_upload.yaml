@@ -1,0 +1,14 @@
+title: CSV №Загрузка
+path: csv-upload
+icon: mdi:upload
+cards:
+  - type: custom:state-switch
+    entity: group
+    states:
+      admin:
+        type: custom:upload-csv-card
+  - type: custom:state-switch
+    entity: group
+    states:
+      admin:
+        type: custom:params-csv-card

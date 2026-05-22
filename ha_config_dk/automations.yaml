@@ -1,0 +1,659 @@
+- alias: Notify Telegram on alarm avariia_datchika_ksiloroda
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_datchika_ksiloroda
+    - binary_sensor.b02_avariia_datchika_ksiloroda
+    - binary_sensor.b03_avariia_datchika_ksiloroda
+    - binary_sensor.b04_avariia_datchika_ksiloroda
+    - binary_sensor.b05_avariia_datchika_ksiloroda
+    - binary_sensor.b06_avariia_datchika_ksiloroda
+    - binary_sensor.b07_avariia_datchika_ksiloroda
+    - binary_sensor.b08_avariia_datchika_ksiloroda
+    - binary_sensor.b09_avariia_datchika_ksiloroda
+    - binary_sensor.b10_avariia_datchika_ksiloroda
+    - binary_sensor.b11_avariia_datchika_ksiloroda
+    - binary_sensor.b12_avariia_datchika_ksiloroda
+    - binary_sensor.b13_avariia_datchika_ksiloroda
+    - binary_sensor.b14_avariia_datchika_ksiloroda
+    - binary_sensor.b15_avariia_datchika_ksiloroda
+    - binary_sensor.b16_avariia_datchika_ksiloroda
+    - binary_sensor.b17_avariia_datchika_ksiloroda
+    - binary_sensor.b18_avariia_datchika_ksiloroda
+    - binary_sensor.b19_avariia_datchika_ksiloroda
+    - binary_sensor.b20_avariia_datchika_ksiloroda
+    - binary_sensor.b21_avariia_datchika_ksiloroda
+    - binary_sensor.b22_avariia_datchika_ksiloroda
+    - binary_sensor.b23_avariia_datchika_ksiloroda
+    - binary_sensor.b24_avariia_datchika_ksiloroda
+    - binary_sensor.b25_avariia_datchika_ksiloroda
+    - binary_sensor.b26_avariia_datchika_ksiloroda
+    - binary_sensor.b27_avariia_datchika_ksiloroda
+    - binary_sensor.b28_avariia_datchika_ksiloroda
+    - binary_sensor.b29_avariia_datchika_ksiloroda
+    - binary_sensor.b30_avariia_datchika_ksiloroda
+    - binary_sensor.b31_avariia_datchika_ksiloroda
+    - binary_sensor.b32_avariia_datchika_ksiloroda
+    - binary_sensor.b33_avariia_datchika_ksiloroda
+    - binary_sensor.b34_avariia_datchika_ksiloroda
+    - binary_sensor.b35_avariia_datchika_ksiloroda
+    - binary_sensor.b36_avariia_datchika_ksiloroda
+    - binary_sensor.b37_avariia_datchika_ksiloroda
+    - binary_sensor.b38_avariia_datchika_ksiloroda
+    - binary_sensor.b39_avariia_datchika_ksiloroda
+    - binary_sensor.b40_avariia_datchika_ksiloroda
+    - binary_sensor.b41_avariia_datchika_ksiloroda
+    - binary_sensor.b42_avariia_datchika_ksiloroda
+    - binary_sensor.b43_avariia_datchika_ksiloroda
+    - binary_sensor.b44_avariia_datchika_ksiloroda
+    - binary_sensor.b45_avariia_datchika_ksiloroda
+    - binary_sensor.b46_avariia_datchika_ksiloroda
+    - binary_sensor.b47_avariia_datchika_ksiloroda
+    - binary_sensor.b48_avariia_datchika_ksiloroda
+    - binary_sensor.b49_avariia_datchika_ksiloroda
+    - binary_sensor.b50_avariia_datchika_ksiloroda
+    - binary_sensor.b51_avariia_datchika_ksiloroda
+    - binary_sensor.b52_avariia_datchika_ksiloroda
+    - binary_sensor.b53_avariia_datchika_ksiloroda
+    - binary_sensor.b54_avariia_datchika_ksiloroda
+    - binary_sensor.b55_avariia_datchika_ksiloroda
+    - binary_sensor.b56_avariia_datchika_ksiloroda
+    - binary_sensor.b57_avariia_datchika_ksiloroda
+    - binary_sensor.b58_avariia_datchika_ksiloroda
+    - binary_sensor.b59_avariia_datchika_ksiloroda
+    - binary_sensor.b60_avariia_datchika_ksiloroda
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}‼️
+        Бассейн {{ pool_num }}. 🫧🌡 Ошибка датчика кислорода'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_kormushka_1
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_kormushka_1
+    - binary_sensor.b02_avariia_kormushka_1
+    - binary_sensor.b03_avariia_kormushka_1
+    - binary_sensor.b04_avariia_kormushka_1
+    - binary_sensor.b05_avariia_kormushka_1
+    - binary_sensor.b06_avariia_kormushka_1
+    - binary_sensor.b07_avariia_kormushka_1
+    - binary_sensor.b08_avariia_kormushka_1
+    - binary_sensor.b09_avariia_kormushka_1
+    - binary_sensor.b10_avariia_kormushka_1
+    - binary_sensor.b11_avariia_kormushka_1
+    - binary_sensor.b12_avariia_kormushka_1
+    - binary_sensor.b13_avariia_kormushka_1
+    - binary_sensor.b14_avariia_kormushka_1
+    - binary_sensor.b15_avariia_kormushka_1
+    - binary_sensor.b16_avariia_kormushka_1
+    - binary_sensor.b17_avariia_kormushka_1
+    - binary_sensor.b18_avariia_kormushka_1
+    - binary_sensor.b19_avariia_kormushka_1
+    - binary_sensor.b20_avariia_kormushka_1
+    - binary_sensor.b21_avariia_kormushka_1
+    - binary_sensor.b22_avariia_kormushka_1
+    - binary_sensor.b23_avariia_kormushka_1
+    - binary_sensor.b24_avariia_kormushka_1
+    - binary_sensor.b25_avariia_kormushka_1
+    - binary_sensor.b26_avariia_kormushka_1
+    - binary_sensor.b27_avariia_kormushka_1
+    - binary_sensor.b28_avariia_kormushka_1
+    - binary_sensor.b29_avariia_kormushka_1
+    - binary_sensor.b30_avariia_kormushka_1
+    - binary_sensor.b31_avariia_kormushka_1
+    - binary_sensor.b32_avariia_kormushka_1
+    - binary_sensor.b33_avariia_kormushka_1
+    - binary_sensor.b34_avariia_kormushka_1
+    - binary_sensor.b35_avariia_kormushka_1
+    - binary_sensor.b36_avariia_kormushka_1
+    - binary_sensor.b37_avariia_kormushka_1
+    - binary_sensor.b38_avariia_kormushka_1
+    - binary_sensor.b39_avariia_kormushka_1
+    - binary_sensor.b40_avariia_kormushka_1
+    - binary_sensor.b41_avariia_kormushka_1
+    - binary_sensor.b42_avariia_kormushka_1
+    - binary_sensor.b43_avariia_kormushka_1
+    - binary_sensor.b44_avariia_kormushka_1
+    - binary_sensor.b45_avariia_kormushka_1
+    - binary_sensor.b46_avariia_kormushka_1
+    - binary_sensor.b47_avariia_kormushka_1
+    - binary_sensor.b48_avariia_kormushka_1
+    - binary_sensor.b49_avariia_kormushka_1
+    - binary_sensor.b50_avariia_kormushka_1
+    - binary_sensor.b51_avariia_kormushka_1
+    - binary_sensor.b52_avariia_kormushka_1
+    - binary_sensor.b53_avariia_kormushka_1
+    - binary_sensor.b54_avariia_kormushka_1
+    - binary_sensor.b55_avariia_kormushka_1
+    - binary_sensor.b56_avariia_kormushka_1
+    - binary_sensor.b57_avariia_kormushka_1
+    - binary_sensor.b58_avariia_kormushka_1
+    - binary_sensor.b59_avariia_kormushka_1
+    - binary_sensor.b60_avariia_kormushka_1
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}‼️
+        Бассейн {{ pool_num }}. 🫘 Не включилась кормушка 1'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_kormushka_2
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_kormushka_2
+    - binary_sensor.b02_avariia_kormushka_2
+    - binary_sensor.b03_avariia_kormushka_2
+    - binary_sensor.b04_avariia_kormushka_2
+    - binary_sensor.b05_avariia_kormushka_2
+    - binary_sensor.b06_avariia_kormushka_2
+    - binary_sensor.b07_avariia_kormushka_2
+    - binary_sensor.b08_avariia_kormushka_2
+    - binary_sensor.b09_avariia_kormushka_2
+    - binary_sensor.b10_avariia_kormushka_2
+    - binary_sensor.b11_avariia_kormushka_2
+    - binary_sensor.b12_avariia_kormushka_2
+    - binary_sensor.b13_avariia_kormushka_2
+    - binary_sensor.b14_avariia_kormushka_2
+    - binary_sensor.b15_avariia_kormushka_2
+    - binary_sensor.b16_avariia_kormushka_2
+    - binary_sensor.b17_avariia_kormushka_2
+    - binary_sensor.b18_avariia_kormushka_2
+    - binary_sensor.b19_avariia_kormushka_2
+    - binary_sensor.b20_avariia_kormushka_2
+    - binary_sensor.b21_avariia_kormushka_2
+    - binary_sensor.b22_avariia_kormushka_2
+    - binary_sensor.b23_avariia_kormushka_2
+    - binary_sensor.b24_avariia_kormushka_2
+    - binary_sensor.b25_avariia_kormushka_2
+    - binary_sensor.b26_avariia_kormushka_2
+    - binary_sensor.b27_avariia_kormushka_2
+    - binary_sensor.b28_avariia_kormushka_2
+    - binary_sensor.b29_avariia_kormushka_2
+    - binary_sensor.b30_avariia_kormushka_2
+    - binary_sensor.b31_avariia_kormushka_2
+    - binary_sensor.b32_avariia_kormushka_2
+    - binary_sensor.b33_avariia_kormushka_2
+    - binary_sensor.b34_avariia_kormushka_2
+    - binary_sensor.b35_avariia_kormushka_2
+    - binary_sensor.b36_avariia_kormushka_2
+    - binary_sensor.b37_avariia_kormushka_2
+    - binary_sensor.b38_avariia_kormushka_2
+    - binary_sensor.b39_avariia_kormushka_2
+    - binary_sensor.b40_avariia_kormushka_2
+    - binary_sensor.b41_avariia_kormushka_2
+    - binary_sensor.b42_avariia_kormushka_2
+    - binary_sensor.b43_avariia_kormushka_2
+    - binary_sensor.b44_avariia_kormushka_2
+    - binary_sensor.b45_avariia_kormushka_2
+    - binary_sensor.b46_avariia_kormushka_2
+    - binary_sensor.b47_avariia_kormushka_2
+    - binary_sensor.b48_avariia_kormushka_2
+    - binary_sensor.b49_avariia_kormushka_2
+    - binary_sensor.b50_avariia_kormushka_2
+    - binary_sensor.b51_avariia_kormushka_2
+    - binary_sensor.b52_avariia_kormushka_2
+    - binary_sensor.b53_avariia_kormushka_2
+    - binary_sensor.b54_avariia_kormushka_2
+    - binary_sensor.b55_avariia_kormushka_2
+    - binary_sensor.b56_avariia_kormushka_2
+    - binary_sensor.b57_avariia_kormushka_2
+    - binary_sensor.b58_avariia_kormushka_2
+    - binary_sensor.b59_avariia_kormushka_2
+    - binary_sensor.b60_avariia_kormushka_2
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}‼️
+        Бассейн {{ pool_num }}. 🫘 Не включилась кормушка 2'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_oksigeneratora
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_oksigeneratora
+    - binary_sensor.b02_avariia_oksigeneratora
+    - binary_sensor.b03_avariia_oksigeneratora
+    - binary_sensor.b04_avariia_oksigeneratora
+    - binary_sensor.b05_avariia_oksigeneratora
+    - binary_sensor.b06_avariia_oksigeneratora
+    - binary_sensor.b07_avariia_oksigeneratora
+    - binary_sensor.b08_avariia_oksigeneratora
+    - binary_sensor.b09_avariia_oksigeneratora
+    - binary_sensor.b10_avariia_oksigeneratora
+    - binary_sensor.b11_avariia_oksigeneratora
+    - binary_sensor.b12_avariia_oksigeneratora
+    - binary_sensor.b13_avariia_oksigeneratora
+    - binary_sensor.b14_avariia_oksigeneratora
+    - binary_sensor.b15_avariia_oksigeneratora
+    - binary_sensor.b16_avariia_oksigeneratora
+    - binary_sensor.b17_avariia_oksigeneratora
+    - binary_sensor.b18_avariia_oksigeneratora
+    - binary_sensor.b19_avariia_oksigeneratora
+    - binary_sensor.b20_avariia_oksigeneratora
+    - binary_sensor.b21_avariia_oksigeneratora
+    - binary_sensor.b22_avariia_oksigeneratora
+    - binary_sensor.b23_avariia_oksigeneratora
+    - binary_sensor.b24_avariia_oksigeneratora
+    - binary_sensor.b25_avariia_oksigeneratora
+    - binary_sensor.b26_avariia_oksigeneratora
+    - binary_sensor.b27_avariia_oksigeneratora
+    - binary_sensor.b28_avariia_oksigeneratora
+    - binary_sensor.b29_avariia_oksigeneratora
+    - binary_sensor.b30_avariia_oksigeneratora
+    - binary_sensor.b31_avariia_oksigeneratora
+    - binary_sensor.b32_avariia_oksigeneratora
+    - binary_sensor.b33_avariia_oksigeneratora
+    - binary_sensor.b34_avariia_oksigeneratora
+    - binary_sensor.b35_avariia_oksigeneratora
+    - binary_sensor.b36_avariia_oksigeneratora
+    - binary_sensor.b37_avariia_oksigeneratora
+    - binary_sensor.b38_avariia_oksigeneratora
+    - binary_sensor.b39_avariia_oksigeneratora
+    - binary_sensor.b40_avariia_oksigeneratora
+    - binary_sensor.b41_avariia_oksigeneratora
+    - binary_sensor.b42_avariia_oksigeneratora
+    - binary_sensor.b43_avariia_oksigeneratora
+    - binary_sensor.b44_avariia_oksigeneratora
+    - binary_sensor.b45_avariia_oksigeneratora
+    - binary_sensor.b46_avariia_oksigeneratora
+    - binary_sensor.b47_avariia_oksigeneratora
+    - binary_sensor.b48_avariia_oksigeneratora
+    - binary_sensor.b49_avariia_oksigeneratora
+    - binary_sensor.b50_avariia_oksigeneratora
+    - binary_sensor.b51_avariia_oksigeneratora
+    - binary_sensor.b52_avariia_oksigeneratora
+    - binary_sensor.b53_avariia_oksigeneratora
+    - binary_sensor.b54_avariia_oksigeneratora
+    - binary_sensor.b55_avariia_oksigeneratora
+    - binary_sensor.b56_avariia_oksigeneratora
+    - binary_sensor.b57_avariia_oksigeneratora
+    - binary_sensor.b58_avariia_oksigeneratora
+    - binary_sensor.b59_avariia_oksigeneratora
+    - binary_sensor.b60_avariia_oksigeneratora
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}‼️
+        Бассейн {{ pool_num }}. 💨 Не включен оксигенератор'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_nizkaia_temperatura
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_nizkaia_temperatura
+    - binary_sensor.b02_avariia_nizkaia_temperatura
+    - binary_sensor.b03_avariia_nizkaia_temperatura
+    - binary_sensor.b04_avariia_nizkaia_temperatura
+    - binary_sensor.b05_avariia_nizkaia_temperatura
+    - binary_sensor.b06_avariia_nizkaia_temperatura
+    - binary_sensor.b07_avariia_nizkaia_temperatura
+    - binary_sensor.b08_avariia_nizkaia_temperatura
+    - binary_sensor.b09_avariia_nizkaia_temperatura
+    - binary_sensor.b10_avariia_nizkaia_temperatura
+    - binary_sensor.b11_avariia_nizkaia_temperatura
+    - binary_sensor.b12_avariia_nizkaia_temperatura
+    - binary_sensor.b13_avariia_nizkaia_temperatura
+    - binary_sensor.b14_avariia_nizkaia_temperatura
+    - binary_sensor.b15_avariia_nizkaia_temperatura
+    - binary_sensor.b16_avariia_nizkaia_temperatura
+    - binary_sensor.b17_avariia_nizkaia_temperatura
+    - binary_sensor.b18_avariia_nizkaia_temperatura
+    - binary_sensor.b19_avariia_nizkaia_temperatura
+    - binary_sensor.b20_avariia_nizkaia_temperatura
+    - binary_sensor.b21_avariia_nizkaia_temperatura
+    - binary_sensor.b22_avariia_nizkaia_temperatura
+    - binary_sensor.b23_avariia_nizkaia_temperatura
+    - binary_sensor.b24_avariia_nizkaia_temperatura
+    - binary_sensor.b25_avariia_nizkaia_temperatura
+    - binary_sensor.b26_avariia_nizkaia_temperatura
+    - binary_sensor.b27_avariia_nizkaia_temperatura
+    - binary_sensor.b28_avariia_nizkaia_temperatura
+    - binary_sensor.b29_avariia_nizkaia_temperatura
+    - binary_sensor.b30_avariia_nizkaia_temperatura
+    - binary_sensor.b31_avariia_nizkaia_temperatura
+    - binary_sensor.b32_avariia_nizkaia_temperatura
+    - binary_sensor.b33_avariia_nizkaia_temperatura
+    - binary_sensor.b34_avariia_nizkaia_temperatura
+    - binary_sensor.b35_avariia_nizkaia_temperatura
+    - binary_sensor.b36_avariia_nizkaia_temperatura
+    - binary_sensor.b37_avariia_nizkaia_temperatura
+    - binary_sensor.b38_avariia_nizkaia_temperatura
+    - binary_sensor.b39_avariia_nizkaia_temperatura
+    - binary_sensor.b40_avariia_nizkaia_temperatura
+    - binary_sensor.b41_avariia_nizkaia_temperatura
+    - binary_sensor.b42_avariia_nizkaia_temperatura
+    - binary_sensor.b43_avariia_nizkaia_temperatura
+    - binary_sensor.b44_avariia_nizkaia_temperatura
+    - binary_sensor.b45_avariia_nizkaia_temperatura
+    - binary_sensor.b46_avariia_nizkaia_temperatura
+    - binary_sensor.b47_avariia_nizkaia_temperatura
+    - binary_sensor.b48_avariia_nizkaia_temperatura
+    - binary_sensor.b49_avariia_nizkaia_temperatura
+    - binary_sensor.b50_avariia_nizkaia_temperatura
+    - binary_sensor.b51_avariia_nizkaia_temperatura
+    - binary_sensor.b52_avariia_nizkaia_temperatura
+    - binary_sensor.b53_avariia_nizkaia_temperatura
+    - binary_sensor.b54_avariia_nizkaia_temperatura
+    - binary_sensor.b55_avariia_nizkaia_temperatura
+    - binary_sensor.b56_avariia_nizkaia_temperatura
+    - binary_sensor.b57_avariia_nizkaia_temperatura
+    - binary_sensor.b58_avariia_nizkaia_temperatura
+    - binary_sensor.b59_avariia_nizkaia_temperatura
+    - binary_sensor.b60_avariia_nizkaia_temperatura
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 5 + 1) ~ "_niz_limit_temperatury"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_temperatura" %}‼️
+        Бассейн {{ pool_num }}.🌡 Температура {{ states(sensor) }}°C < {{ states(limit_sensor)
+        }}°C'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_vysokaia_temperatura
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_vysokaia_temperatura
+    - binary_sensor.b02_avariia_vysokaia_temperatura
+    - binary_sensor.b03_avariia_vysokaia_temperatura
+    - binary_sensor.b04_avariia_vysokaia_temperatura
+    - binary_sensor.b05_avariia_vysokaia_temperatura
+    - binary_sensor.b06_avariia_vysokaia_temperatura
+    - binary_sensor.b07_avariia_vysokaia_temperatura
+    - binary_sensor.b08_avariia_vysokaia_temperatura
+    - binary_sensor.b09_avariia_vysokaia_temperatura
+    - binary_sensor.b10_avariia_vysokaia_temperatura
+    - binary_sensor.b11_avariia_vysokaia_temperatura
+    - binary_sensor.b12_avariia_vysokaia_temperatura
+    - binary_sensor.b13_avariia_vysokaia_temperatura
+    - binary_sensor.b14_avariia_vysokaia_temperatura
+    - binary_sensor.b15_avariia_vysokaia_temperatura
+    - binary_sensor.b16_avariia_vysokaia_temperatura
+    - binary_sensor.b17_avariia_vysokaia_temperatura
+    - binary_sensor.b18_avariia_vysokaia_temperatura
+    - binary_sensor.b19_avariia_vysokaia_temperatura
+    - binary_sensor.b20_avariia_vysokaia_temperatura
+    - binary_sensor.b21_avariia_vysokaia_temperatura
+    - binary_sensor.b22_avariia_vysokaia_temperatura
+    - binary_sensor.b23_avariia_vysokaia_temperatura
+    - binary_sensor.b24_avariia_vysokaia_temperatura
+    - binary_sensor.b25_avariia_vysokaia_temperatura
+    - binary_sensor.b26_avariia_vysokaia_temperatura
+    - binary_sensor.b27_avariia_vysokaia_temperatura
+    - binary_sensor.b28_avariia_vysokaia_temperatura
+    - binary_sensor.b29_avariia_vysokaia_temperatura
+    - binary_sensor.b30_avariia_vysokaia_temperatura
+    - binary_sensor.b31_avariia_vysokaia_temperatura
+    - binary_sensor.b32_avariia_vysokaia_temperatura
+    - binary_sensor.b33_avariia_vysokaia_temperatura
+    - binary_sensor.b34_avariia_vysokaia_temperatura
+    - binary_sensor.b35_avariia_vysokaia_temperatura
+    - binary_sensor.b36_avariia_vysokaia_temperatura
+    - binary_sensor.b37_avariia_vysokaia_temperatura
+    - binary_sensor.b38_avariia_vysokaia_temperatura
+    - binary_sensor.b39_avariia_vysokaia_temperatura
+    - binary_sensor.b40_avariia_vysokaia_temperatura
+    - binary_sensor.b41_avariia_vysokaia_temperatura
+    - binary_sensor.b42_avariia_vysokaia_temperatura
+    - binary_sensor.b43_avariia_vysokaia_temperatura
+    - binary_sensor.b44_avariia_vysokaia_temperatura
+    - binary_sensor.b45_avariia_vysokaia_temperatura
+    - binary_sensor.b46_avariia_vysokaia_temperatura
+    - binary_sensor.b47_avariia_vysokaia_temperatura
+    - binary_sensor.b48_avariia_vysokaia_temperatura
+    - binary_sensor.b49_avariia_vysokaia_temperatura
+    - binary_sensor.b50_avariia_vysokaia_temperatura
+    - binary_sensor.b51_avariia_vysokaia_temperatura
+    - binary_sensor.b52_avariia_vysokaia_temperatura
+    - binary_sensor.b53_avariia_vysokaia_temperatura
+    - binary_sensor.b54_avariia_vysokaia_temperatura
+    - binary_sensor.b55_avariia_vysokaia_temperatura
+    - binary_sensor.b56_avariia_vysokaia_temperatura
+    - binary_sensor.b57_avariia_vysokaia_temperatura
+    - binary_sensor.b58_avariia_vysokaia_temperatura
+    - binary_sensor.b59_avariia_vysokaia_temperatura
+    - binary_sensor.b60_avariia_vysokaia_temperatura
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 5 + 1) ~ "_verkh_limit_temperatury"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_temperatura" %}‼️
+        Бассейн {{ pool_num }}.🌡🌡 Температура {{ states(sensor) }}°C > {{ states(limit_sensor)
+        }}°C'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_nizkii_kislorod
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_nizkii_kislorod
+    - binary_sensor.b02_avariia_nizkii_kislorod
+    - binary_sensor.b03_avariia_nizkii_kislorod
+    - binary_sensor.b04_avariia_nizkii_kislorod
+    - binary_sensor.b05_avariia_nizkii_kislorod
+    - binary_sensor.b06_avariia_nizkii_kislorod
+    - binary_sensor.b07_avariia_nizkii_kislorod
+    - binary_sensor.b08_avariia_nizkii_kislorod
+    - binary_sensor.b09_avariia_nizkii_kislorod
+    - binary_sensor.b10_avariia_nizkii_kislorod
+    - binary_sensor.b11_avariia_nizkii_kislorod
+    - binary_sensor.b12_avariia_nizkii_kislorod
+    - binary_sensor.b13_avariia_nizkii_kislorod
+    - binary_sensor.b14_avariia_nizkii_kislorod
+    - binary_sensor.b15_avariia_nizkii_kislorod
+    - binary_sensor.b16_avariia_nizkii_kislorod
+    - binary_sensor.b17_avariia_nizkii_kislorod
+    - binary_sensor.b18_avariia_nizkii_kislorod
+    - binary_sensor.b19_avariia_nizkii_kislorod
+    - binary_sensor.b20_avariia_nizkii_kislorod
+    - binary_sensor.b21_avariia_nizkii_kislorod
+    - binary_sensor.b22_avariia_nizkii_kislorod
+    - binary_sensor.b23_avariia_nizkii_kislorod
+    - binary_sensor.b24_avariia_nizkii_kislorod
+    - binary_sensor.b25_avariia_nizkii_kislorod
+    - binary_sensor.b26_avariia_nizkii_kislorod
+    - binary_sensor.b27_avariia_nizkii_kislorod
+    - binary_sensor.b28_avariia_nizkii_kislorod
+    - binary_sensor.b29_avariia_nizkii_kislorod
+    - binary_sensor.b30_avariia_nizkii_kislorod
+    - binary_sensor.b31_avariia_nizkii_kislorod
+    - binary_sensor.b32_avariia_nizkii_kislorod
+    - binary_sensor.b33_avariia_nizkii_kislorod
+    - binary_sensor.b34_avariia_nizkii_kislorod
+    - binary_sensor.b35_avariia_nizkii_kislorod
+    - binary_sensor.b36_avariia_nizkii_kislorod
+    - binary_sensor.b37_avariia_nizkii_kislorod
+    - binary_sensor.b38_avariia_nizkii_kislorod
+    - binary_sensor.b39_avariia_nizkii_kislorod
+    - binary_sensor.b40_avariia_nizkii_kislorod
+    - binary_sensor.b41_avariia_nizkii_kislorod
+    - binary_sensor.b42_avariia_nizkii_kislorod
+    - binary_sensor.b43_avariia_nizkii_kislorod
+    - binary_sensor.b44_avariia_nizkii_kislorod
+    - binary_sensor.b45_avariia_nizkii_kislorod
+    - binary_sensor.b46_avariia_nizkii_kislorod
+    - binary_sensor.b47_avariia_nizkii_kislorod
+    - binary_sensor.b48_avariia_nizkii_kislorod
+    - binary_sensor.b49_avariia_nizkii_kislorod
+    - binary_sensor.b50_avariia_nizkii_kislorod
+    - binary_sensor.b51_avariia_nizkii_kislorod
+    - binary_sensor.b52_avariia_nizkii_kislorod
+    - binary_sensor.b53_avariia_nizkii_kislorod
+    - binary_sensor.b54_avariia_nizkii_kislorod
+    - binary_sensor.b55_avariia_nizkii_kislorod
+    - binary_sensor.b56_avariia_nizkii_kislorod
+    - binary_sensor.b57_avariia_nizkii_kislorod
+    - binary_sensor.b58_avariia_nizkii_kislorod
+    - binary_sensor.b59_avariia_nizkii_kislorod
+    - binary_sensor.b60_avariia_nizkii_kislorod
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 5 + 1) ~ "_niz_limit_kisloroda"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_kislorod" %}‼️ Бассейн
+        {{ pool_num }}.🫧 Кислород {{ states(sensor) }}мг/л < {{ states(limit_sensor)
+        }}мг/л'
+  mode: queued
+- alias: Notify Telegram on alarm avariia_vysokii_kislorod
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.b01_avariia_vysokii_kislorod
+    - binary_sensor.b02_avariia_vysokii_kislorod
+    - binary_sensor.b03_avariia_vysokii_kislorod
+    - binary_sensor.b04_avariia_vysokii_kislorod
+    - binary_sensor.b05_avariia_vysokii_kislorod
+    - binary_sensor.b06_avariia_vysokii_kislorod
+    - binary_sensor.b07_avariia_vysokii_kislorod
+    - binary_sensor.b08_avariia_vysokii_kislorod
+    - binary_sensor.b09_avariia_vysokii_kislorod
+    - binary_sensor.b10_avariia_vysokii_kislorod
+    - binary_sensor.b11_avariia_vysokii_kislorod
+    - binary_sensor.b12_avariia_vysokii_kislorod
+    - binary_sensor.b13_avariia_vysokii_kislorod
+    - binary_sensor.b14_avariia_vysokii_kislorod
+    - binary_sensor.b15_avariia_vysokii_kislorod
+    - binary_sensor.b16_avariia_vysokii_kislorod
+    - binary_sensor.b17_avariia_vysokii_kislorod
+    - binary_sensor.b18_avariia_vysokii_kislorod
+    - binary_sensor.b19_avariia_vysokii_kislorod
+    - binary_sensor.b20_avariia_vysokii_kislorod
+    - binary_sensor.b21_avariia_vysokii_kislorod
+    - binary_sensor.b22_avariia_vysokii_kislorod
+    - binary_sensor.b23_avariia_vysokii_kislorod
+    - binary_sensor.b24_avariia_vysokii_kislorod
+    - binary_sensor.b25_avariia_vysokii_kislorod
+    - binary_sensor.b26_avariia_vysokii_kislorod
+    - binary_sensor.b27_avariia_vysokii_kislorod
+    - binary_sensor.b28_avariia_vysokii_kislorod
+    - binary_sensor.b29_avariia_vysokii_kislorod
+    - binary_sensor.b30_avariia_vysokii_kislorod
+    - binary_sensor.b31_avariia_vysokii_kislorod
+    - binary_sensor.b32_avariia_vysokii_kislorod
+    - binary_sensor.b33_avariia_vysokii_kislorod
+    - binary_sensor.b34_avariia_vysokii_kislorod
+    - binary_sensor.b35_avariia_vysokii_kislorod
+    - binary_sensor.b36_avariia_vysokii_kislorod
+    - binary_sensor.b37_avariia_vysokii_kislorod
+    - binary_sensor.b38_avariia_vysokii_kislorod
+    - binary_sensor.b39_avariia_vysokii_kislorod
+    - binary_sensor.b40_avariia_vysokii_kislorod
+    - binary_sensor.b41_avariia_vysokii_kislorod
+    - binary_sensor.b42_avariia_vysokii_kislorod
+    - binary_sensor.b43_avariia_vysokii_kislorod
+    - binary_sensor.b44_avariia_vysokii_kislorod
+    - binary_sensor.b45_avariia_vysokii_kislorod
+    - binary_sensor.b46_avariia_vysokii_kislorod
+    - binary_sensor.b47_avariia_vysokii_kislorod
+    - binary_sensor.b48_avariia_vysokii_kislorod
+    - binary_sensor.b49_avariia_vysokii_kislorod
+    - binary_sensor.b50_avariia_vysokii_kislorod
+    - binary_sensor.b51_avariia_vysokii_kislorod
+    - binary_sensor.b52_avariia_vysokii_kislorod
+    - binary_sensor.b53_avariia_vysokii_kislorod
+    - binary_sensor.b54_avariia_vysokii_kislorod
+    - binary_sensor.b55_avariia_vysokii_kislorod
+    - binary_sensor.b56_avariia_vysokii_kislorod
+    - binary_sensor.b57_avariia_vysokii_kislorod
+    - binary_sensor.b58_avariia_vysokii_kislorod
+    - binary_sensor.b59_avariia_vysokii_kislorod
+    - binary_sensor.b60_avariia_vysokii_kislorod
+    to: 'on'
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state == ''on'' }}'
+  action:
+  - service: notify.telegram
+    data:
+      message: '{% set pool_num = trigger.entity_id.split(".")[1][1:3] | int %}{%
+        set limit_sensor = "number.sh" ~ ((pool_num - 1) // 5 + 1) ~ "_verkh_limit_kisloroda"
+        %}{% set sensor = "sensor.b" ~  ("%02d" % pool_num) ~ "_kislorod" %}‼️ Бассейн
+        {{ pool_num }}.🫧🫧 Кислород {{ states(sensor) }}мг/л > {{ states(limit_sensor)
+        }}мг/л'
+  mode: queued
+- alias: Notify Telegram on no connect
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.sh1_pitanie
+        - binary_sensor.sh2_pitanie
+        - binary_sensor.sh3_pitanie
+        - binary_sensor.sh4_pitanie
+        - binary_sensor.sh5_pitanie
+        - binary_sensor.sh6_pitanie
+        - binary_sensor.sh7_pitanie
+        - binary_sensor.sh8_pitanie
+        - binary_sensor.sh9_pitanie
+        - binary_sensor.sh10_pitanie
+        - binary_sensor.sh11_pitanie
+        - binary_sensor.sh12_pitanie
+      to:
+        - 'unknown'
+        - 'unavailable'
+  action:
+    - service: notify.telegram
+      data:
+        message: >
+          {% set num = trigger.entity_id.split(".")[1][2:4].rstrip('_') | int %}
+          ‼️ ПЛК {{ num }}. ⛓️‍💥 Нет связи
+  mode: queued
+- alias: Notify Telegram on no connect repeat
+  trigger:
+    - platform: time_pattern
+      minutes: "0"
+  condition:
+    - condition: state
+      entity_id:
+        - binary_sensor.sh1_pitanie
+        - binary_sensor.sh2_pitanie
+        - binary_sensor.sh3_pitanie
+        - binary_sensor.sh4_pitanie
+        - binary_sensor.sh5_pitanie
+        - binary_sensor.sh6_pitanie
+        - binary_sensor.sh7_pitanie
+        - binary_sensor.sh8_pitanie
+        - binary_sensor.sh9_pitanie
+        - binary_sensor.sh10_pitanie
+        - binary_sensor.sh11_pitanie
+        - binary_sensor.sh12_pitanie
+      state:
+        - 'unknown'
+        - 'unavailable'
+  action:
+    - service: notify.telegram
+      data:
+        message: >
+          {% set num = trigger.entity_id.split(".")[1][2:4].rstrip('_') | int %}
+          ⏰ Напоминание! ‼️ ПЛК {{ num }}. ⛓️‍💥 Нет связи
+  mode: queued
