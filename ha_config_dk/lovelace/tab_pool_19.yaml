@@ -64,11 +64,14 @@ sections:
           - entity: binary_sensor.sh4_pitanie
             icon: mdi:power
             name: Питание
+          - entity: time.sh4_vremia_smeny_sutok
+            icon: mdi:sun-clock-outline
+            name: Время смены суток
   - type: grid
     cards:
       - type: heading
         heading_style: title
-        heading: Кормушка 1 (Б19)
+        heading: Кормушка 1
         icon: mdi:shaker
         badges: []
       - type: entities
@@ -114,6 +117,51 @@ sections:
     cards:
       - type: heading
         heading_style: title
+        heading: Кормушка 2
+        icon: mdi:shaker
+      - type: entities
+        entities:
+          - entity: sensor.b19_kormlenie_2
+            name: Состояние
+          - entity: sensor.b19_proshlo_korm_2
+            name: Прошло кормлений
+            icon: mdi:counter
+          - entity: sensor.b19_sled_korm_2
+            name: Следующее кормление
+            icon: mdi:timer
+          - entity: binary_sensor.b19_korm_2_rabota
+            name: Состояние кормушки
+          - entity: binary_sensor.b19_korm_2_pusk
+            name: Пуск кормушки
+      - type: custom:state-switch
+        entity: group
+        states:
+          admin:
+            type: entities
+            entities:
+              - entity: time.b19_vremia_nachala_2
+                name: Начало кормления
+              - entity: time.b19_period_2
+                name: Периодичность
+              - entity: number.b19_ust_kol_vo_kormlenii_2
+                name: Кол-во
+                icon: mdi:counter
+              - entity: number.b19_ust_dlitelnost_2
+                name: Длительность, сек
+                icon: mdi:timer
+          user:
+            type: markdown
+            content: |
+              |  |  |
+              |-----------|-----------|
+              | **Начало кормления** | {{ states('time.b19_vremia_nachala_2').replace('unknown', '-') }} |
+              | **Периодичность** | {{ states('time.b19_period_2').replace('unknown', '-') }} |
+              | **Кол-во** | {{ states('number.b19_ust_kol_vo_kormlenii_2').replace('unknown', '-') }} |
+              | **Длительность** | {{ states('number.b19_ust_dlitelnost_2').replace('unknown', '-') }} сек |
+  - type: grid
+    cards:
+      - type: heading
+        heading_style: title
         heading: Аварии
         icon: mdi:alarm-light
       - type: entities
@@ -139,6 +187,9 @@ sections:
           - entity: binary_sensor.b19_avariia_kormushka_1
             name: Не включилась кормушка 1
             secondary_info: last-changed
+          - entity: binary_sensor.b19_avariia_kormushka_2
+            name: Не включилась кормушка 2
+            secondary_info: last-changed
       - type: heading
         heading_style: title
         heading: Игнорирование аварий
@@ -157,6 +208,8 @@ sections:
                 name: Оксигенератор
               - entity: switch.b19_ignor_avarii_kormushki_1
                 name: Кормушка 1
+              - entity: switch.b19_ignor_avarii_kormushki_2
+                name: Кормушка 2
           user:
             type: markdown
             content: |

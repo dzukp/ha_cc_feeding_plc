@@ -10,7 +10,7 @@ styles:
     - padding: 5%
     - font-size: 14px
   grid:
-    - grid-template-areas: '"n n" "temp oxy" "oxy_valve oxy_gen" "mode alarm" "feeding_1 feeding_1"'
+    - grid-template-areas: '"n n" "temp oxy" "oxy_valve oxy_gen" "mode alarm" "feeding_1 feeding_2"'
     - grid-template-columns: 1fr 1fr
     - grid-template-rows: min-content min-content min-content min-content
   name:
