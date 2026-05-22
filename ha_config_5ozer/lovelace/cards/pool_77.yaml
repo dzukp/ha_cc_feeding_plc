@@ -1,0 +1,203 @@
+type: custom:button-card
+name: Бассейн 77
+tap_action:
+  action: navigate
+  navigation_path: /lovelace/pool_77
+styles:
+  card:
+    - background-color: var(--card-background-color)
+    - border-radius: 5%
+    - padding: 5%
+    - font-size: 14px
+  grid:
+    - grid-template-areas: '"n n" "temp oxy" "oxy_valve oxy_gen" "mode alarm" "feeding_1 feeding_2"'
+    - grid-template-columns: 1fr 1fr
+    - grid-template-rows: min-content min-content min-content min-content
+  name:
+    - font-weight: bold
+    - font-size: 16px
+    - align-self: middle
+    - justify-self: start
+    - padding-bottom: 8px
+  custom_fields:
+    temp:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[
+            const fact = parseFloat(states['sensor.b77_temperatura'].state);
+            if (fact < parseFloat(states['number.sh16_niz_limit_temperatury'].state) )
+              return 'red';
+            if (fact > parseFloat(states['number.sh16_verkh_limit_temperatury'].state) )
+              return 'red';
+            return '';
+          ]]]
+    oxy:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[ 
+            const fact = parseFloat(states['sensor.b77_kislorod'].state);
+            if (fact < parseFloat(states['number.sh16_niz_limit_kisloroda'].state) )
+              return 'red';
+            if (fact > parseFloat(states['number.sh16_verkh_limit_kisloroda'].state) )
+              return 'red';
+            return '';
+          ]]]
+    mode:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[ 
+              const m = states['binary_sensor.b77_ruchnoi'].state;
+              const a = states['binary_sensor.b77_avtomat'].state;
+              return (m === 'on' && a !== 'on') ? 'orange' : (a === 'on' && m !== 'on') ? '' : 'red'; 
+          ]]]
+    alarm:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[
+            const value = states['sensor.b77_avariia'].state;
+            console.log(value);
+            if (value === 'Ошибок нет')
+              return '';
+            if (value === 'unknown' || value === 'Нет данных')
+              return '';
+            return 'red';
+          ]]]
+    feeding_1:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[ 
+            const state = states['sensor.b77_kormlenie_1'].state;
+            const feeding_alarm = states['binary_sensor.b77_avariia_kormushka_1'].state;
+            if (feeding_alarm == 'on')
+              return 'red';
+            if (state == 'Ожидание следующего' || state == 'Кормление')
+              return 'green';
+            return ''; 
+          ]]]
+    feeding_2:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[ 
+            const state = states['sensor.b77_kormlenie_2'].state;
+            const feeding_alarm = states['binary_sensor.b77_avariia_kormushka_2'].state;
+            if (feeding_alarm == 'on')
+              return 'red';
+            if (state == 'Ожидание следующего' || state == 'Кормление')
+              return 'green';
+            return ''; 
+          ]]]
+    oxy_gen:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[
+            return states['binary_sensor.b77_oksigenerator'].state == 'on' ? 'green' : '';
+          ]]]
+    oxy_valve:
+      - padding-bottom: 8px
+      - align-self: middle
+      - justify-self: start
+      - --color-sensor: >
+          [[[
+            return states['binary_sensor.b77_klapan_kisloroda'].state == 'on' ? 'green' : '';
+          ]]]
+
+custom_fields:
+  temp: >
+    [[[ 
+      let icon = "mdi:thermometer";
+      let fact = parseFloat(states['sensor.b77_temperatura'].state);
+      if (!Number.isNaN(fact)) {
+        if (fact < parseFloat(states['number.sh16_niz_limit_temperatury'].state) )
+          icon = "mdi:thermometer-low";
+        else if (fact > parseFloat(states['number.sh16_verkh_limit_temperatury'].state) )
+          icon = "mdi:thermometer-high";    
+      }
+      else {
+        fact = "&mdash;";
+      }
+      return `
+        <ha-icon icon="${icon}" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+        <span>${fact}</span>
+        <span>${states["sensor.b77_temperatura"].attributes.unit_of_measurement}</span>`
+    ]]]
+  oxy: >
+    [[[ 
+      let fact = parseFloat(states['sensor.b77_kislorod'].state);
+      if (Number.isNaN(fact)) {
+        fact = "&mdash;";
+      }
+      return `
+        <ha-icon icon="mdi:chart-bubble" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+        <span>${fact}</span>
+        <span>${states["sensor.b77_kislorod"].attributes.unit_of_measurement}</span>` 
+    ]]]
+  mode: >
+    [[[
+      const m = states['binary_sensor.b77_ruchnoi'].state;
+      const a = states['binary_sensor.b77_avtomat'].state;
+      if (m === 'on' && a !== 'on') 
+        return `
+          <ha-icon icon="mdi:hand-back-left" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+          <span>Ручной режим</span>`;
+      if (a === 'on' && m !== 'on') 
+        return `
+           <ha-icon icon="mdi:desktop-classic" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+           <span>Автомат</span>`;
+      if (a === 'off' && m === 'off')
+        return `
+             <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+             <span>Отключен</span>`;
+      if (a === 'on' && m === 'on')
+        return `
+             <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+             <span>Ошибка</span>`;
+      if (a === 'unknown' || m === 'unknown')
+        return `
+             <ha-icon icon="mdi:cancel" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+             <span>&mdash;</span>`;
+    ]]]
+  alarm: >
+    [[[
+      return `<ha-icon icon="mdi:alarm-light" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>`
+    ]]]
+  feeding_1: >
+    [[[
+      const value = 
+        `${states['sensor.b77_proshlo_korm_1'].state} / ${states['number.b77_ust_kol_vo_kormlenii_1'].state}`
+          .replaceAll('unknown', '&mdash;');
+      return `
+        <ha-icon icon="mdi:shaker" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+        <span">${value}</span>`
+    ]]]
+  feeding_2: >
+    [[[
+      const value = 
+        `${states['sensor.b77_proshlo_korm_2'].state} / ${states['number.b77_ust_kol_vo_kormlenii_2'].state}`
+          .replaceAll('unknown', '&mdash;');
+      return `
+        <ha-icon icon="mdi:shaker" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+        <span">${value}</span>`
+    ]]]
+  oxy_gen: >
+    [[[
+      return `<ha-icon icon="mdi:tree" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>
+      <span>LOXY</span>`
+    ]]]
+  oxy_valve: >
+    [[[
+      return `<ha-icon icon="mdi:pipe-valve" style="width: 20px; height: 20px; color: var(--color-sensor);"></ha-icon>`
+    ]]]

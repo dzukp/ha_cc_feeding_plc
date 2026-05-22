@@ -1,0 +1,68 @@
+title: Б 41-60 (корм)
+sections:
+  - type: grid
+    cards:
+      - !include cards/feeding_41.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_42.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_43.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_44.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_45.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_46.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_47.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_48.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_49.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_50.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_51.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_52.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_53.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_54.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_55.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_56.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_57.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_58.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_59.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_60.yaml
+header:
+  card:
+    type: markdown
+    content: '## Бассейны 41-60'
+    text_only: true
+
