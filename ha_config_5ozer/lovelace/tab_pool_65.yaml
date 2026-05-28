@@ -64,6 +64,9 @@ sections:
           - entity: binary_sensor.sh13_pitanie
             icon: mdi:power
             name: Питание
+          - entity: time.sh13_vremia_smeny_sutok
+            icon: mdi:sun-clock-outline
+            name: Время смены суток
   - type: grid
     cards:
       - type: heading

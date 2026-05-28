@@ -10,6 +10,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh1_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh1_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -50,6 +53,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh2_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh2_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -90,6 +96,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh3_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh3_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -130,6 +139,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh4_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh4_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -170,6 +182,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh5_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh5_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -210,6 +225,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh6_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh6_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -250,6 +268,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh7_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh7_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -290,6 +311,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh8_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh8_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -330,6 +354,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh9_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh9_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -370,6 +397,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh10_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh10_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -410,6 +440,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh11_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh11_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -450,6 +483,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh12_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh12_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -490,6 +526,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh13_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh13_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -530,6 +569,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh14_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh14_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -570,6 +612,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh15_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh15_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -610,6 +655,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh16_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh16_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -650,6 +698,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh17_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh17_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -690,6 +741,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh18_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh18_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -730,6 +784,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh19_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh19_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
@@ -770,6 +827,9 @@ sections:
           admin:
             type: entities
             entities:
+              - entity: time.sh20_vremia_smeny_sutok
+                name: Время смены суток
+                mode: box
               - entity: number.sh20_verkh_limit_kisloroda
                 name: Верхний предел O₂
                 mode: box
