@@ -4,9 +4,11 @@ views:
   - !include lovelace/tab_pools_1_20.yaml
   - !include lovelace/tab_pools_21_40.yaml
   - !include lovelace/tab_pools_41_60.yaml
+  - !include lovelace/tab_pools_65_89.yaml
   - !include lovelace/tab_feeding_1_20.yaml
   - !include lovelace/tab_feeding_21_40.yaml
   - !include lovelace/tab_feeding_41_60.yaml
+  - !include lovelace/tab_feeding_65_89.yaml
   - !include lovelace/tab_temp_oxy_1_8.yaml
   - !include lovelace/tab_temp_oxy_9_16.yaml
   - !include lovelace/tab_sensors.yaml

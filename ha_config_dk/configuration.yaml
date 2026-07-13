@@ -317,9 +317,9 @@ pools_plc:
   - host: 10.10.10.25
     number: 15
   - host: 10.10.10.26
-    number: 17
+    number: 16
   - host: 10.10.10.27
-    number: 18
+    number: 17
 
 recorder:
   exclude:
