@@ -70,3 +70,28 @@ views:
   - !include lovelace/tab_pool_58.yaml
   - !include lovelace/tab_pool_59.yaml
   - !include lovelace/tab_pool_60.yaml
+  - !include lovelace/tab_pool_65.yaml
+  - !include lovelace/tab_pool_66.yaml
+  - !include lovelace/tab_pool_67.yaml
+  - !include lovelace/tab_pool_68.yaml
+  - !include lovelace/tab_pool_69.yaml
+  - !include lovelace/tab_pool_70.yaml
+  - !include lovelace/tab_pool_71.yaml
+  - !include lovelace/tab_pool_72.yaml
+  - !include lovelace/tab_pool_73.yaml
+  - !include lovelace/tab_pool_74.yaml
+  - !include lovelace/tab_pool_75.yaml
+  - !include lovelace/tab_pool_76.yaml
+  - !include lovelace/tab_pool_77.yaml
+  - !include lovelace/tab_pool_78.yaml
+  - !include lovelace/tab_pool_79.yaml
+  - !include lovelace/tab_pool_80.yaml
+  - !include lovelace/tab_pool_81.yaml
+  - !include lovelace/tab_pool_82.yaml
+  - !include lovelace/tab_pool_83.yaml
+  - !include lovelace/tab_pool_84.yaml
+  - !include lovelace/tab_pool_85.yaml
+  - !include lovelace/tab_pool_86.yaml
+  - !include lovelace/tab_pool_87.yaml
+  - !include lovelace/tab_pool_88.yaml
+  - !include lovelace/tab_pool_89.yaml

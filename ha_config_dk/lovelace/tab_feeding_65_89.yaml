@@ -1,0 +1,82 @@
+title: Б 65-89 (корм)
+sections:
+  - type: grid
+    cards:
+      - !include cards/feeding_65.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_66.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_67.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_68.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_69.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_70.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_71.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_72.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_73.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_74.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_75.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_76.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_77.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_78.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_79.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_80.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_81.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_82.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_83.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_84.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_85.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_86.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_87.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_88.yaml
+  - type: grid
+    cards:
+      - !include cards/feeding_89.yaml
+header:
+  card:
+    type: markdown
+    content: '## Бассейны 65-89'
+    text_only: true
