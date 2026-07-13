@@ -64,9 +64,13 @@ sections:
           - entity: binary_sensor.sh5_pitanie
             icon: mdi:power
             name: Питание
-          - entity: time.sh5_vremia_smeny_sutok
-            icon: mdi:sun-clock-outline
-            name: Время смены суток
+      - type: markdown
+        content: |
+          <div>
+          <ha-icon icon="mdi:sun-clock-outline"></ha-icon>
+          <span>Время смены суток: &emsp;</span> 
+          <span>{{ states('time.sh5_vremia_smeny_sutok').replace('unknown', '-') }}</span>
+          </div>
   - type: grid
     cards:
       - type: heading
