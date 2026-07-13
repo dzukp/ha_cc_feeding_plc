@@ -14,7 +14,7 @@ logger = logging.getLogger('feeding')
 class ModbusSensor(CoordinatorEntity, SensorEntity):
     def __init__(
             self, coordinator, entry_id, name, address, unit=None, map_fn=None, ratio=None, signed=False,
-            device_class : SensorDeviceClass | None = None
+            device_class : SensorDeviceClass | None = None, none_value: int | None = None
     ):
         super().__init__(coordinator)
         self._ratio = ratio
@@ -26,11 +26,14 @@ class ModbusSensor(CoordinatorEntity, SensorEntity):
         self._unit = unit
         self._map_fn = map_fn
         self._signed = signed
+        self._none_value = none_value
         logger.debug(f'sensor created addr: {self._address:03} uid: `{self._attr_unique_id}` name: `{self._attr_name}`')
 
     @property
     def native_value(self):
         value = self.coordinator.data.get(self._address)
+        if value is not None and self._none_value is not None and value == self._none_value:
+            value = None
         if value is not None:
             if self._signed:
                 value = struct.unpack('h', struct.pack('H', value))[0]
@@ -123,15 +126,15 @@ def create_items(
     sensors = [
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Температура", address_offset + 15, "°C",
-            ratio=0.01, signed=True, device_class=SensorDeviceClass.TEMPERATURE
+            ratio=0.01, signed=True, device_class=SensorDeviceClass.TEMPERATURE, none_value=0
         ),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кислород", address_offset + 16, "мг/л",
-            ratio=0.01, signed=True
+            ratio=0.01, signed=True, none_value=0
         ),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кислород средн", address_offset + 18, "мг/л",
-            ratio=0.01, signed=True
+            ratio=0.01, signed=True, none_value=0
         ),
         ModbusSensor(
             coordinator, device_id, f"Б{plc_feeding_number:02} Кормление 1", address_offset + 5,
